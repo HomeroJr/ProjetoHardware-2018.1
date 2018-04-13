@@ -1,0 +1,15 @@
+module UC(input logic clock,
+			input logic OPcode,
+			output logic SrcPC,
+			output logic ULASrcA,
+			output logic ULASrcB,
+			output logic EscReg,
+			output logic RegDst,
+			output logic IREsc,
+			output logic Mem2Reg,
+			output logic WriteMem,
+			output logic ULAOp,
+			output logic IorD,
+			output logic PCWri,
+			output logic PCWriCond);
+			

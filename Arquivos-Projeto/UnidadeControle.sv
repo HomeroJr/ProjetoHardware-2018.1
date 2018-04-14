@@ -47,7 +47,7 @@ case(state)
 	Mem2Reg = 1'b0;
 	WriteMem = 1'b0;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;
+	ULAOp = 3'b001;
 	IorD = 1'b0;
 	PCWri = 1'b0;
 	PCWriCond = 1'b0;
@@ -56,14 +56,14 @@ case(state)
 	BUSCA:begin
 	SrcPC = 2'b00;
 	ULASrcA = 1'b0;
-	ULASrcB = 2'b01;
+	ULASrcB = 2'b01; // carrega o 4 
 	EscReg = 1'b0;
 	RegDst = 1'b0;
 	IREsc = 1'b0;
 	Mem2Reg = 1'b0;
 	WriteMem = 1'b0; //sempre leia a memoria quando = 0
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;
+	ULAOp = 3'b001;
 	IorD = 1'b0;
 	PCWri = 1'b1;
 	PCWriCond = 1'b0;
@@ -79,7 +79,7 @@ case(state)
 	Mem2Reg = 1'b0;
 	WriteMem = 1'b0;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;
+	ULAOp = 3'b001;
 	IorD = 1'b0;
 	PCWri = 1'b0;
 	PCWriCond = 1'b0;
@@ -95,7 +95,7 @@ case(state)
 	Mem2Reg = 1'b0;
 	WriteMem = 1'b0;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;
+	ULAOp = 3'b001;
 	IorD = 1'b0;
 	PCWri = 1'b0;
 	PCWriCond = 1'b0;

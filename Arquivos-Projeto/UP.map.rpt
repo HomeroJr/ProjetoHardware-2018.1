@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UP
-Fri Apr 13 19:08:35 2018
+Sat Apr 14 18:01:10 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,33 +13,11 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. State Machine - |Up|UnidadeControle:UC|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 14. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 17. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
- 18. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
- 19. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
- 20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
- 21. Port Connectivity Checks: "Ula32:ULA"
- 22. Port Connectivity Checks: "Multiplex2bit:MuxSrcPC"
- 23. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
- 24. Port Connectivity Checks: "Multiplex:MuxSrcA"
- 25. Port Connectivity Checks: "Multiplex:Mem2Reg"
- 26. Port Connectivity Checks: "Multiplex:RegDst"
- 27. Port Connectivity Checks: "Multiplex:MuxIorD"
- 28. Port Connectivity Checks: "Banco_reg:BancoRegs"
- 29. Port Connectivity Checks: "Instr_Reg:RegInstrucao"
- 30. Port Connectivity Checks: "Registrador:MemReg"
- 31. Port Connectivity Checks: "Registrador:PC"
- 32. Port Connectivity Checks: "UnidadeControle:UC"
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |UnidadeControle|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -65,18 +43,18 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 13 19:08:35 2018        ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 14 18:01:10 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; UP                                           ;
-; Top-level Entity Name              ; Up                                           ;
+; Top-level Entity Name              ; UnidadeControle                              ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 1                                            ;
+; Total logic elements               ; 4                                            ;
 ;     Total combinational functions  ; 1                                            ;
-;     Dedicated logic registers      ; 0                                            ;
-; Total registers                    ; 0                                            ;
-; Total pins                         ; 66                                           ;
+;     Dedicated logic registers      ; 4                                            ;
+; Total registers                    ; 4                                            ;
+; Total pins                         ; 25                                           ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 64                                           ;
+; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
 ; Total PLLs                         ; 0                                            ;
 +------------------------------------+----------------------------------------------+
@@ -88,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C70F672C6       ;                    ;
-; Top-level entity name                                                      ; Up                 ; UP                 ;
+; Top-level entity name                                                      ; UnidadeControle    ; UP                 ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -178,26 +156,13 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                            ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------+
-; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/phjc/Downloads/ProjetoHardware/instrucoes.mif                                  ;
-; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware/Banco_reg.vhd                                   ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware/Instr_Reg.vhd                                   ;
-; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware/Memoria.vhd                                     ;
-; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware/Multiplex.sv                                    ;
-; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware/Multiplex2bit.sv                                ;
-; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware/Registrador.vhd                                 ;
-; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware/ula32.vhd                                       ;
-; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware/Up.sv                                           ;
-; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware/UnidadeControle.sv                              ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/users/phjc/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
-; altram.tdf                       ; yes             ; Megafunction                     ; c:/users/phjc/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/users/phjc/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/phjc/Downloads/ProjetoHardware/db/altsyncram_e1a1.tdf                          ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/hbcj/Downloads/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UnidadeControle.sv ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -205,7 +170,7 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1     ;
+; Estimated Total logic elements              ; 4     ;
 ;                                             ;       ;
 ; Total combinational functions               ; 1     ;
 ; Logic element usage by number of LUT inputs ;       ;
@@ -217,61 +182,31 @@ applicable agreement for further details.
 ;     -- normal mode                          ; 1     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
+; Total registers                             ; 4     ;
+;     -- Dedicated logic registers            ; 4     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 66    ;
-; Total memory bits                           ; 64    ;
-; Maximum fan-out node                        ; ~GND  ;
-; Maximum fan-out                             ; 32    ;
-; Total fan-out                               ; 96    ;
-; Average fan-out                             ; 0.97  ;
+; I/O pins                                    ; 25    ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 4     ;
+; Total fan-out                               ; 16    ;
+; Average fan-out                             ; 0.53  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                    ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Library Name ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; |Up                                             ; 1 (1)             ; 0 (0)        ; 64          ; 0            ; 0       ; 0         ; 66   ; 0            ; |Up                                                                                                       ; work         ;
-;    |Memoria:Mem|                                ; 0 (0)             ; 0 (0)        ; 64          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM                                                                            ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |UnidadeControle           ; 1 (1)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |UnidadeControle    ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------+
-; State Machine - |Up|UnidadeControle:UC|state                       ;
+; State Machine - |UnidadeControle|state                             ;
 +-------------+-------------+------------+-------------+-------------+
 ; Name        ; state.WRITE ; state.WAIT ; state.BUSCA ; state.RESET ;
 +-------------+-------------+------------+-------------+-------------+
@@ -282,65 +217,15 @@ Encoding Type:  One-Hot
 +-------------+-------------+------------+-------------+-------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+-----------------------------------------+---------------------------------------------+
-; Register name                           ; Reason for Removal                          ;
-+-----------------------------------------+---------------------------------------------+
-; Instr_Reg:RegInstrucao|Instr25_21[0..4] ; Lost fanout                                 ;
-; Instr_Reg:RegInstrucao|Instr15_0[11]    ; Lost fanout                                 ;
-; Banco_reg:BancoRegs|Reg0[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg1[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg2[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg3[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg4[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg5[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg6[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg7[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg8[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg9[0]             ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg10[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg11[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg12[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg13[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg14[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg15[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg16[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg17[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg18[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg19[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg20[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg21[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg22[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg23[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg24[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg25[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg26[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg27[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg28[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg29[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg30[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Banco_reg:BancoRegs|Reg31[0]            ; Stuck at GND due to stuck port clock_enable ;
-; Instr_Reg:RegInstrucao|Instr20_16[0]    ; Lost fanout                                 ;
-; Registrador:PC|Saida[0]                 ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:UC|state~4              ; Lost fanout                                 ;
-; UnidadeControle:UC|state~5              ; Lost fanout                                 ;
-; UnidadeControle:UC|state.RESET          ; Lost fanout                                 ;
-; UnidadeControle:UC|state.BUSCA          ; Lost fanout                                 ;
-; UnidadeControle:UC|state.WAIT           ; Lost fanout                                 ;
-; UnidadeControle:UC|state.WRITE          ; Lost fanout                                 ;
-; Total Number of Removed Registers = 46  ;                                             ;
-+-----------------------------------------+---------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                           ;
-+-----------------------------+--------------------------------+----------------------------------------+
-; Register name               ; Reason for Removal             ; Registers Removed due to This Register ;
-+-----------------------------+--------------------------------+----------------------------------------+
-; Banco_reg:BancoRegs|Reg0[0] ; Stuck at GND                   ; Instr_Reg:RegInstrucao|Instr20_16[0]   ;
-;                             ; due to stuck port clock_enable ;                                        ;
-+-----------------------------+--------------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~4                               ; Lost fanout        ;
+; state~5                               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -348,281 +233,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                  ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                             ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM ;
-+------------------------+----------------+-------------------------------+
-; Parameter Name         ; Value          ; Type                          ;
-+------------------------+----------------+-------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                       ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                       ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                       ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                       ;
-; USE_EAB                ; ON             ; Untyped                       ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                       ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                       ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
-+------------------------+----------------+-------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                           ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                           ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                           ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                  ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                  ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                  ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                  ;
-; USE_EAB                ; ON             ; Untyped                                  ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                  ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Port Connectivity Checks: "Ula32:ULA"                         ;
-+----------+--------+------------------+------------------------+
-; Port     ; Type   ; Severity         ; Details                ;
-+----------+--------+------------------+------------------------+
-; seletor  ; Input  ; Critical Warning ; Types are incompatible ;
-; overflow ; Output ; Info             ; Explicitly unconnected ;
-; negativo ; Output ; Info             ; Explicitly unconnected ;
-; igual    ; Output ; Info             ; Explicitly unconnected ;
-; maior    ; Output ; Info             ; Explicitly unconnected ;
-; menor    ; Output ; Info             ; Explicitly unconnected ;
-+----------+--------+------------------+------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex2bit:MuxSrcPC"                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
-; a    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b    ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; c    ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; d    ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; sel  ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "sel[1..1]" will be connected to GND.                                        ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex2bit:MuxSrcB"                                                                                                                                                              ;
-+-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
-; a     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; c     ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; d     ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; sel   ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "sel[1..1]" will be connected to GND.                                        ;
-+-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex:MuxSrcA"                                                                                                                                                                 ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
-; a    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex:Mem2Reg"                                                                                                                                                                 ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; a    ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; b    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex:RegDst"                                                                                                                                                                ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (5 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND.            ;
-; a    ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b    ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex:MuxIorD"                                                                                                                                                                 ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; f    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
-; a    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b    ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Banco_reg:BancoRegs"                                                                            ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; writedata        ; Input  ; Info     ; Explicitly unconnected                                                              ;
-; readdata1[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; readdata2[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Instr_Reg:RegInstrucao"                                                                                                     ;
-+-------------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity         ; Details                                                                                                ;
-+-------------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
-; instr31_26        ; Output ; Critical Warning ; Can't connect array with 5 elements in array dimension 1 to port with 6 elements in the same dimension ;
-; instr15_0[15..12] ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                    ;
-; instr15_0[10..0]  ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                    ;
-+-------------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Registrador:MemReg"                                                                         ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Registrador:PC"                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UnidadeControle:UC"                                                                                                                               ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                        ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; OPcode  ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (6 bits) it drives.  Extra input bit(s) "OPcode[5..5]" will be connected to GND. ;
-; SrcPC   ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "SrcPC[1..1]" have no fanouts                       ;
-; ULASrcB ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "ULASrcB[1..1]" have no fanouts                     ;
-; ULAOp   ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "ULAOp[2..1]" have no fanouts                       ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -631,16 +249,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Apr 13 19:08:33 2018
+    Info: Processing started: Sat Apr 14 18:01:08 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoHardware -c UP
-Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
-Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
-Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
-Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
-Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
-Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
-Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
-Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -659,6 +269,8 @@ Info: Found 1 design units, including 1 entities, in source file multiplex2bit.s
 Info: Found 2 design units, including 1 entities, in source file regdesloc.vhd
     Info: Found design unit 1: RegDesloc-behavioral_arch
     Info: Found entity 1: RegDesloc
+Info: Found 1 design units, including 1 entities, in source file unidadecontrole.sv
+    Info: Found entity 1: UnidadeControle
 Info: Found 2 design units, including 1 entities, in source file registrador.vhd
     Info: Found design unit 1: Registrador-behavioral_arch
     Info: Found entity 1: Registrador
@@ -667,8 +279,6 @@ Info: Found 2 design units, including 1 entities, in source file ula32.vhd
     Info: Found entity 1: Ula32
 Info: Found 1 design units, including 1 entities, in source file up.sv
     Info: Found entity 1: Up
-Info: Found 1 design units, including 1 entities, in source file unidadecontrole.sv
-    Info: Found entity 1: UnidadeControle
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex.sv(4): created implicit net for "fl"
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex.sv(4): created implicit net for "n_sel"
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex.sv(5): created implicit net for "f2"
@@ -685,701 +295,48 @@ Warning (10236): Verilog HDL Implicit Net warning at Multiplex2bit.sv(13): creat
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex2bit.sv(14): created implicit net for "d3"
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex2bit.sv(15): created implicit net for "ab"
 Warning (10236): Verilog HDL Implicit Net warning at Multiplex2bit.sv(16): created implicit net for "cd"
-Warning (10236): Verilog HDL Implicit Net warning at Up.sv(38): created implicit net for "pccond"
-Info: Elaborating entity "Up" for the top level hierarchy
-Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:UC"
-Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
-Info: Elaborating entity "Memoria" for hierarchy "Memoria:Mem"
-Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Instantiated megafunction "Memoria:Mem|LPM_RAM_DQ:MEM" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "8"
-    Info: Parameter "LPM_WIDTHAD" = "8"
-    Info: Parameter "LPM_NUMWORDS" = "0"
-    Info: Parameter "LPM_INDATA" = "REGISTERED"
-    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
-    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info: Parameter "LPM_FILE" = "instrucoes.mif"
-    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
-    Info: Parameter "USE_EAB" = "ON"
-    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
-    Info: Parameter "LPM_HINT" = "UNUSED"
-Info: Elaborating entity "altram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram"
-Warning: Assertion warning: altram does not support Cyclone II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone II devices
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_e1a1.tdf
-    Info: Found entity 1: altsyncram_e1a1
-Info: Elaborating entity "altsyncram_e1a1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated"
-Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:RegInstrucao"
-Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BancoRegs"
-Info: Elaborating entity "Multiplex" for hierarchy "Multiplex:MuxIorD"
-Info: Elaborating entity "Multiplex2bit" for hierarchy "Multiplex2bit:MuxSrcB"
-Warning (10030): Net "n_sel0" at Multiplex2bit.sv(7) has no driver or initial value, using a default initial value '0'
-Info: Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[31]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[30]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[29]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[28]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[27]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[26]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[25]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[24]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[23]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[22]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[21]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[20]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[19]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[18]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[17]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[16]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[15]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[14]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[13]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[12]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[11]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[10]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[9]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[8]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[7]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[6]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[5]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[4]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[3]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[2]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[31]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[30]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[29]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[28]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[27]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[26]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[25]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[24]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[23]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[22]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[21]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[20]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[19]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[18]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[17]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[16]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[15]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[14]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[13]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[12]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[11]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[10]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[9]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[8]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[7]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[6]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[5]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[4]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[3]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[2]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[31]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[30]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[29]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[28]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[27]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[26]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[25]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[24]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[23]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[22]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[21]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[20]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[19]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[18]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[17]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[16]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[15]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[14]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[13]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[12]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[11]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[10]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[9]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[8]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[7]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[6]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[5]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[4]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[3]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[2]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[1]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[31]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[30]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[29]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[28]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[27]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[26]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[25]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[24]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[23]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[22]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[21]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[20]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[19]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[18]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[17]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[16]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[15]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[14]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[13]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[12]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[11]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[10]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[9]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[8]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[7]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[6]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[5]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[4]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[3]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[2]" is missing source, defaulting to GND
-    Warning (12110): Net "address_exit[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultA[1]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[31]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[30]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[29]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[28]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[27]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[26]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[25]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[24]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[23]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[22]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[21]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[20]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[19]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[18]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[17]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[16]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[15]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[14]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[13]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[12]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[11]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[10]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[9]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[8]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[7]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[6]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[5]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[4]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[3]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[2]" is missing source, defaulting to GND
-    Warning (12110): Net "resultB[1]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[4]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[3]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[2]" is missing source, defaulting to GND
-    Warning (12110): Net "writeregsult[1]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[31]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[30]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[29]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[28]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[27]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[26]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[25]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[24]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[23]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[22]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[21]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[20]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[19]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[18]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[17]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[16]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[15]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[14]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[13]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[12]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[11]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[10]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[9]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[8]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[7]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[6]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[5]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[4]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[3]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[2]" is missing source, defaulting to GND
-    Warning (12110): Net "pc_next[1]" is missing source, defaulting to GND
-Warning: 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10236): Verilog HDL Implicit Net warning at Up.sv(39): created implicit net for "pccond"
+Info: Elaborating entity "UnidadeControle" for the top level hierarchy
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "resultULA[0]" is stuck at GND
-    Warning (13410): Pin "resultULA[1]" is stuck at GND
-    Warning (13410): Pin "resultULA[2]" is stuck at GND
-    Warning (13410): Pin "resultULA[3]" is stuck at GND
-    Warning (13410): Pin "resultULA[4]" is stuck at GND
-    Warning (13410): Pin "resultULA[5]" is stuck at GND
-    Warning (13410): Pin "resultULA[6]" is stuck at GND
-    Warning (13410): Pin "resultULA[7]" is stuck at GND
-    Warning (13410): Pin "resultULA[8]" is stuck at GND
-    Warning (13410): Pin "resultULA[9]" is stuck at GND
-    Warning (13410): Pin "resultULA[10]" is stuck at GND
-    Warning (13410): Pin "resultULA[11]" is stuck at GND
-    Warning (13410): Pin "resultULA[12]" is stuck at GND
-    Warning (13410): Pin "resultULA[13]" is stuck at GND
-    Warning (13410): Pin "resultULA[14]" is stuck at GND
-    Warning (13410): Pin "resultULA[15]" is stuck at GND
-    Warning (13410): Pin "resultULA[16]" is stuck at GND
-    Warning (13410): Pin "resultULA[17]" is stuck at GND
-    Warning (13410): Pin "resultULA[18]" is stuck at GND
-    Warning (13410): Pin "resultULA[19]" is stuck at GND
-    Warning (13410): Pin "resultULA[20]" is stuck at GND
-    Warning (13410): Pin "resultULA[21]" is stuck at GND
-    Warning (13410): Pin "resultULA[22]" is stuck at GND
-    Warning (13410): Pin "resultULA[23]" is stuck at GND
-    Warning (13410): Pin "resultULA[24]" is stuck at GND
-    Warning (13410): Pin "resultULA[25]" is stuck at GND
-    Warning (13410): Pin "resultULA[26]" is stuck at GND
-    Warning (13410): Pin "resultULA[27]" is stuck at GND
-    Warning (13410): Pin "resultULA[28]" is stuck at GND
-    Warning (13410): Pin "resultULA[29]" is stuck at GND
-    Warning (13410): Pin "resultULA[30]" is stuck at GND
-    Warning (13410): Pin "resultULA[31]" is stuck at GND
-Info: 13 registers lost all their fanouts during netlist optimizations. The first 13 are displayed below.
-    Info: Register "Instr_Reg:RegInstrucao|Instr25_21[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr25_21[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr25_21[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr25_21[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr25_21[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr15_0[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Instr_Reg:RegInstrucao|Instr20_16[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~4" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~5" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state.RESET" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state.BUSCA" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state.WAIT" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state.WRITE" lost all its fanouts during netlist optimizations.
-Info: Removed 7 MSB VCC or GND address nodes from RAM block "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM"
-Info: Removed 7 MSB VCC or GND address nodes from RAM block "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM"
-Info: Removed 7 MSB VCC or GND address nodes from RAM block "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM"
-Info: Removed 7 MSB VCC or GND address nodes from RAM block "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM"
-Info: Generated suppressed messages file C:/Users/phjc/Downloads/ProjetoHardware/UP.map.smsg
-Warning: Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset_l"
-Info: Implemented 99 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
-    Info: Implemented 64 output pins
-    Info: Implemented 1 logic cells
-    Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 655 warnings
-    Info: Peak virtual memory: 253 megabytes
-    Info: Processing ended: Fri Apr 13 19:08:35 2018
+    Warning (13410): Pin "SrcPC[0]" is stuck at GND
+    Warning (13410): Pin "SrcPC[1]" is stuck at GND
+    Warning (13410): Pin "ULASrcA" is stuck at GND
+    Warning (13410): Pin "ULASrcB[1]" is stuck at GND
+    Warning (13410): Pin "EscReg" is stuck at GND
+    Warning (13410): Pin "RegDst" is stuck at GND
+    Warning (13410): Pin "Mem2Reg" is stuck at GND
+    Warning (13410): Pin "WriteMem" is stuck at GND
+    Warning (13410): Pin "StoreMem" is stuck at GND
+    Warning (13410): Pin "ULAOp[0]" is stuck at VCC
+    Warning (13410): Pin "ULAOp[1]" is stuck at GND
+    Warning (13410): Pin "ULAOp[2]" is stuck at GND
+    Warning (13410): Pin "IorD" is stuck at GND
+    Warning (13410): Pin "PCWriCond" is stuck at GND
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "state~4" lost all its fanouts during netlist optimizations.
+    Info: Register "state~5" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/Users/hbcj/Downloads/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UP.map.smsg
+Warning: Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "OPcode[0]"
+    Warning (15610): No output dependent on input pin "OPcode[1]"
+    Warning (15610): No output dependent on input pin "OPcode[2]"
+    Warning (15610): No output dependent on input pin "OPcode[3]"
+    Warning (15610): No output dependent on input pin "OPcode[4]"
+    Warning (15610): No output dependent on input pin "OPcode[5]"
+Info: Implemented 29 device resources after synthesis - the final resource count might be different
+    Info: Implemented 8 input pins
+    Info: Implemented 17 output pins
+    Info: Implemented 4 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 234 megabytes
+    Info: Processing ended: Sat Apr 14 18:01:10 2018
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/phjc/Downloads/ProjetoHardware/UP.map.smsg.
+The suppressed messages can be found in C:/Users/hbcj/Downloads/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UP.map.smsg.
 
 

@@ -1,5 +1,6 @@
 module Up(input logic clock,
 			input logic reset_l,
+			output logic [31:0] address_exit
 			output logic [31:0] memline,
 			output logic [31:0] resultULA);
 

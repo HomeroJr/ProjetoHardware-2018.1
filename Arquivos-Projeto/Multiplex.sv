@@ -1,8 +1,16 @@
-module Multiplex (output logic f,
-			input logic a,b,sel);
+module Multiplex (output logic [31:0] f,
+			input logic [31:0] a,b,
+			input logic sel);
 			
-			and #2 g1(fl,a,n_sel),
-				   g2(f2,b,sel);
-		    or #2	g3(f,fl,f2);
-		    not		g4(n_sel,sel);
-		    endmodule:Multiplex
+			always @ (sel)
+			begin
+				case(sel)
+				1'b0:begin
+				f = a;
+				end
+				1'b1:begin
+				f = b;
+				end
+				endcase
+			end
+endmodule:Multiplex

@@ -1,5 +1,5 @@
 Flow report for UP
-Sat Apr 14 18:01:35 2018
+Mon Apr 16 20:43:23 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Sat Apr 14 18:01:35 2018        ;
+; Flow Status                        ; Successful - Mon Apr 16 20:43:23 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; UP                                           ;
-; Top-level Entity Name              ; UnidadeControle                              ;
+; Top-level Entity Name              ; Up                                           ;
 ; Family                             ; Cyclone II                                   ;
 ; Device                             ; EP2C70F672C6                                 ;
 ; Timing Models                      ; Final                                        ;
 ; Met timing requirements            ; Yes                                          ;
-; Total logic elements               ; 4 / 68,416 ( < 1 % )                         ;
-;     Total combinational functions  ; 2 / 68,416 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 4 / 68,416 ( < 1 % )                         ;
-; Total registers                    ; 4                                            ;
-; Total pins                         ; 25 / 422 ( 6 % )                             ;
+; Total logic elements               ; 1,941 / 68,416 ( 3 % )                       ;
+;     Total combinational functions  ; 1,825 / 68,416 ( 3 % )                       ;
+;     Dedicated logic registers      ; 1,173 / 68,416 ( 2 % )                       ;
+; Total registers                    ; 1173                                         ;
+; Total pins                         ; 335 / 422 ( 79 % )                           ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                        ;
+; Total memory bits                  ; 8,192 / 1,152,000 ( < 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                              ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                ;
 +------------------------------------+----------------------------------------------+
@@ -63,25 +63,24 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/14/2018 18:01:08 ;
+; Start date & time ; 04/16/2018 20:42:38 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; UP                  ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                       ;
-+------------------------------------+--------------------------------+---------------+-----------------+----------------+
-; Assignment Name                    ; Value                          ; Default Value ; Entity Name     ; Section Id     ;
-+------------------------------------+--------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 57606936861273.152373966807368 ; --            ; --              ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                             ; --            ; --              ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                              ; --            ; --              ; --             ;
-; PARTITION_COLOR                    ; 16764057                       ; --            ; UnidadeControle ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --            ; UnidadeControle ; Top            ;
-; TOP_LEVEL_ENTITY                   ; UnidadeControle                ; UP            ; --              ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --            ; --              ; eda_blast_fpga ;
-+------------------------------------+--------------------------------+---------------+-----------------+----------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                   ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 13557697413796.152392215807700 ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                              ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                       ; --            ; Up          ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --            ; Up          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -89,11 +88,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 234 MB              ; 00:00:04                           ;
-; Fitter                  ; 00:00:10     ; 1.9                     ; 366 MB              ; 00:00:12                           ;
-; Assembler               ; 00:00:04     ; 1.0                     ; 336 MB              ; 00:00:04                           ;
-; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 167 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:18     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis    ; 00:00:09     ; 1.0                     ; 269 MB              ; 00:00:11                           ;
+; Fitter                  ; 00:00:28     ; 1.4                     ; 377 MB              ; 00:00:32                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 342 MB              ; 00:00:03                           ;
+; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 189 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:43     ; --                      ; --                  ; 00:00:47                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,10 +101,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; g2c35            ; Windows Vista ; 6.1        ; x86_64         ;
-; Fitter                  ; g2c35            ; Windows Vista ; 6.1        ; x86_64         ;
-; Assembler               ; g2c35            ; Windows Vista ; 6.1        ; x86_64         ;
-; Classic Timing Analyzer ; g2c35            ; Windows Vista ; 6.1        ; x86_64         ;
+; Analysis & Synthesis    ; HWC19            ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; HWC19            ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; HWC19            ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; HWC19            ; Windows Vista ; 6.1        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

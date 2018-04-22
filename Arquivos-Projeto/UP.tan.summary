@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 6.269 ns
-From           : state.WRITE
-To             : IREsc
+Actual Time    : 36.112 ns
+From           : Instr_Reg:RegInstrucao|Instr25_21[4]
+To             : Alu[30]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
-From           : state.RESET
-To             : state.BUSCA
+Actual Time    : 20.30 MHz ( period = 49.260 ns )
+From           : UnidadeControle:UC|state.DECODE
+To             : Registrador:RegPC|Saida[1]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0

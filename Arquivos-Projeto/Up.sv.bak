@@ -1,88 +1,126 @@
 module Up(input logic clock,
 			input logic reset_l,
-			output logic [31:0] address_exit,
-			output logic [31:0] memline,
-			output logic [31:0] resultULA);
+			output logic [31:0] Address,
+			output logic [31:0] MemData,
+			output logic [31:0] Alu,
+			output logic [31:0] WriteDataMem, //resultado de B
+			output logic [31:0] extrapcnext,
+			output logic [31:0] PC,
+			output logic [31:0] WriteDataReg,
+			output logic [4:0] WriteRegister,
+			output logic [31:0] DeslocInst,
+			output logic [31:0] DeslocSinal,
+			output logic wr,
+			output logic RegWrite,
+			output logic IRWrite,
+			output logic [31:0] AluOut,
+			output logic [4:0] State
+			);
 
 
 //logic [tamanho] nome 
-logic [31:0] address_pc;
-logic [31:0] address_exit;
 logic [31:0] resultA;
-logic [31:0] resultB;
 logic [4:0] code25_21;
 logic [4:0] code20_16;
 logic [31:0] regisA;
 logic [31:0] regisB;
 logic [15:0] code15_0;
-logic [4:0] writeregsult;
 logic [31:0] pc_next;
-logic [4:0] code31_26;
-logic comMemWrite;
-logic pc_choosenext;
+logic [5:0] code31_26;
+logic [1:0] pc_choosenext;
 logic chooseulaA;
-logic chooseulaB;
-logic comWriteReg;
+logic [1:0] chooseulaB;
 logic chooseRegDst;
-logic comLoadIR;
 logic comStoreMem;
 logic datawriteline;
-logic chooseRegData;
-logic selectULAOp;
+logic [1:0]chooseRegData;
+logic [2:0] selectULAOp;
 logic chooseIorD;
 logic zeroalert;
 logic setpcwrite;
 logic setcondpcwrite;
 logic loadpc;
-logic [31:0] memdata;
+logic [31:0] MDR;
+logic comALUOut;
+logic [31:0] exten31_0;
+logic pccond;
+logic callOverflow;
+logic [31:0] luishift;
 
-and(pccond,zeroalert,setcondpcwrite);
-or(loadpc,pccond,setpcwrite);
+and g1(pccond,zeroalert,setcondpcwrite);
+or g2(loadpc,pccond,setpcwrite);
 
+always @(code25_21)
+begin
+extrapcnext[31:30] = 2'b00;
+extrapcnext[29:26] =  PC[31:28];
+extrapcnext[25:21] = code25_21;
+extrapcnext[20:16] = code20_16;
+extrapcnext[15:0] = code15_0;
+end
+
+always@(extrapcnext)
+begin
+DeslocInst = extrapcnext<<2'b10;
+end
+
+always@(exten31_0)
+begin
+DeslocSinal = exten31_0<<2'b10;
+end
+
+always@(code15_0)
+begin
+luishift = code15_0<<5'b10000;
+end
 
 UnidadeControle UC (.clock(clock),
 					.reset(reset_l),
+					.sinalOverflow(callOverflow),
 					.OPcode(code31_26),
+					.Funct(code15_0[5:0]),
 					.SrcPC(pc_choosenext),
 					.ULASrcA(chooseulaA),
 					.ULASrcB(chooseulaB),
-					.EscReg(comWriteReg),
+					.EscReg(RegWrite),
 					.RegDst(chooseRegDst),
-					.IREsc(comLoadIR),
+					.IREsc(IRWrite),
 					.Mem2Reg(chooseRegData),
-					.WriteMem(comMemWrite),		//read se for 0, write se for 1
+					.WriteMem(wr),		//read se for 0, write se for 1
 					.StoreMem(comStoreMem),
 					.ULAOp(selectULAOp),
 					.IorD(chooseIorD),
 					.PCWri(setpcwrite),
-					.PCWriCond(setcondpcwrite)
+					.PCWriCond(setcondpcwrite),
+					.ALUOutCtrl(comALUOut),
+					.stateout(State)
 					);
 
 
-Registrador PC (.Clk(clock),
+Registrador RegPC (.Clk(clock),
 				.Entrada(pc_next),
-				.Saida(address_pc),
+				.Saida(PC),
 				.Reset(reset_l),
 				.Load(loadpc) );
 
-Memoria Mem (.Address(address_exit),
+Memoria Mem (.Address(Address),
 				.Clock(clock),
-				.Wr(comMemWrite),
-				.Datain(resultB),
-				.Dataout(memline)
+				.Wr(wr),
+				.Datain(WriteDataMem),
+				.Dataout(MemData)
 				);
 				
 Registrador MemReg (.Clk(clock),
-					.Entrada(memline),
-					.Saida(memdata),
+					.Entrada(MemData),
+					.Saida(MDR),
 					.Reset(reset_l),
 					.Load(comStoreMem)
 					);
 
 Instr_Reg RegInstrucao (.Clk(clock),
 						.Reset(reset_l),
-						.Load_ir(comLoadIR),
-						.Entrada(memline),
+						.Load_ir(IRWrite),
+						.Entrada(MemData),
 						.Instr31_26(code31_26),
 						.Instr25_21(code25_21),
 						.Instr20_16(code20_16),
@@ -91,60 +129,59 @@ Instr_Reg RegInstrucao (.Clk(clock),
 
 Banco_Reg BancoRegs (.Clk(clock),
 					.Reset(reset_l),
-					.RegWrite(comWriteReg),
+					.RegWrite(RegWrite),
 					.ReadReg1(code25_21),
 					.ReadReg2(code20_16),
-					.WriteReg(writeregsult),
-					.WriteData(),
+					.WriteReg(WriteRegister),
+					.WriteData(WriteDataReg),
 					.ReadData1(regisA),
 					.ReadData2(regisB)
 					);
 
-Multiplex MuxIorD (.f(address_exit),
-					.a(address_pc),
-					.b(),
+Multiplex MuxIorD (.f(Address),
+					.a(PC),
+					.b(AluOut),
 					.sel(chooseIorD)
 					);
 
-Multiplex RegDst (.f(writeregsult),
+MultiplexMini RegDst (.f(WriteRegister),
 					.a(code20_16),
 					.b(code15_0[15:11]),
 					.sel(chooseRegDst)
 					);
 					
-Multiplex Mem2Reg (.f(datawriteline),
-					.a(),
-					.b(memdata),
-					.sel(chooseRegData)
-					);
-
 Multiplex MuxSrcA (.f(resultA),
-					.a(address_pc),
+					.a(PC),
 					.b(regisA),
 					.sel(chooseulaA)
 					);
 
-Multiplex2bit MuxSrcB (.f(resultB),
+Multiplex2bit MuxSrcB (.f(WriteDataMem),
 						.a(regisB),
 						.b(32'b00000000000000000000000000000100),
-						.c(),
-						.d(),
+						.c(exten31_0),
+						.d(DeslocSinal),
 						.sel(chooseulaB)
 						);
 
-Multiplex2bit MuxSrcPC (.f(pc_next),
-						.a(resultULA),
-						.b(),
-						.c(),
-						.d(),
+Multiplex3op MuxSrcPC (.f(pc_next),
+						.a(Alu),
+						.b(AluOut),
+						.c(DeslocInst),
 						.sel(pc_choosenext)
 						);
+						
+Multiplex3op MuxMem2Reg (.f(WriteDataReg),
+							.a(MDR),
+							.b(AluOut),
+							.c(luishift), //quando LUI, sel = 10.
+							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
-			.B(resultB),
+			.B(WriteDataMem),
 			.Seletor(selectULAOp),
-			.S(resultULA),
-			.Overflow(),
+			.S(Alu),
+			.Overflow(callOverflow),
 			.Negativo(),
 			.z(zeroalert),
 			.Igual(),
@@ -152,5 +189,15 @@ Ula32 ULA (.A(resultA),
 			.Menor()
 			);
 
+Registrador ALUOut (.Clk(clock),
+					.Entrada(Alu),
+					.Saida(AluOut),
+					.Reset(reset_l),
+					.Load(comALUOut)
+					);
 
+SignedExtend SinalExtensao (.codein(code15_0),
+							.outsigned(exten31_0)
+							);
+						
 endmodule:Up

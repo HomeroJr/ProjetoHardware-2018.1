@@ -46,6 +46,11 @@ logic [31:0] exten31_0;
 logic pccond;
 logic callOverflow;
 logic [31:0] luishift;
+logic [31:0] regAout;
+logic [31:0] regBout;
+logic comRegA;
+logic comRegB;
+logic loadEPC;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -93,6 +98,9 @@ UnidadeControle UC (.clock(clock),
 					.PCWri(setpcwrite),
 					.PCWriCond(setcondpcwrite),
 					.ALUOutCtrl(comALUOut),
+					.RegAload(comRegA),
+					.RegBload(comRegB),
+					.EPCWrite(loadEPC),
 					.stateout(State)
 					);
 
@@ -137,6 +145,18 @@ Banco_Reg BancoRegs (.Clk(clock),
 					.ReadData1(regisA),
 					.ReadData2(regisB)
 					);
+					
+Registrador A (.Clk(clock),
+				.Entrada(regisA),
+				.Saida(regAout),
+				.Reset(reset_l),
+				.Load(comRegA) );
+
+Registrador B (.Clk(clock),
+				.Entrada(regisB),
+				.Saida(regBout),
+				.Reset(reset_l),
+				.Load(comRegB) );
 
 Multiplex MuxIorD (.f(Address),
 					.a(PC),
@@ -152,22 +172,23 @@ MultiplexMini RegDst (.f(WriteRegister),
 					
 Multiplex MuxSrcA (.f(resultA),
 					.a(PC),
-					.b(regisA),
+					.b(regAout),
 					.sel(chooseulaA)
 					);
 
 Multiplex2bit MuxSrcB (.f(WriteDataMem),
-						.a(regisB),
+						.a(regBout),
 						.b(32'b00000000000000000000000000000100),
 						.c(exten31_0),
 						.d(DeslocSinal),
 						.sel(chooseulaB)
 						);
 
-Multiplex3op MuxSrcPC (.f(pc_next),
+MMultiplex2bit MuxSrcPC (.f(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
+						.d(),
 						.sel(pc_choosenext)
 						);
 						
@@ -199,5 +220,11 @@ Registrador ALUOut (.Clk(clock),
 SignedExtend SinalExtensao (.codein(code15_0),
 							.outsigned(exten31_0)
 							);
-						
+
+UnsignedExtend ExtensaoMemInst (.MemIn(MemData),
+								.OutNewInst(MemDataExt),
+								.Overflow()
+								);
+
+
 endmodule:Up

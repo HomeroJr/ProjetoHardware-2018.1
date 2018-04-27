@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UP
-Mon Apr 16 20:42:45 2018
+Thu Apr 26 09:13:43 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -26,12 +26,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  18. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
  19. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
  20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
- 21. Port Connectivity Checks: "Ula32:ULA"
- 22. Port Connectivity Checks: "Multiplex3op:MuxMem2Reg"
- 23. Port Connectivity Checks: "Multiplex3op:MuxSrcPC"
- 24. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+ 21. Port Connectivity Checks: "UnsignedExtend:ExtensaoMemInst"
+ 22. Port Connectivity Checks: "Ula32:ULA"
+ 23. Port Connectivity Checks: "Multiplex3op:MuxMem2Reg"
+ 24. Port Connectivity Checks: "Multiplex3op:MuxSrcPC"
+ 25. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,15 +58,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 16 20:42:45 2018        ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 26 09:13:43 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; UP                                           ;
 ; Top-level Entity Name              ; Up                                           ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 2,892                                        ;
-;     Total combinational functions  ; 1,824                                        ;
-;     Dedicated logic registers      ; 1,173                                        ;
-; Total registers                    ; 1173                                         ;
+; Total logic elements               ; 2,950                                        ;
+;     Total combinational functions  ; 1,882                                        ;
+;     Dedicated logic registers      ; 1,238                                        ;
+; Total registers                    ; 1238                                         ;
 ; Total pins                         ; 335                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 8,192                                        ;
@@ -170,29 +171,30 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                  ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+
-; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Banco_reg.vhd          ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Instr_Reg.vhd          ;
-; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Memoria.vhd            ;
-; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Multiplex.sv           ;
-; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Multiplex2bit.sv       ;
-; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/UnidadeControle.sv     ;
-; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Registrador.vhd        ;
-; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/ula32.vhd              ;
-; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Up.sv                  ;
-; MultiplexMini.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/MultiplexMini.sv       ;
-; SignedExtend.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/SignedExtend.sv        ;
-; Multiplex3op.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/Multiplex3op.sv        ;
-; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/instrucoes.mif         ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                ;
-; altram.tdf                       ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                                    ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                ;
-; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/db/altsyncram_e1a1.tdf ;
-+----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                    ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/Arquivos-Projeto/Banco_reg.vhd          ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/Arquivos-Projeto/Instr_Reg.vhd          ;
+; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/Arquivos-Projeto/Memoria.vhd            ;
+; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/Multiplex.sv           ;
+; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/Multiplex2bit.sv       ;
+; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/UnidadeControle.sv     ;
+; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/Arquivos-Projeto/Registrador.vhd        ;
+; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/phjc/Downloads/Arquivos-Projeto/ula32.vhd              ;
+; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/Up.sv                  ;
+; MultiplexMini.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/MultiplexMini.sv       ;
+; SignedExtend.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/SignedExtend.sv        ;
+; Multiplex3op.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/Multiplex3op.sv        ;
+; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/phjc/Downloads/Arquivos-Projeto/instrucoes.mif         ;
+; UnsignedExtend.sv                ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Downloads/Arquivos-Projeto/UnsignedExtend.sv      ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf  ;
+; altram.tdf                       ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf      ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf  ;
+; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/phjc/Downloads/Arquivos-Projeto/db/altsyncram_e1a1.tdf ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -200,28 +202,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,892 ;
+; Estimated Total logic elements              ; 2,950 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1824  ;
+; Total combinational functions               ; 1882  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1596  ;
-;     -- 3 input functions                    ; 181   ;
-;     -- <=2 input functions                  ; 47    ;
+;     -- 4 input functions                    ; 1582  ;
+;     -- 3 input functions                    ; 252   ;
+;     -- <=2 input functions                  ; 48    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1804  ;
+;     -- normal mode                          ; 1862  ;
 ;     -- arithmetic mode                      ; 20    ;
 ;                                             ;       ;
-; Total registers                             ; 1173  ;
-;     -- Dedicated logic registers            ; 1173  ;
+; Total registers                             ; 1238  ;
+;     -- Dedicated logic registers            ; 1238  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 335   ;
 ; Total memory bits                           ; 8192  ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 1205  ;
-; Total fan-out                               ; 12431 ;
-; Average fan-out                             ; 3.70  ;
+; Maximum fan-out                             ; 1270  ;
+; Total fan-out                               ; 12849 ;
+; Average fan-out                             ; 3.68  ;
 +---------------------------------------------+-------+
 
 
@@ -230,10 +232,10 @@ applicable agreement for further details.
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; |Up                                             ; 1824 (14)         ; 1173 (0)     ; 8192        ; 0            ; 0       ; 0         ; 335  ; 0            ; |Up                                                                                                       ; work         ;
-;    |Banco_reg:BancoRegs|                        ; 48 (48)           ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Banco_reg:BancoRegs                                                                                   ; work         ;
+; |Up                                             ; 1882 (15)         ; 1238 (0)     ; 8192        ; 0            ; 0       ; 0         ; 335  ; 0            ; |Up                                                                                                       ; work         ;
+;    |Banco_reg:BancoRegs|                        ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Banco_reg:BancoRegs                                                                                   ; work         ;
 ;    |Instr_Reg:RegInstrucao|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Instr_Reg:RegInstrucao                                                                                ; work         ;
-;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ;              ;
+;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
@@ -250,17 +252,19 @@ applicable agreement for further details.
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
-;    |Multiplex2bit:MuxSrcB|                      ; 701 (701)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcB                                                                                 ; work         ;
+;    |Multiplex2bit:MuxSrcB|                      ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcB                                                                                 ; work         ;
 ;    |Multiplex3op:MuxMem2Reg|                    ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3op:MuxMem2Reg                                                                               ; work         ;
 ;    |Multiplex3op:MuxSrcPC|                      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3op:MuxSrcPC                                                                                 ; work         ;
 ;    |Multiplex:MuxIorD|                          ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxIorD                                                                                     ; work         ;
-;    |Multiplex:MuxSrcA|                          ; 705 (705)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxSrcA                                                                                     ; work         ;
+;    |Multiplex:MuxSrcA|                          ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxSrcA                                                                                     ; work         ;
 ;    |MultiplexMini:RegDst|                       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|MultiplexMini:RegDst                                                                                  ; work         ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:ALUOut                                                                                    ; work         ;
+;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:A                                                                                         ; work         ;
+;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:B                                                                                         ; work         ;
 ;    |Registrador:MemReg|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:MemReg                                                                                    ; work         ;
-;    |Registrador:RegPC|                          ; 36 (36)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:RegPC                                                                                     ; work         ;
-;    |Ula32:ULA|                                  ; 151 (151)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Ula32:ULA                                                                                             ; work         ;
-;    |UnidadeControle:UC|                         ; 59 (59)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|UnidadeControle:UC                                                                                    ;              ;
+;    |Registrador:RegPC|                          ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:RegPC                                                                                     ;              ;
+;    |Ula32:ULA|                                  ; 183 (183)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Ula32:ULA                                                                                             ; work         ;
+;    |UnidadeControle:UC|                         ; 59 (59)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|UnidadeControle:UC                                                                                    ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -278,34 +282,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Up|UnidadeControle:UC|state                                                                                                                                                                                                                                                                  ;
-+---------------+--------------+-----------+-----------+-----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+-----------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
-; Name          ; state.WAITLW ; state.LUI ; state.BEQ ; state.BNE ; state.JUMP ; state.STOPPC ; state.NOP ; state.BREAK ; state.XOR ; state.ADDComp ; state.SUB ; state.AND ; state.ADD ; state.WBS ; state.SW ; state.LW ; state.LWorSW ; state.DECODE ; state.WRITE ; state.WAIT ; state.BUSCA ; state.RESET ;
-+---------------+--------------+-----------+-----------+-----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+-----------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
-; state.RESET   ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 0           ;
-; state.BUSCA   ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 1           ; 1           ;
-; state.WAIT    ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 1          ; 0           ; 1           ;
-; state.WRITE   ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 1           ; 0          ; 0           ; 1           ;
-; state.DECODE  ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 1            ; 0           ; 0          ; 0           ; 1           ;
-; state.LWorSW  ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LW      ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SW      ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.WBS     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADD     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.AND     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SUB     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADDComp ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 1             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.XOR     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 1         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BREAK   ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 1           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.NOP     ; 0            ; 0         ; 0         ; 0         ; 0          ; 0            ; 1         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.STOPPC  ; 0            ; 0         ; 0         ; 0         ; 0          ; 1            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.JUMP    ; 0            ; 0         ; 0         ; 0         ; 1          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BNE     ; 0            ; 0         ; 0         ; 1         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BEQ     ; 0            ; 0         ; 1         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LUI     ; 0            ; 1         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.WAITLW  ; 1            ; 0         ; 0         ; 0         ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
-+---------------+--------------+-----------+-----------+-----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+-----------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Up|UnidadeControle:UC|state                                                                                                                                                                                                                                                                                                          ;
++---------------+--------------+-----------+-----------+-----------+----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+------------+-----------+---------------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
+; Name          ; state.WAITLW ; state.LUI ; state.BEQ ; state.BNE ; state.JR ; state.JUMP ; state.STOPPC ; state.NOP ; state.BREAK ; state.XOR ; state.ADDComp ; state.SUB ; state.AND ; state.ADDU ; state.ADD ; state.ADDLOAD ; state.WBS ; state.SW ; state.LW ; state.LWorSW ; state.DECODE ; state.WRITE ; state.WAIT ; state.BUSCA ; state.RESET ;
++---------------+--------------+-----------+-----------+-----------+----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+------------+-----------+---------------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
+; state.RESET   ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 0           ;
+; state.BUSCA   ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 1           ; 1           ;
+; state.WAIT    ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 1          ; 0           ; 1           ;
+; state.WRITE   ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 1           ; 0          ; 0           ; 1           ;
+; state.DECODE  ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 1            ; 0           ; 0          ; 0           ; 1           ;
+; state.LWorSW  ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 1            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.LW      ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 1        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.SW      ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 1        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.WBS     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 1         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.ADDLOAD ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 1             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.ADD     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 1         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.ADDU    ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 1          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.AND     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 1         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.SUB     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 1         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.ADDComp ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 1             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.XOR     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 1         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.BREAK   ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 1           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.NOP     ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 1         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.STOPPC  ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 1            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.JUMP    ; 0            ; 0         ; 0         ; 0         ; 0        ; 1          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.JR      ; 0            ; 0         ; 0         ; 0         ; 1        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.BNE     ; 0            ; 0         ; 0         ; 1         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.BEQ     ; 0            ; 0         ; 1         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.LUI     ; 0            ; 1         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
+; state.WAITLW  ; 1            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0            ; 0         ; 0           ; 0         ; 0             ; 0         ; 0         ; 0          ; 0         ; 0             ; 0         ; 0        ; 0        ; 0            ; 0            ; 0           ; 0          ; 0           ; 1           ;
++---------------+--------------+-----------+-----------+-----------+----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+------------+-----------+---------------+-----------+----------+----------+--------------+--------------+-------------+------------+-------------+-------------+
 
 
 +------------------------------------------------------------+
@@ -313,13 +320,15 @@ Encoding Type:  One-Hot
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
+; UnidadeControle:UC|state.ADDU         ; Lost fanout        ;
 ; UnidadeControle:UC|state.STOPPC       ; Lost fanout        ;
+; UnidadeControle:UC|state.JR           ; Lost fanout        ;
 ; UnidadeControle:UC|state~4            ; Lost fanout        ;
 ; UnidadeControle:UC|state~5            ; Lost fanout        ;
 ; UnidadeControle:UC|state~6            ; Lost fanout        ;
 ; UnidadeControle:UC|state~7            ; Lost fanout        ;
 ; UnidadeControle:UC|state~8            ; Lost fanout        ;
-; Total Number of Removed Registers = 6 ;                    ;
+; Total Number of Removed Registers = 8 ;                    ;
 +---------------------------------------+--------------------+
 
 
@@ -328,34 +337,34 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1173  ;
+; Total registers                              ; 1238  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 1173  ;
+; Number of registers using Asynchronous Clear ; 1238  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1152  ;
+; Number of registers using Clock Enable       ; 1216  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[0]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[31]      ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[8]       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex3op:MuxMem2Reg|Mux28    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex3op:MuxMem2Reg|Mux10    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Up|UnidadeControle:UC|nextState.XOR ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |Up|Ula32:ULA|Mux32                  ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |Up|Ula32:ULA|Mux23                  ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Up|Multiplex:MuxSrcA|f[10]          ;
-; 34:1               ; 2 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux31      ;
-; 34:1               ; 15 bits   ; 330 LEs       ; 330 LEs              ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux12      ;
-; 35:1               ; 15 bits   ; 345 LEs       ; 330 LEs              ; 15 LEs                 ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux22      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[1]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[29]   ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[27]   ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:B|Saida[11]       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:A|Saida[22]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux30   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux10   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex3op:MuxMem2Reg|Mux25 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex3op:MuxMem2Reg|Mux4  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux26   ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |Up|Ula32:ULA|Mux60               ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |Up|Ula32:ULA|Mux20               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -486,6 +495,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------+
+; Port Connectivity Checks: "UnsignedExtend:ExtensaoMemInst" ;
++------------+--------+----------+---------------------------+
+; Port       ; Type   ; Severity ; Details                   ;
++------------+--------+----------+---------------------------+
+; OutNewInst ; Output ; Info     ; Explicitly unconnected    ;
+; Overflow   ; Input  ; Info     ; Explicitly unconnected    ;
++------------+--------+----------+---------------------------+
+
+
 +-------------------------------------------------------+
 ; Port Connectivity Checks: "Ula32:ULA"                 ;
 +----------+--------+----------+------------------------+
@@ -534,7 +553,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Apr 16 20:42:38 2018
+    Info: Processing started: Thu Apr 26 09:13:36 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoHardware -c UP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
@@ -570,10 +589,12 @@ Info: Found 1 design units, including 1 entities, in source file signedextend.sv
     Info: Found entity 1: SignedExtend
 Info: Found 1 design units, including 1 entities, in source file multiplex3op.sv
     Info: Found entity 1: Multiplex3op
+Info: Found 1 design units, including 1 entities, in source file unsignedextend.sv
+    Info: Found entity 1: UnsignedExtend
 Info: Elaborating entity "Up" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(56): variable "PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(58): variable "code20_16" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(59): variable "code15_0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(60): variable "PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(62): variable "code20_16" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(63): variable "code15_0" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:UC"
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:RegPC"
 Info: Elaborating entity "Memoria" for hierarchy "Memoria:Mem"
@@ -619,6 +640,8 @@ Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(15): va
 Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(17): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
 Info: Elaborating entity "SignedExtend" for hierarchy "SignedExtend:SinalExtensao"
+Info: Elaborating entity "UnsignedExtend" for hierarchy "UnsignedExtend:ExtensaoMemInst"
+Warning (10235): Verilog HDL Always Construct warning at UnsignedExtend.sv(8): variable "Overflow" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "extrapcnext[30]" is stuck at GND
     Warning (13410): Pin "extrapcnext[31]" is stuck at GND
@@ -626,29 +649,31 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "DeslocInst[1]" is stuck at GND
     Warning (13410): Pin "DeslocSinal[0]" is stuck at GND
     Warning (13410): Pin "DeslocSinal[1]" is stuck at GND
-Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
+Info: 8 registers lost all their fanouts during netlist optimizations. The first 8 are displayed below.
+    Info: Register "UnidadeControle:UC|state.ADDU" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state.STOPPC" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:UC|state.JR" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~4" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~5" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~6" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~7" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~8" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/UP.map.smsg
-Info: Implemented 3324 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file C:/Users/phjc/Downloads/Arquivos-Projeto/UP.map.smsg
+Info: Implemented 3382 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 333 output pins
-    Info: Implemented 2957 logic cells
+    Info: Implemented 3015 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 269 megabytes
-    Info: Processing ended: Mon Apr 16 20:42:45 2018
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 268 megabytes
+    Info: Processing ended: Thu Apr 26 09:13:43 2018
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/phjc/Downloads/ProjetoHardware 2018.1-master/Arquivos-Projeto/UP.map.smsg.
+The suppressed messages can be found in C:/Users/phjc/Downloads/Arquivos-Projeto/UP.map.smsg.
 
 

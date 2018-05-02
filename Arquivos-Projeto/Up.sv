@@ -50,7 +50,7 @@ logic [31:0] regAout;
 logic [31:0] regBout;
 logic comRegA;
 logic comRegB;
-logic loadEPC;
+logic WriteEPC;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -100,7 +100,7 @@ UnidadeControle UC (.clock(clock),
 					.ALUOutCtrl(comALUOut),
 					.RegAload(comRegA),
 					.RegBload(comRegB),
-					.EPCWrite(loadEPC),
+					.EPCWrite(WriteEPC),
 					.stateout(State)
 					);
 
@@ -184,11 +184,11 @@ Multiplex2bit MuxSrcB (.f(WriteDataMem),
 						.sel(chooseulaB)
 						);
 
-MMultiplex2bit MuxSrcPC (.f(pc_next),
+Multiplex2bit MuxSrcPC (.f(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
-						.d(),
+						.d(MemDataExt),
 						.sel(pc_choosenext)
 						);
 						
@@ -226,5 +226,11 @@ UnsignedExtend ExtensaoMemInst (.MemIn(MemData),
 								.Overflow()
 								);
 
+Registrador EPC (.Clk(clock),
+					.Entrada(Alu),
+					.Saida(),
+					.Reset(reset_l),
+					.Load(WriteEPC)
+					);
 
 endmodule:Up

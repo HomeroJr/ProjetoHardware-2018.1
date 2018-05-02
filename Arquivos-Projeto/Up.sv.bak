@@ -184,10 +184,11 @@ Multiplex2bit MuxSrcB (.f(WriteDataMem),
 						.sel(chooseulaB)
 						);
 
-Multiplex3op MuxSrcPC (.f(pc_next),
+MMultiplex2bit MuxSrcPC (.f(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
+						.d(),
 						.sel(pc_choosenext)
 						);
 						
@@ -221,7 +222,7 @@ SignedExtend SinalExtensao (.codein(code15_0),
 							);
 
 UnsignedExtend ExtensaoMemInst (.MemIn(MemData),
-								.OutNewInst(),
+								.OutNewInst(MemDataExt),
 								.Overflow()
 								);
 

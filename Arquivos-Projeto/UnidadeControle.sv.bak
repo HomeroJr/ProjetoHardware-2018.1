@@ -19,7 +19,8 @@ module UnidadeControle(input logic clock,
 			output logic ALUOutCtrl,
 			output logic [4:0]stateout,
 			output logic RegAload,
-			output logic RegBload
+			output logic RegBload,
+			output logic EPCWrite
 			);
 			//output logic stateout);
 			

@@ -51,6 +51,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 Multiplex2bit:MuxSrcB
+Multiplex2bit:MuxSrcPC
 }
 # macro_sequence
 
@@ -195,7 +196,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-Multiplex3op:MuxSrcPC
 Multiplex3op:MuxMem2Reg
 }
 # macro_sequence
@@ -308,42 +308,6 @@ Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncra
 
 # end
 # entity
-UnidadeControle
-# storage
-db|UP.(1).cnf
-db|UP.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-unidadecontrole.sv
-ea921fdfb909d3b3cc7e995b659b625
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-UnidadeControle:UC
-}
-# macro_sequence
-
-# end
-# entity
 Registrador
 # storage
 db|UP.(2).cnf
@@ -373,6 +337,7 @@ Registrador:MemReg
 Registrador:A
 Registrador:B
 Registrador:ALUOut
+Registrador:EPC
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -1192,7 +1157,7 @@ ON
 # case_sensitive
 # source_file
 up.sv
-f98c83d2f66d655f81b02fde7273e0
+182b7ad42019e54e79d2d7f26fe513
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1212,6 +1177,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 |
+}
+# macro_sequence
+
+# end
+# entity
+UnidadeControle
+# storage
+db|UP.(1).cnf
+db|UP.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+unidadecontrole.sv
+8565297765ede2a0c21426d1ad5881
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+UnidadeControle:UC
 }
 # macro_sequence
 

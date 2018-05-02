@@ -7,7 +7,7 @@ if (codein[15] == 1'b0)
 	outsigned[31:16] = 16'b0000000000000000;
 	else
 	outsigned[31:16] = 16'b1111111111111111;
-	assign outsigned[15:0] = codein;
+	outsigned[15:0] = codein;
 	end
 	
 endmodule:SignedExtend

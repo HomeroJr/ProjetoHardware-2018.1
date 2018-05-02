@@ -17,4 +17,4 @@ always@(MemIn)
 		endcase
 	end
 	
-endmodule:UnsignedExtend
+endmodule:UnsignedExtend  

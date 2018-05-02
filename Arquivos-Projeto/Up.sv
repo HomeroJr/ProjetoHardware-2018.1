@@ -3,7 +3,8 @@ module Up(input logic clock,
 			output logic [31:0] Address,
 			output logic [31:0] MemData,
 			output logic [31:0] Alu,
-			output logic [31:0] WriteDataMem, //resultado de B
+			output logic [31:0] resultB, //resultado de B
+			output logic [31:0] writeDataMem,
 			output logic [31:0] extrapcnext,
 			output logic [31:0] PC,
 			output logic [31:0] WriteDataReg,
@@ -33,7 +34,7 @@ logic [1:0] chooseulaB;
 logic chooseRegDst;
 logic comStoreMem;
 logic datawriteline;
-logic [1:0]chooseRegData;
+logic [2:0]chooseRegData;
 logic [2:0] selectULAOp;
 logic chooseIorD;
 logic zeroalert;
@@ -51,6 +52,12 @@ logic [31:0] regBout;
 logic comRegA;
 logic comRegB;
 logic WriteEPC;
+logic [31:0] MDRByte;
+logic [31:0] MDRHalf;
+logic [31:0] addrHalf;
+logic [31:0] addrByte;
+logic [1:0] selwrmem;
+logic [31:0] MemDataExt;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -92,6 +99,7 @@ UnidadeControle UC (.clock(clock),
 					.IREsc(IRWrite),
 					.Mem2Reg(chooseRegData),
 					.WriteMem(wr),		//read se for 0, write se for 1
+					.SelMemWrite(selwrmem),
 					.StoreMem(comStoreMem),
 					.ULAOp(selectULAOp),
 					.IorD(chooseIorD),
@@ -114,7 +122,7 @@ Registrador RegPC (.Clk(clock),
 Memoria Mem (.Address(Address),
 				.Clock(clock),
 				.Wr(wr),
-				.Datain(WriteDataMem),
+				.Datain(writeDataMem),
 				.Dataout(MemData)
 				);
 				
@@ -176,7 +184,7 @@ Multiplex MuxSrcA (.f(resultA),
 					.sel(chooseulaA)
 					);
 
-Multiplex2bit MuxSrcB (.f(WriteDataMem),
+Multiplex2bit MuxSrcB (.f(resultB),
 						.a(regBout),
 						.b(32'b00000000000000000000000000000100),
 						.c(exten31_0),
@@ -188,18 +196,20 @@ Multiplex2bit MuxSrcPC (.f(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
-						.d(MemDataExt),
+						.d(MemDataExt), //q q e isso esqueci man
 						.sel(pc_choosenext)
 						);
 						
-Multiplex3op MuxMem2Reg (.f(WriteDataReg),
+Multiplex3bit MuxMem2Reg (.f(WriteDataReg),
 							.a(MDR),
 							.b(AluOut),
 							.c(luishift), //quando LUI, sel = 10.
+							.d(MDRByte),
+							.e(MDRHalf),
 							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
-			.B(WriteDataMem),
+			.B(resultB),
 			.Seletor(selectULAOp),
 			.S(Alu),
 			.Overflow(callOverflow),
@@ -210,7 +220,7 @@ Ula32 ULA (.A(resultA),
 			.Menor()
 			);
 
-Registrador ALUOut (.Clk(clock),
+Registrador ALUOutReg (.Clk(clock),
 					.Entrada(Alu),
 					.Saida(AluOut),
 					.Reset(reset_l),
@@ -221,7 +231,7 @@ SignedExtend SinalExtensao (.codein(code15_0),
 							.outsigned(exten31_0)
 							);
 
-UnsignedExtend ExtensaoMemInst (.MemIn(MemData),
+UnsignedExtendExc ExtensaoMemInst (.MemIn(MemData),
 								.OutNewInst(MemDataExt),
 								.Overflow()
 								);
@@ -233,4 +243,28 @@ Registrador EPC (.Clk(clock),
 					.Load(WriteEPC)
 					);
 
+UnsExtend8 MDRExt8 (.MemIn(MDR),
+			.OutByte(MDRByte)
+			);
+			
+UnsExtend16 MDRExt16 (.MemIn(MDR),
+			.OutHalfWord(MDRHalf)
+			);
+			
+AdderMem8 AdderByte (.MemByte(addrByte),
+					.MDRrs(MDR),
+					.rt(regBout)
+					);
+					
+AdderMem16 AdderHlf (.MemHalf(addrHalf),
+					.MDRrs (MDR),
+					.rt (regBout)
+					);
+
+Multiplex3op MuxMemWri (.f(writeDataMem),
+						.a(regBout),
+						.b(addrByte),
+						.c(addrHalf),
+						.sel(selwrmem)
+						);
 endmodule:Up

@@ -68,4 +68,9 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE Multiplex3op.sv
 set_global_assignment -name MIF_FILE instrucoes.mif
 set_global_assignment -name SYSTEMVERILOG_FILE UnsignedExtend.sv
+set_global_assignment -name SYSTEMVERILOG_FILE UnsExtend8.sv
+set_global_assignment -name SYSTEMVERILOG_FILE UnsExtend16.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Multiplex3bit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE AdderMem8.sv
+set_global_assignment -name SYSTEMVERILOG_FILE AdderMem16.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

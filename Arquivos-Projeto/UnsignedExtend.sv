@@ -1,4 +1,4 @@
-module UnsignedExtend (output logic [31:0] OutNewInst,
+module UnsignedExtendExc (output logic [31:0] OutNewInst,
 			input logic [31:0] MemIn,
 			input logic Overflow
 			);
@@ -17,4 +17,4 @@ always@(MemIn)
 		endcase
 	end
 	
-endmodule:UnsignedExtend  
+endmodule:UnsignedExtendExc

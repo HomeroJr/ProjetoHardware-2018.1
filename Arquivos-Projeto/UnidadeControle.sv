@@ -27,15 +27,15 @@ module UnidadeControle(input logic clock,
 			//output logic stateout);
 			
 			
-			enum logic [5:0] {RESET, 
-			BUSCA, WAIT, WRITE, DECODE, LWorSW, 
-			LBU, LBUMEM, LBUWBS, LHU, LHUMEM,
-			LHUWBS, LW, SW, WBS, SB,
-			SBMEM, SBWRITE, SH, SHMEM, SHWRITE, 
-			ADDLOAD, ADD, ADDU, AND, SUB,
-			ADDComp, XOR, BREAK, NOP, STOPPC,
-			JUMP, JR, BNE, BEQ, LUI,
-			WAITLW, OVERFLOW} state, nextState;
+			enum logic [5:0] {RESET /* 0 */, 
+			BUSCA/*1*/, WAIT/*2*/, WRITE/*3*/, DECODE/*4*/, LORS/*5*/, //LORS = LOAD OR STORE (byte, halfword, word)
+			LBU/*6*/, LBUMEM/*7*/, LBUWBS/*8*/, LHU/*9*/, LHUMEM/*10*/,
+			LHUWBS/*11*/, LW/*12*/, SW/*13*/, WBS/*14*/, SB/*15*/,
+			SBMEM/*16*/, SBWRITE/*17*/, SH/*18*/, SHMEM/*19*/, SHWRITE/*20*/, 
+			ADDLOAD/*21*/, ADD/*22*/, ADDU/*23*/, AND/*24*/, SUB/*25*/,
+			SUBU/*26*/, ADDComp/*27*/, XOR/*28*/, BREAK/*29*/, NOP/*30*/, 
+			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
+			WAITLW/*36*/, OVERFLOW/*37*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)
@@ -176,22 +176,22 @@ case(state)
 		 nextState = LUI;
 		end
 		6'b100011:begin // rever depois big endian etc
-		 nextState = LWorSW;
+		 nextState = LORS;
 		end
 		6'b101011:begin // rever depois big endian etc
-		 nextState = LWorSW;
+		 nextState = LORS;
 		end
 		6'b100100:begin
-		nextState = LWorSW;
+		nextState = LORS;
 		end
 		6'b100101:begin
-		nextState = LWorSW;
+		nextState = LORS;
 		end
 		6'b101000:begin
-		nextState = LWorSW;
+		nextState = LORS;
 		end
 		6'b101001:begin
-		nextState = LWorSW;
+		nextState = LORS;
 		end
 		
 		//Operacoes do tipo R
@@ -641,6 +641,9 @@ case(state)
 			6'b000000:begin
 			nextState = NOP;
 			end
+			6'b001000:begin
+			nextState = JR;
+			end
 			default: nextState = NOP; //excecao opcode inexistente
 			endcase
 	end
@@ -718,6 +721,36 @@ case(state)
 	RegBload = 1'b0;
 	shiftSel = 3'b000;
 	EPCWrite = 1'b0;
+	case(sinalOverflow)
+		1'b0:begin
+		nextState = ADDComp;
+		end
+		1'b1:begin
+		nextState = OVERFLOW;
+		end
+		endcase
+	end
+	
+	SUBU:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b0;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b001;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b010;  //SUB
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b1;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	shiftSel = 3'b000;
+	EPCWrite = 1'b0;
 	nextState = ADDComp;
 	end
 	
@@ -725,7 +758,7 @@ case(state)
     SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
-	EscReg = 1'b0;
+	EscReg = 1'b1;
 	RegDst = 1'b1;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
@@ -770,7 +803,7 @@ case(state)
 	SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
-	EscReg = 1'b0;
+	EscReg = 1'b1;
 	RegDst = 1'b1;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
@@ -832,28 +865,6 @@ case(state)
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
-	STOPPC:begin
-	SrcPC = 2'b00;
-	ULASrcA = 1'b0;
-	ULASrcB = 2'b01;
-	EscReg = 1'b0;
-	RegDst = 1'b0;
-	IREsc = 1'b0;
-	Mem2Reg = 3'b000;
-	WriteMem = 1'b0;
-	SelMemWrite = 2'b00;
-	StoreMem = 1'b0;
-	ULAOp = 3'b000;  //LOAD
-	IorD = 1'b0;
-	PCWri = 1'b0;
-	PCWriCond = 1'b0;
-	ALUOutCtrl = 1'b0; //precisa de EPC?
-	RegAload = 1'b0;
-	RegBload = 1'b0;
-	shiftSel = 3'b000;
-	EPCWrite = 1'b0;
-	nextState = BUSCA;
-	end
 	
 	JUMP:begin
 	SrcPC = 2'b10;
@@ -888,7 +899,7 @@ case(state)
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;  //LOAD
+	ULAOp = 3'b000;  //LOAD, a função load simplemente carrega o registrador A
 	IorD = 1'b0;
 	PCWri = 1'b1;
 	PCWriCond = 1'b0;

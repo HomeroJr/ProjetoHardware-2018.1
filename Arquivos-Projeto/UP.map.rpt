@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UP
-Wed May 02 18:49:43 2018
+Fri May 04 02:02:13 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -27,13 +27,12 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  19. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
  20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
  21. Port Connectivity Checks: "Registrador:EPC"
- 22. Port Connectivity Checks: "UnsignedExtendExc:ExtensaoMemInst"
- 23. Port Connectivity Checks: "Ula32:ULA"
- 24. Port Connectivity Checks: "Multiplex3bit:MuxMem2Reg"
- 25. Port Connectivity Checks: "Multiplex2bit:MuxSrcPC"
- 26. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+ 22. Port Connectivity Checks: "Ula32:ULA"
+ 23. Port Connectivity Checks: "Multiplex3bit:MuxMem2Reg"
+ 24. Port Connectivity Checks: "Multiplex2bit:MuxSrcPC"
+ 25. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,16 +58,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 02 18:49:43 2018        ;
+; Analysis & Synthesis Status        ; Successful - Fri May 04 02:02:13 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; UP                                           ;
 ; Top-level Entity Name              ; Up                                           ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 2,993                                        ;
-;     Total combinational functions  ; 1,919                                        ;
+; Total logic elements               ; 3,002                                        ;
+;     Total combinational functions  ; 1,928                                        ;
 ;     Dedicated logic registers      ; 1,251                                        ;
 ; Total registers                    ; 1251                                         ;
-; Total pins                         ; 367                                          ;
+; Total pins                         ; 399                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 8,192                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -155,52 +154,47 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                         ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------+
-; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Banco_reg.vhd          ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Instr_Reg.vhd          ;
-; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Memoria.vhd            ;
-; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex.sv           ;
-; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex2bit.sv       ;
-; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv     ;
-; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Registrador.vhd        ;
-; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/ula32.vhd              ;
-; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Up.sv                  ;
-; MultiplexMini.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/MultiplexMini.sv       ;
-; SignedExtend.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/SignedExtend.sv        ;
-; Multiplex3op.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex3op.sv        ;
-; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/instrucoes.mif         ;
-; UnsignedExtend.sv                ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsignedExtend.sv      ;
-; UnsExtend8.sv                    ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsExtend8.sv          ;
-; UnsExtend16.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsExtend16.sv         ;
-; Multiplex3bit.sv                 ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex3bit.sv       ;
-; AdderMem8.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/AdderMem8.sv           ;
-; AdderMem16.sv                    ; yes             ; User SystemVerilog HDL File      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/AdderMem16.sv          ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                       ;
-; altram.tdf                       ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                           ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                       ;
-; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/db/altsyncram_e1a1.tdf ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                                                          ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Banco_reg.vhd          ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Instr_Reg.vhd          ;
+; Memoria.vhd                      ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Memoria.vhd            ;
+; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Multiplex.sv           ;
+; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Multiplex2bit.sv       ;
+; RegDesloc.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/RegDesloc.vhd          ;
+; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UnidadeControle.sv     ;
+; Registrador.vhd                  ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Registrador.vhd        ;
+; ula32.vhd                        ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/ula32.vhd              ;
+; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Up.sv                  ;
+; MultiplexMini.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/MultiplexMini.sv       ;
+; SignedExtend.sv                  ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/SignedExtend.sv        ;
+; Multiplex3op.sv                  ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Multiplex3op.sv        ;
+; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/instrucoes.mif         ;
+; UnsignedExtend.sv                ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UnsignedExtend.sv      ;
+; UnsExtend8.sv                    ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UnsExtend8.sv          ;
+; UnsExtend16.sv                   ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UnsExtend16.sv         ;
+; Multiplex3bit.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/Multiplex3bit.sv       ;
+; AdderMem8.sv                     ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/AdderMem8.sv           ;
+; AdderMem16.sv                    ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/AdderMem16.sv          ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                                      ;
+; altram.tdf                       ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/altram.tdf                                                          ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/altsyncram.tdf                                                      ;
+; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/db/altsyncram_e1a1.tdf ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -208,28 +202,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,993 ;
+; Estimated Total logic elements              ; 3,002 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1919  ;
+; Total combinational functions               ; 1928  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1641  ;
-;     -- 3 input functions                    ; 235   ;
-;     -- <=2 input functions                  ; 43    ;
+;     -- 4 input functions                    ; 1653  ;
+;     -- 3 input functions                    ; 233   ;
+;     -- <=2 input functions                  ; 42    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1899  ;
+;     -- normal mode                          ; 1908  ;
 ;     -- arithmetic mode                      ; 20    ;
 ;                                             ;       ;
 ; Total registers                             ; 1251  ;
 ;     -- Dedicated logic registers            ; 1251  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 367   ;
+; I/O pins                                    ; 399   ;
 ; Total memory bits                           ; 8192  ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 1283  ;
-; Total fan-out                               ; 13103 ;
-; Average fan-out                             ; 3.67  ;
+; Total fan-out                               ; 13143 ;
+; Average fan-out                             ; 3.64  ;
 +---------------------------------------------+-------+
 
 
@@ -238,39 +232,39 @@ applicable agreement for further details.
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; |Up                                             ; 1919 (13)         ; 1251 (0)     ; 8192        ; 0            ; 0       ; 0         ; 367  ; 0            ; |Up                                                                                                       ; work         ;
+; |Up                                             ; 1928 (13)         ; 1251 (0)     ; 8192        ; 0            ; 0       ; 0         ; 399  ; 0            ; |Up                                                                                                       ; work         ;
 ;    |Banco_reg:BancoRegs|                        ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Banco_reg:BancoRegs                                                                                   ; work         ;
 ;    |Instr_Reg:RegInstrucao|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Instr_Reg:RegInstrucao                                                                                ; work         ;
-;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ;              ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
+;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ; work         ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM                                                                            ; work         ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM                                                                            ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
 ;    |Multiplex2bit:MuxSrcB|                      ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcB                                                                                 ; work         ;
-;    |Multiplex2bit:MuxSrcPC|                     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcPC                                                                                ; work         ;
-;    |Multiplex3bit:MuxMem2Reg|                   ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3bit:MuxMem2Reg                                                                              ; work         ;
+;    |Multiplex2bit:MuxSrcPC|                     ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcPC                                                                                ; work         ;
+;    |Multiplex3bit:MuxMem2Reg|                   ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3bit:MuxMem2Reg                                                                              ; work         ;
 ;    |Multiplex3op:MuxMemWri|                     ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3op:MuxMemWri                                                                                ; work         ;
 ;    |Multiplex:MuxIorD|                          ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxIorD                                                                                     ; work         ;
 ;    |Multiplex:MuxSrcA|                          ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxSrcA                                                                                     ; work         ;
 ;    |MultiplexMini:RegDst|                       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|MultiplexMini:RegDst                                                                                  ; work         ;
-;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:ALUOutReg                                                                                 ; work         ;
+;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:ALUOutReg                                                                                 ;              ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:A                                                                                         ; work         ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:B                                                                                         ; work         ;
 ;    |Registrador:MemReg|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:MemReg                                                                                    ; work         ;
-;    |Registrador:RegPC|                          ; 27 (27)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:RegPC                                                                                     ; work         ;
-;    |Ula32:ULA|                                  ; 165 (165)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Ula32:ULA                                                                                             ; work         ;
+;    |Registrador:RegPC|                          ; 28 (28)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:RegPC                                                                                     ;              ;
+;    |Ula32:ULA|                                  ; 164 (164)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Ula32:ULA                                                                                             ; work         ;
 ;    |UnidadeControle:UC|                         ; 91 (91)           ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|UnidadeControle:UC                                                                                    ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -335,22 +329,24 @@ Encoding Type:  One-Hot
 +----------------+----------------+--------------+-----------+-----------+-----------+----------+------------+--------------+-----------+-------------+-----------+---------------+-----------+-----------+------------+-----------+---------------+---------------+-------------+----------+---------------+-------------+----------+-----------+----------+----------+--------------+--------------+-----------+--------------+--------------+-----------+--------------+--------------+-------------+------------+-------------+-------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; UnidadeControle:UC|state.ADDU         ; Lost fanout        ;
-; UnidadeControle:UC|state.STOPPC       ; Lost fanout        ;
-; UnidadeControle:UC|state.JR           ; Lost fanout        ;
-; UnidadeControle:UC|state~4            ; Lost fanout        ;
-; UnidadeControle:UC|state~5            ; Lost fanout        ;
-; UnidadeControle:UC|state~6            ; Lost fanout        ;
-; UnidadeControle:UC|state~7            ; Lost fanout        ;
-; UnidadeControle:UC|state~8            ; Lost fanout        ;
-; UnidadeControle:UC|state~9            ; Lost fanout        ;
-; Total Number of Removed Registers = 9 ;                    ;
-+---------------------------------------+--------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; RegDesloc:ShiftOp|temp[0..30]          ; Merged with RegDesloc:ShiftOp|temp[31] ;
+; RegDesloc:ShiftOp|temp[31]             ; Stuck at GND due to stuck port data_in ;
+; UnidadeControle:UC|state.ADDU          ; Lost fanout                            ;
+; UnidadeControle:UC|state.STOPPC        ; Lost fanout                            ;
+; UnidadeControle:UC|state.JR            ; Lost fanout                            ;
+; UnidadeControle:UC|state~4             ; Lost fanout                            ;
+; UnidadeControle:UC|state~5             ; Lost fanout                            ;
+; UnidadeControle:UC|state~6             ; Lost fanout                            ;
+; UnidadeControle:UC|state~7             ; Lost fanout                            ;
+; UnidadeControle:UC|state~8             ; Lost fanout                            ;
+; UnidadeControle:UC|state~9             ; Lost fanout                            ;
+; Total Number of Removed Registers = 41 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -373,10 +369,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[0]     ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[31]    ;
 ; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[16]    ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[6]     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[0]     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[6]     ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:B|Saida[22]        ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:A|Saida[10]        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux30    ;
@@ -528,15 +524,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+------------------------+
 
 
-+---------------------------------------------------------------+
-; Port Connectivity Checks: "UnsignedExtendExc:ExtensaoMemInst" ;
-+----------+-------+----------+---------------------------------+
-; Port     ; Type  ; Severity ; Details                         ;
-+----------+-------+----------+---------------------------------+
-; Overflow ; Input ; Info     ; Explicitly unconnected          ;
-+----------+-------+----------+---------------------------------+
-
-
 +-------------------------------------------------------+
 ; Port Connectivity Checks: "Ula32:ULA"                 ;
 +----------+--------+----------+------------------------+
@@ -585,9 +572,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 02 18:49:36 2018
+    Info: Processing started: Fri May 04 02:01:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoHardware -c UP
-Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
     Info: Found entity 1: Banco_reg
@@ -634,11 +620,11 @@ Info: Found 1 design units, including 1 entities, in source file addermem8.sv
 Info: Found 1 design units, including 1 entities, in source file addermem16.sv
     Info: Found entity 1: AdderMem16
 Info: Elaborating entity "Up" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(68): variable "PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(70): variable "code20_16" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(71): variable "code15_0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(70): variable "PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(72): variable "code20_16" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Up.sv(73): variable "code15_0" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:UC"
-Warning (10230): Verilog HDL assignment warning at UnidadeControle.sv(38): truncated value with size 6 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at UnidadeControle.sv(39): truncated value with size 6 to match size of target (5)
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:RegPC"
 Info: Elaborating entity "Memoria" for hierarchy "Memoria:Mem"
 Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM"
@@ -682,8 +668,11 @@ Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(13): v
 Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(16): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(19): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(22): variable "e" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(24): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(25): variable "f" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(27): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
+Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:ShiftOp"
+Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1102): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "SignedExtend" for hierarchy "SignedExtend:SinalExtensao"
 Info: Elaborating entity "UnsignedExtendExc" for hierarchy "UnsignedExtendExc:ExtensaoMemInst"
 Warning (10235): Verilog HDL Always Construct warning at UnsignedExtend.sv(8): variable "Overflow" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -705,6 +694,38 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "DeslocInst[1]" is stuck at GND
     Warning (13410): Pin "DeslocSinal[0]" is stuck at GND
     Warning (13410): Pin "DeslocSinal[1]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[0]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[1]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[2]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[3]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[4]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[5]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[6]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[7]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[8]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[9]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[10]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[11]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[12]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[13]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[14]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[15]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[16]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[17]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[18]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[19]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[20]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[21]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[22]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[23]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[24]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[25]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[26]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[27]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[28]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[29]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[30]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[31]" is stuck at GND
 Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
     Info: Register "UnidadeControle:UC|state.ADDU" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state.STOPPC" lost all its fanouts during netlist optimizations.
@@ -715,22 +736,22 @@ Info: 9 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "UnidadeControle:UC|state~7" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:UC|state~9" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UP.map.smsg
-Info: Implemented 3456 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UP.map.smsg
+Info: Implemented 3497 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 365 output pins
-    Info: Implemented 3057 logic cells
+    Info: Implemented 397 output pins
+    Info: Implemented 3066 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 269 megabytes
-    Info: Processing ended: Wed May 02 18:49:43 2018
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 250 megabytes
+    Info: Processing ended: Fri May 04 02:02:13 2018
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UP.map.smsg.
+The suppressed messages can be found in D:/Users/Paulinho/Desktop/Quartus/ProjetoHardware-2018.1-master/ProjetoHardware-2018.1-master/Arquivos-Projeto/UP.map.smsg.
 
 

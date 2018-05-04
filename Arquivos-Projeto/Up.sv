@@ -15,7 +15,8 @@ module Up(input logic clock,
 			output logic RegWrite,
 			output logic IRWrite,
 			output logic [31:0] AluOut,
-			output logic [4:0] State
+			output logic [4:0] State,
+			output logic [31:0] Reg_Desloc
 			);
 
 
@@ -58,6 +59,7 @@ logic [31:0] addrHalf;
 logic [31:0] addrByte;
 logic [1:0] selwrmem;
 logic [31:0] MemDataExt;
+logic [2:0] setDesloc;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -108,6 +110,7 @@ UnidadeControle UC (.clock(clock),
 					.ALUOutCtrl(comALUOut),
 					.RegAload(comRegA),
 					.RegBload(comRegB),
+					.shiftSel(setDesloc),
 					.EPCWrite(WriteEPC),
 					.stateout(State)
 					);
@@ -196,16 +199,17 @@ Multiplex2bit MuxSrcPC (.f(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
-						.d(MemDataExt), //q q e isso esqueci man
+						.d(MemDataExt),
 						.sel(pc_choosenext)
 						);
 						
-Multiplex3bit MuxMem2Reg (.f(WriteDataReg),
+Multiplex3bit MuxMem2Reg (.g(WriteDataReg),
 							.a(MDR),
 							.b(AluOut),
 							.c(luishift), //quando LUI, sel = 10.
 							.d(MDRByte),
 							.e(MDRHalf),
+							.f(Reg_Desloc),
 							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
@@ -226,6 +230,14 @@ Registrador ALUOutReg (.Clk(clock),
 					.Reset(reset_l),
 					.Load(comALUOut)
 					);
+					
+RegDesloc ShiftOp (.Clk(clock),
+					.Reset(reset_l),
+					.Shift(setDesloc), //recebe o seletor da unidade de controle, tem que dar 'load' por aqui
+					.N(code15_0[10:6]),
+					.Entrada(regBout),
+					.Saida(Reg_Desloc)
+					);
 
 SignedExtend SinalExtensao (.codein(code15_0),
 							.outsigned(exten31_0)
@@ -233,7 +245,7 @@ SignedExtend SinalExtensao (.codein(code15_0),
 
 UnsignedExtendExc ExtensaoMemInst (.MemIn(MemData),
 								.OutNewInst(MemDataExt),
-								.Overflow()
+								.Overflow(callOverflow)
 								);
 
 Registrador EPC (.Clk(clock),

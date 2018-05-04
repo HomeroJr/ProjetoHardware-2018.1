@@ -1,5 +1,5 @@
-module Multiplex3bit (output logic [31:0] f,
-			input logic [31:0] a,b,c,d,e,
+module Multiplex3bit (output logic [31:0] g,
+			input logic [31:0] a,b,c,d,e,f,
 			input logic [2:0] sel);
 			
 			
@@ -7,21 +7,24 @@ module Multiplex3bit (output logic [31:0] f,
 		begin
 			case(sel)
 			3'b000:begin
-			f = a;
+			g = a;
 			end
 			3'b001:begin
-			f = b;
+			g = b;
 			end
 			3'b010:begin
-			f = c;
+			g = c;
 			end
 			3'b011:begin
-			f = d;
+			g = d;
 			end
 			3'b100:begin
-			f = e;
+			g = e;
 			end
-			default: f = a;
+			3'b101:begin
+			g = f;
+			end
+			default: g = a;
 		endcase
 		end
 			endmodule:Multiplex3bit

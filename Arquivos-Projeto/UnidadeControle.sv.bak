@@ -175,6 +175,18 @@ case(state)
 		6'b101011:begin // rever depois big endian etc
 		 nextState = LWorSW;
 		end
+		6'b100100:begin
+		nextState = LWorSW;
+		end
+		6'b100101:begin
+		nextState = LWorSW;
+		end
+		6'b101000:begin
+		nextState = LWorSW;
+		end
+		6'b101001:begin
+		nextState = LWorSW;
+		end
 		
 		//Operacoes do tipo R
 		6'b000000:begin // rever depois big endian etc
@@ -219,6 +231,9 @@ case(state)
 		end
 		6'b101000:begin
 		nextState = SB;
+		end
+		6'b101001:begin
+		nextState = SH;
 		end
 		default: nextState = NOP;
 		endcase

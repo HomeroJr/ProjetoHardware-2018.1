@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed May 02 18:50:01 2018
+Fitter Status : Successful - Fri May 04 02:03:00 2018
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : UP
 Top-level Entity Name : Up
 Family : Cyclone II
 Device : EP2C70F672C6
 Timing Models : Final
-Total logic elements : 1,940 / 68,416 ( 3 % )
-    Total combinational functions : 1,920 / 68,416 ( 3 % )
+Total logic elements : 1,949 / 68,416 ( 3 % )
+    Total combinational functions : 1,929 / 68,416 ( 3 % )
     Dedicated logic registers : 1,251 / 68,416 ( 2 % )
 Total registers : 1251
-Total pins : 367 / 422 ( 87 % )
+Total pins : 399 / 422 ( 95 % )
 Total virtual pins : 0
 Total memory bits : 8,192 / 1,152,000 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )

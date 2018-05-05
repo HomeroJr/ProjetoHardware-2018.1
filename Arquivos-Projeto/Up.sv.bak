@@ -197,12 +197,12 @@ Multiplex2bit MuxSrcB (.f(resultB),
 						.sel(chooseulaB)
 						);
 
-Multiplex3bit MuxSrcPC (.g(pc_next),
+Multiplex3bit MuxSrcPC (.h(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
 						.d(MemDataExt),
-						.e(getEPC),
+						.e(getEPC),  //sel = 100
 						.sel(pc_choosenext)
 						);
 						

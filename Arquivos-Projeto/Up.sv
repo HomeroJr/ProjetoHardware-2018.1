@@ -12,7 +12,7 @@ module Up(input logic clock,
 			output logic RegWrite,
 			output logic IRWrite,
 			output logic [31:0] AluOut,
-			output logic [5:0] State,
+			output logic [6:0] State,
 			output logic [31:0] Reg_Desloc
 			);
 

@@ -37,7 +37,7 @@ module UnidadeControle(input logic clock,
 			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
 			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/, SLLV /*40*/,
 			SLLVEND/*41*/, SRA /*42*/, SRAEND /*43*/, SRAV/*44*/, SRAVEND /*45*/,
-			SRL /*46*/, SRLEND /*47*/} state, nextState;
+			SRL /*46*/, SRLEND /*47*/, SLT /*48*/, RTE /*49*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)

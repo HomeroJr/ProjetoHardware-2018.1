@@ -73,344 +73,344 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
 VCCIO3                       : A3        : power  :                   : 3.3V    : 3         :                
-PC[29]                       : A4        : output : 3.3-V LVTTL       :         : 3         : N              
-Alu[8]                       : A5        : output : 3.3-V LVTTL       :         : 3         : N              
-Address[9]                   : A6        : output : 3.3-V LVTTL       :         : 3         : N              
-AluOut[20]                   : A7        : output : 3.3-V LVTTL       :         : 3         : N              
-resultB[1]                   : A8        : output : 3.3-V LVTTL       :         : 3         : N              
-extrapcnext[23]              : A9        : output : 3.3-V LVTTL       :         : 3         : N              
-extrapcnext[24]              : A10       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : A4        :        :                   :         : 3         :                
+Address[18]                  : A5        : output : 3.3-V LVTTL       :         : 3         : N              
+Address[21]                  : A6        : output : 3.3-V LVTTL       :         : 3         : N              
+resultB[1]                   : A7        : output : 3.3-V LVTTL       :         : 3         : N              
+resultB[28]                  : A8        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[0]                   : A9        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[4]                   : A10       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A11       : power  :                   : 3.3V    : 3         :                
 GND                          : A12       : gnd    :                   :         :           :                
 GND+                         : A13       :        :                   :         : 4         :                
-WriteDataReg[21]             : A14       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[31]               : A14       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
-writeDataMem[25]             : A17       : output : 3.3-V LVTTL       :         : 4         : N              
-MemData[11]                  : A18       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[17]             : A19       : output : 3.3-V LVTTL       :         : 4         : N              
-Address[19]                  : A20       : output : 3.3-V LVTTL       :         : 4         : N              
-DeslocInst[14]               : A21       : output : 3.3-V LVTTL       :         : 4         : N              
-DeslocSinal[14]              : A22       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[29]             : A23       : output : 3.3-V LVTTL       :         : 4         : N              
+Address[0]                   : A17       : output : 3.3-V LVTTL       :         : 4         : N              
+Address[1]                   : A18       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[6]                    : A19       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[18]               : A20       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[10]             : A21       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[29]             : A22       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[19]               : A23       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A24       : power  :                   : 3.3V    : 4         :                
 GND                          : A25       : gnd    :                   :         :           :                
-extrapcnext[28]              : AA1       : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocInst[30]               : AA2       : output : 3.3-V LVTTL       :         : 1         : N              
-Reg_Desloc[27]               : AA3       : output : 3.3-V LVTTL       :         : 1         : N              
-extrapcnext[2]               : AA4       : output : 3.3-V LVTTL       :         : 1         : N              
-Reg_Desloc[2]                : AA5       : output : 3.3-V LVTTL       :         : 1         : N              
-Reg_Desloc[31]               : AA6       : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocSinal[24]              : AA7       : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[18]                      : AA1       : output : 3.3-V LVTTL       :         : 1         : N              
+resultB[19]                  : AA2       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AA3       :        :                   :         : 1         :                
+GND*                         : AA4       :        :                   :         : 1         :                
+GND*                         : AA5       :        :                   :         : 1         :                
+GND*                         : AA6       :        :                   :         : 1         :                
+GND*                         : AA7       :        :                   :         : 1         :                
 VCCA_PLL1                    : AA8       : power  :                   : 1.2V    :           :                
-Address[18]                  : AA9       : output : 3.3-V LVTTL       :         : 8         : N              
-DeslocInst[23]               : AA10      : output : 3.3-V LVTTL       :         : 8         : N              
-DeslocInst[6]                : AA11      : output : 3.3-V LVTTL       :         : 8         : N              
-PC[9]                        : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
-resultB[14]                  : AA13      : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[5]                   : AA14      : output : 3.3-V LVTTL       :         : 7         : N              
-writeDataMem[3]              : AA15      : output : 3.3-V LVTTL       :         : 7         : N              
-resultB[23]                  : AA16      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[2]                : AA17      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[28]               : AA18      : output : 3.3-V LVTTL       :         : 7         : N              
+Address[31]                  : AA9       : output : 3.3-V LVTTL       :         : 8         : N              
+PC[6]                        : AA10      : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[15]                      : AA11      : output : 3.3-V LVTTL       :         : 8         : N              
+writeDataMem[15]             : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
+Address[5]                   : AA13      : output : 3.3-V LVTTL       :         : 7         : N              
+writeDataMem[21]             : AA14      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteDataReg[14]             : AA15      : output : 3.3-V LVTTL       :         : 7         : N              
+PC[10]                       : AA16      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AA17      :        :                   :         : 7         :                
+writeDataMem[20]             : AA18      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCA_PLL4                    : AA19      : power  :                   : 1.2V    :           :                
-DeslocSinal[5]               : AA20      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AA20      :        :                   :         : 7         :                
 GND_PLL4                     : AA21      : gnd    :                   :         :           :                
 VCCIO6                       : AA22      : power  :                   : 3.3V    : 6         :                
-DeslocSinal[30]              : AA23      : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocSinal[26]              : AA24      : output : 3.3-V LVTTL       :         : 6         : N              
-Address[27]                  : AA25      : output : 3.3-V LVTTL       :         : 6         : N              
-Address[17]                  : AA26      : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocInst[4]                : AB1       : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocSinal[4]               : AB2       : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocSinal[0]               : AB3       : output : 3.3-V LVTTL       :         : 1         : N              
-Reg_Desloc[1]                : AB4       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AA23      :        :                   :         : 6         :                
+GND*                         : AA24      :        :                   :         : 6         :                
+GND*                         : AA25      :        :                   :         : 6         :                
+GND*                         : AA26      :        :                   :         : 6         :                
+GND*                         : AB1       :        :                   :         : 1         :                
+GND*                         : AB2       :        :                   :         : 1         :                
+GND*                         : AB3       :        :                   :         : 1         :                
+GND*                         : AB4       :        :                   :         : 1         :                
 VCCIO1                       : AB5       : power  :                   : 3.3V    : 1         :                
 VCCIO8                       : AB6       : power  :                   : 3.3V    : 8         :                
 GND                          : AB7       : gnd    :                   :         :           :                
-DeslocSinal[6]               : AB8       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[5]                       : AB8       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AB9       : power  :                   : 3.3V    : 8         :                
-DeslocInst[3]                : AB10      : output : 3.3-V LVTTL       :         : 8         : N              
+resultB[31]                  : AB10      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AB11      : gnd    :                   :         :           :                
-PC[22]                       : AB12      : output : 3.3-V LVTTL       :         : 8         : N              
+MemData[1]                   : AB12      : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AB13      : power  :                   : 3.3V    : 8         :                
 VCCIO7                       : AB14      : power  :                   : 3.3V    : 7         :                
-WriteRegister[3]             : AB15      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteRegister[4]             : AB15      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AB16      : gnd    :                   :         :           :                
 VCCIO7                       : AB17      : power  :                   : 3.3V    : 7         :                
-extrapcnext[7]               : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
+AluOut[16]                   : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AB19      : gnd    :                   :         :           :                
-PC[7]                        : AB20      : output : 3.3-V LVTTL       :         : 7         : N              
-Reg_Desloc[14]               : AB21      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AB20      :        :                   :         : 7         :                
+GND*                         : AB21      :        :                   :         : 7         :                
 VCCIO7                       : AB22      : power  :                   : 3.3V    : 7         :                
-Reg_Desloc[17]               : AB23      : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[10]               : AB24      : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[22]               : AB25      : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[21]               : AB26      : output : 3.3-V LVTTL       :         : 6         : N              
-extrapcnext[6]               : AC1       : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocSinal[8]               : AC2       : output : 3.3-V LVTTL       :         : 1         : N              
-Reg_Desloc[12]               : AC3       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AB23      :        :                   :         : 6         :                
+GND*                         : AB24      :        :                   :         : 6         :                
+GND*                         : AB25      :        :                   :         : 6         :                
+GND*                         : AB26      :        :                   :         : 6         :                
+GND*                         : AC1       :        :                   :         : 1         :                
+GND*                         : AC2       :        :                   :         : 1         :                
+GND*                         : AC3       :        :                   :         : 1         :                
 GND                          : AC4       : gnd    :                   :         :           :                
-Reg_Desloc[13]               : AC5       : output : 3.3-V LVTTL       :         : 8         : N              
-Reg_Desloc[0]                : AC6       : output : 3.3-V LVTTL       :         : 8         : N              
-Reg_Desloc[5]                : AC7       : output : 3.3-V LVTTL       :         : 8         : N              
-extrapcnext[1]               : AC8       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[20]                      : AC9       : output : 3.3-V LVTTL       :         : 8         : N              
-PC[14]                       : AC10      : output : 3.3-V LVTTL       :         : 8         : N              
-Address[21]                  : AC11      : output : 3.3-V LVTTL       :         : 8         : N              
-WriteDataReg[13]             : AC12      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AC5       :        :                   :         : 8         :                
+GND*                         : AC6       :        :                   :         : 8         :                
+GND*                         : AC7       :        :                   :         : 8         :                
+Address[22]                  : AC8       : output : 3.3-V LVTTL       :         : 8         : N              
+AluOut[2]                    : AC9       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[25]                      : AC10      : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[9]                       : AC11      : output : 3.3-V LVTTL       :         : 8         : N              
+State[3]                     : AC12      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AC13      :        :                   :         : 8         :                
-WriteDataReg[11]             : AC14      : output : 3.3-V LVTTL       :         : 7         : N              
-AluOut[3]                    : AC15      : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[30]                  : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
-PC[4]                        : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
-extrapcnext[0]               : AC18      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[2]               : AC19      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[15]               : AC20      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteDataReg[20]             : AC14      : output : 3.3-V LVTTL       :         : 7         : N              
+writeDataMem[17]             : AC15      : output : 3.3-V LVTTL       :         : 7         : N              
+PC[20]                       : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteRegister[2]             : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AC18      :        :                   :         : 7         :                
+GND*                         : AC19      :        :                   :         : 7         :                
+GND*                         : AC20      :        :                   :         : 7         :                
 GND*                         : AC21      :        :                   :         : 7         :                
-DeslocInst[0]                : AC22      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[22]              : AC23      : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[29]               : AC24      : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocSinal[21]              : AC25      : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[25]               : AC26      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AC22      :        :                   :         : 7         :                
+GND*                         : AC23      :        :                   :         : 6         :                
+GND*                         : AC24      :        :                   :         : 6         :                
+GND*                         : AC25      :        :                   :         : 6         :                
+GND*                         : AC26      :        :                   :         : 6         :                
 VCCIO1                       : AD1       : power  :                   : 3.3V    : 1         :                
-DeslocSinal[28]              : AD2       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AD2       :        :                   :         : 1         :                
 GND*                         : AD3       :        :                   :         : 1         :                
-DeslocSinal[23]              : AD4       : output : 3.3-V LVTTL       :         : 8         : N              
-Reg_Desloc[24]               : AD5       : output : 3.3-V LVTTL       :         : 8         : N              
-extrapcnext[29]              : AD6       : output : 3.3-V LVTTL       :         : 8         : N              
-Reg_Desloc[28]               : AD7       : output : 3.3-V LVTTL       :         : 8         : N              
-extrapcnext[4]               : AD8       : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AD4       :        :                   :         : 8         :                
+GND*                         : AD5       :        :                   :         : 8         :                
+GND*                         : AD6       :        :                   :         : 8         :                
+Alu[16]                      : AD7       : output : 3.3-V LVTTL       :         : 8         : N              
+PC[31]                       : AD8       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AD9       : gnd    :                   :         :           :                
-Address[29]                  : AD10      : output : 3.3-V LVTTL       :         : 8         : N              
-WriteDataReg[19]             : AD11      : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[2]                       : AD12      : output : 3.3-V LVTTL       :         : 8         : N              
+resultB[27]                  : AD10      : output : 3.3-V LVTTL       :         : 8         : N              
+MemData[31]                  : AD11      : output : 3.3-V LVTTL       :         : 8         : N              
+Reg_Desloc[27]               : AD12      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AD13      :        :                   :         : 8         :                
 GND                          : AD14      : gnd    :                   :         :           :                
-WriteRegister[4]             : AD15      : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[16]                  : AD16      : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[13]                  : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteDataReg[27]             : AD15      : output : 3.3-V LVTTL       :         : 7         : N              
+PC[18]                       : AD16      : output : 3.3-V LVTTL       :         : 7         : N              
+AluOut[27]                   : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AD18      : gnd    :                   :         :           :                
-DeslocSinal[15]              : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AD19      :        :                   :         : 7         :                
 VCCIO7                       : AD20      : power  :                   : 3.3V    : 7         :                
-Reg_Desloc[4]                : AD21      : output : 3.3-V LVTTL       :         : 7         : N              
-Reg_Desloc[6]                : AD22      : output : 3.3-V LVTTL       :         : 7         : N              
-Reg_Desloc[15]               : AD23      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[17]               : AD24      : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocSinal[17]              : AD25      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AD21      :        :                   :         : 7         :                
+GND*                         : AD22      :        :                   :         : 7         :                
+GND*                         : AD23      :        :                   :         : 7         :                
+GND*                         : AD24      :        :                   :         : 6         :                
+GND*                         : AD25      :        :                   :         : 6         :                
 VCCIO6                       : AD26      : power  :                   : 3.3V    : 6         :                
 GND                          : AE1       : gnd    :                   :         :           :                
-extrapcnext[15]              : AE2       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AE2       :        :                   :         : 1         :                
 GND*                         : AE3       :        :                   :         : 1         :                
-Reg_Desloc[8]                : AE4       : output : 3.3-V LVTTL       :         : 8         : N              
-Reg_Desloc[7]                : AE5       : output : 3.3-V LVTTL       :         : 8         : N              
-DeslocSinal[3]               : AE6       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[7]                       : AE7       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[21]                      : AE8       : output : 3.3-V LVTTL       :         : 8         : N              
-Address[31]                  : AE9       : output : 3.3-V LVTTL       :         : 8         : N              
-DeslocInst[20]               : AE10      : output : 3.3-V LVTTL       :         : 8         : N              
-WriteDataReg[9]              : AE11      : output : 3.3-V LVTTL       :         : 8         : N              
-PC[10]                       : AE12      : output : 3.3-V LVTTL       :         : 8         : N              
-WriteDataReg[2]              : AE13      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AE4       :        :                   :         : 8         :                
+GND*                         : AE5       :        :                   :         : 8         :                
+Address[14]                  : AE6       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[14]                      : AE7       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[28]                      : AE8       : output : 3.3-V LVTTL       :         : 8         : N              
+resultB[30]                  : AE9       : output : 3.3-V LVTTL       :         : 8         : N              
+PC[17]                       : AE10      : output : 3.3-V LVTTL       :         : 8         : N              
+resultB[0]                   : AE11      : output : 3.3-V LVTTL       :         : 8         : N              
+writeDataMem[31]             : AE12      : output : 3.3-V LVTTL       :         : 8         : N              
+WriteDataReg[29]             : AE13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AE14      :        :                   :         : 7         :                
-WriteDataReg[6]              : AE15      : output : 3.3-V LVTTL       :         : 7         : N              
-writeDataMem[13]             : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
-Address[3]                   : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[12]              : AE18      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[9]               : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
-extrapcnext[26]              : AE20      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[5]                : AE21      : output : 3.3-V LVTTL       :         : 7         : N              
-extrapcnext[3]               : AE22      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[31]              : AE23      : output : 3.3-V LVTTL       :         : 7         : N              
+PC[16]                       : AE15      : output : 3.3-V LVTTL       :         : 7         : N              
+RegWrite                     : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
+MemData[19]                  : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
+AluOut[7]                    : AE18      : output : 3.3-V LVTTL       :         : 7         : N              
+writeDataMem[16]             : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AE20      :        :                   :         : 7         :                
+GND*                         : AE21      :        :                   :         : 7         :                
+GND*                         : AE22      :        :                   :         : 7         :                
+GND*                         : AE23      :        :                   :         : 7         :                
 ~LVDS195p/nCEO~              : AE24      : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : AE25      :        :                   :         : 6         :                
 GND                          : AE26      : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 VCCIO8                       : AF3       : power  :                   : 3.3V    : 8         :                
-DeslocSinal[27]              : AF4       : output : 3.3-V LVTTL       :         : 8         : N              
-DeslocInst[31]               : AF5       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[27]                      : AF6       : output : 3.3-V LVTTL       :         : 8         : N              
-PC[23]                       : AF7       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[30]                      : AF8       : output : 3.3-V LVTTL       :         : 8         : N              
-Address[24]                  : AF9       : output : 3.3-V LVTTL       :         : 8         : N              
-extrapcnext[18]              : AF10      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AF4       :        :                   :         : 8         :                
+Address[28]                  : AF5       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[12]                      : AF6       : output : 3.3-V LVTTL       :         : 8         : N              
+Alu[27]                      : AF7       : output : 3.3-V LVTTL       :         : 8         : N              
+Address[9]                   : AF8       : output : 3.3-V LVTTL       :         : 8         : N              
+Address[16]                  : AF9       : output : 3.3-V LVTTL       :         : 8         : N              
+writeDataMem[8]              : AF10      : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AF11      : power  :                   : 3.3V    : 8         :                
 GND                          : AF12      : gnd    :                   :         :           :                
-WriteDataReg[3]              : AF13      : output : 3.3-V LVTTL       :         : 8         : N              
+WriteDataReg[26]             : AF13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AF14      :        :                   :         : 7         :                
 GND                          : AF15      : gnd    :                   :         :           :                
 VCCIO7                       : AF16      : power  :                   : 3.3V    : 7         :                
-PC[2]                        : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[12]               : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocInst[9]                : AF19      : output : 3.3-V LVTTL       :         : 7         : N              
-extrapcnext[13]              : AF20      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[1]               : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
-Reg_Desloc[19]               : AF22      : output : 3.3-V LVTTL       :         : 7         : N              
-DeslocSinal[18]              : AF23      : output : 3.3-V LVTTL       :         : 7         : N              
+AluOut[8]                    : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
+WriteRegister[0]             : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
+AluOut[18]                   : AF19      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AF20      :        :                   :         : 7         :                
+GND*                         : AF21      :        :                   :         : 7         :                
+GND*                         : AF22      :        :                   :         : 7         :                
+GND*                         : AF23      :        :                   :         : 7         :                
 VCCIO7                       : AF24      : power  :                   : 3.3V    : 7         :                
 GND                          : AF25      : gnd    :                   :         :           :                
 GND                          : B1        : gnd    :                   :         :           :                
-Reg_Desloc[11]               : B2        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : B2        :        :                   :         : 2         :                
 GND*                         : B3        :        :                   :         : 2         :                
-extrapcnext[27]              : B4        : output : 3.3-V LVTTL       :         : 3         : N              
-PC[0]                        : B5        : output : 3.3-V LVTTL       :         : 3         : N              
-Address[22]                  : B6        : output : 3.3-V LVTTL       :         : 3         : N              
-AluOut[23]                   : B7        : output : 3.3-V LVTTL       :         : 3         : N              
-MemData[22]                  : B8        : output : 3.3-V LVTTL       :         : 3         : N              
-DeslocInst[25]               : B9        : output : 3.3-V LVTTL       :         : 3         : N              
-DeslocInst[26]               : B10       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[22]             : B11       : output : 3.3-V LVTTL       :         : 3         : N              
-resultB[22]                  : B12       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : B4        :        :                   :         : 3         :                
+Address[15]                  : B5        : output : 3.3-V LVTTL       :         : 3         : N              
+Alu[1]                       : B6        : output : 3.3-V LVTTL       :         : 3         : N              
+PC[24]                       : B7        : output : 3.3-V LVTTL       :         : 3         : N              
+PC[21]                       : B8        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[14]                  : B9        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[5]                   : B10       : output : 3.3-V LVTTL       :         : 3         : N              
+writeDataMem[7]              : B11       : output : 3.3-V LVTTL       :         : 3         : N              
+Reg_Desloc[22]               : B12       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : B13       :        :                   :         : 4         :                
-WriteDataReg[16]             : B14       : output : 3.3-V LVTTL       :         : 4         : N              
-extrapcnext[20]              : B15       : output : 3.3-V LVTTL       :         : 4         : N              
-AluOut[27]                   : B16       : output : 3.3-V LVTTL       :         : 4         : N              
-Address[5]                   : B17       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[26]             : B18       : output : 3.3-V LVTTL       :         : 4         : N              
-DeslocSinal[11]              : B19       : output : 3.3-V LVTTL       :         : 4         : N              
-State[4]                     : B20       : output : 3.3-V LVTTL       :         : 4         : N              
-extrapcnext[14]              : B21       : output : 3.3-V LVTTL       :         : 4         : N              
-extrapcnext[12]              : B22       : output : 3.3-V LVTTL       :         : 4         : N              
-Address[8]                   : B23       : output : 3.3-V LVTTL       :         : 4         : N              
-resultB[15]                  : B24       : output : 3.3-V LVTTL       :         : 5         : N              
-DeslocSinal[10]              : B25       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[23]             : B14       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[0]              : B15       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[7]              : B16       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[29]               : B17       : output : 3.3-V LVTTL       :         : 4         : N              
+resultB[11]                  : B18       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteRegister[3]             : B19       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[17]               : B20       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[23]                   : B21       : output : 3.3-V LVTTL       :         : 4         : N              
+Address[20]                  : B22       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[12]                   : B23       : output : 3.3-V LVTTL       :         : 4         : N              
+resultB[23]                  : B24       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[10]                   : B25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : B26       : gnd    :                   :         :           :                
 VCCIO2                       : C1        : power  :                   : 3.3V    : 2         :                
-Address[25]                  : C2        : output : 3.3-V LVTTL       :         : 2         : N              
-extrapcnext[31]              : C3        : output : 3.3-V LVTTL       :         : 2         : N              
-AluOut[16]                   : C4        : output : 3.3-V LVTTL       :         : 3         : N              
-PC[24]                       : C5        : output : 3.3-V LVTTL       :         : 3         : N              
-DeslocInst[29]               : C6        : output : 3.3-V LVTTL       :         : 3         : N              
-PC[20]                       : C7        : output : 3.3-V LVTTL       :         : 3         : N              
-AluOut[18]                   : C8        : output : 3.3-V LVTTL       :         : 3         : N              
-AluOut[13]                   : C9        : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[23]             : C10       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[17]             : C11       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[0]              : C12       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : C2        :        :                   :         : 2         :                
+GND*                         : C3        :        :                   :         : 2         :                
+Address[10]                  : C4        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : C5        :        :                   :         : 3         :                
+Address[26]                  : C6        : output : 3.3-V LVTTL       :         : 3         : N              
+State[1]                     : C7        : output : 3.3-V LVTTL       :         : 3         : N              
+AluOut[26]                   : C8        : output : 3.3-V LVTTL       :         : 3         : N              
+Alu[6]                       : C9        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[8]                   : C10       : output : 3.3-V LVTTL       :         : 3         : N              
+Reg_Desloc[0]                : C11       : output : 3.3-V LVTTL       :         : 3         : N              
+Reg_Desloc[14]               : C12       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : C13       :        :                   :         : 3         :                
 GND                          : C14       : gnd    :                   :         :           :                
-DeslocInst[22]               : C15       : output : 3.3-V LVTTL       :         : 4         : N              
-Address[0]                   : C16       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[23]             : C17       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[30]             : C15       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[8]              : C16       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[20]               : C17       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : C18       : gnd    :                   :         :           :                
-DeslocInst[11]               : C19       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[24]               : C19       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
-DeslocSinal[16]              : C21       : output : 3.3-V LVTTL       :         : 4         : N              
-DeslocInst[16]               : C22       : output : 3.3-V LVTTL       :         : 4         : N              
-Reg_Desloc[30]               : C23       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[19]             : C24       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[9]              : C25       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : C21       :        :                   :         : 4         :                
+GND*                         : C22       :        :                   :         : 4         :                
+GND*                         : C23       :        :                   :         : 4         :                
+AluOut[15]                   : C24       : output : 3.3-V LVTTL       :         : 5         : N              
+State[5]                     : C25       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : C26       : power  :                   : 3.3V    : 5         :                
-Address[12]                  : D1        : output : 3.3-V LVTTL       :         : 2         : N              
-writeDataMem[31]             : D2        : output : 3.3-V LVTTL       :         : 2         : N              
+Address[11]                  : D1        : output : 3.3-V LVTTL       :         : 2         : N              
+writeDataMem[11]             : D2        : output : 3.3-V LVTTL       :         : 2         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D3        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND                          : D4        : gnd    :                   :         :           :                
-Address[16]                  : D5        : output : 3.3-V LVTTL       :         : 3         : N              
-Address[15]                  : D6        : output : 3.3-V LVTTL       :         : 3         : N              
-Alu[19]                      : D7        : output : 3.3-V LVTTL       :         : 3         : N              
-AluOut[6]                    : D8        : output : 3.3-V LVTTL       :         : 3         : N              
-Alu[14]                      : D9        : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[31]             : D10       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[7]              : D11       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[27]             : D12       : output : 3.3-V LVTTL       :         : 3         : N              
+Alu[31]                      : D5        : output : 3.3-V LVTTL       :         : 3         : N              
+writeDataMem[13]             : D6        : output : 3.3-V LVTTL       :         : 3         : N              
+AluOut[29]                   : D7        : output : 3.3-V LVTTL       :         : 3         : N              
+PC[22]                       : D8        : output : 3.3-V LVTTL       :         : 3         : N              
+PC[29]                       : D9        : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[13]                  : D10       : output : 3.3-V LVTTL       :         : 3         : N              
+WriteDataReg[25]             : D11       : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[10]                  : D12       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : D13       :        :                   :         : 3         :                
-WriteDataReg[20]             : D14       : output : 3.3-V LVTTL       :         : 4         : N              
-MemData[15]                  : D15       : output : 3.3-V LVTTL       :         : 4         : N              
-MemData[3]                   : D16       : output : 3.3-V LVTTL       :         : 4         : N              
-AluOut[5]                    : D17       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[18]             : D18       : output : 3.3-V LVTTL       :         : 4         : N              
-AluOut[10]                   : D19       : output : 3.3-V LVTTL       :         : 4         : N              
-Alu[23]                      : D20       : output : 3.3-V LVTTL       :         : 4         : N              
-Reg_Desloc[18]               : D21       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[21]             : D14       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[11]             : D15       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[5]              : D16       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[16]               : D17       : output : 3.3-V LVTTL       :         : 4         : N              
+MemData[16]                  : D18       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[6]                : D19       : output : 3.3-V LVTTL       :         : 4         : N              
+resultB[10]                  : D20       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : D21       :        :                   :         : 4         :                
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
 GND*                         : D23       :        :                   :         : 5         :                
 GND                          : D24       : gnd    :                   :         :           :                
-writeDataMem[27]             : D25       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[27]                  : D26       : output : 3.3-V LVTTL       :         : 5         : N              
-AluOut[24]                   : E1        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[18]                      : E2        : output : 3.3-V LVTTL       :         : 2         : N              
+writeDataMem[0]              : D25       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[10]               : D26       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[25]                  : E1        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[20]                      : E2        : output : 3.3-V LVTTL       :         : 2         : N              
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E3        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : E4        : gnd    :                   :         :           :                
-extrapcnext[5]               : E5        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : E5        :        :                   :         : 2         :                
 VCCIO3                       : E6        : power  :                   : 3.3V    : 3         :                
 GND                          : E7        : gnd    :                   :         :           :                
-Address[20]                  : E8        : output : 3.3-V LVTTL       :         : 3         : N              
+Alu[30]                      : E8        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : E9        : power  :                   : 3.3V    : 3         :                
-WriteDataReg[28]             : E10       : output : 3.3-V LVTTL       :         : 3         : N              
+PC[25]                       : E10       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : E11       : gnd    :                   :         :           :                
-WriteDataReg[24]             : E12       : output : 3.3-V LVTTL       :         : 3         : N              
+resultB[12]                  : E12       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : E13       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : E14       : power  :                   : 3.3V    : 4         :                
-writeDataMem[28]             : E15       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[12]             : E15       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
-extrapcnext[9]               : E18       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[22]                   : E18       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E19       : gnd    :                   :         :           :                
-Address[11]                  : E20       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[19]             : E20       : output : 3.3-V LVTTL       :         : 4         : N              
 GND_PLL2                     : E21       : gnd    :                   :         :           :                
-writeDataMem[11]             : E22       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[18]                       : E23       : output : 3.3-V LVTTL       :         : 5         : N              
-DeslocSinal[13]              : E24       : output : 3.3-V LVTTL       :         : 5         : N              
-AluOut[14]                   : E25       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[22]             : E26       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : E22       :        :                   :         : 5         :                
+GND*                         : E23       :        :                   :         : 5         :                
+GND*                         : E24       :        :                   :         : 5         :                
+resultB[7]                   : E25       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[19]                   : E26       : output : 3.3-V LVTTL       :         : 5         : N              
 resultB[29]                  : F1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC[15]                       : F2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC[13]                       : F3        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[3]                   : F4        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[20]                  : F2        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : F3        :        :                   :         : 2         :                
+resultB[13]                  : F4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : F5        : power  :                   : 3.3V    : 2         :                
-PC[1]                        : F6        : output : 3.3-V LVTTL       :         : 2         : N              
-PC[12]                       : F7        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : F6        :        :                   :         : 2         :                
+AluOut[13]                   : F7        : output : 3.3-V LVTTL       :         : 2         : N              
 GNDA_PLL3                    : F8        : gnd    :                   :         :           :                
-resultB[21]                  : F9        : output : 3.3-V LVTTL       :         : 3         : N              
-Alu[12]                      : F10       : output : 3.3-V LVTTL       :         : 3         : N              
-PC[21]                       : F11       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[30]             : F12       : output : 3.3-V LVTTL       :         : 3         : N              
-IRWrite                      : F13       : output : 3.3-V LVTTL       :         : 4         : N              
-WriteDataReg[18]             : F14       : output : 3.3-V LVTTL       :         : 4         : N              
-MemData[24]                  : F15       : output : 3.3-V LVTTL       :         : 4         : N              
-AluOut[25]                   : F16       : output : 3.3-V LVTTL       :         : 4         : N              
-MemData[28]                  : F17       : output : 3.3-V LVTTL       :         : 4         : N              
-Alu[11]                      : F18       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[0]                    : F9        : output : 3.3-V LVTTL       :         : 3         : N              
+PC[15]                       : F10       : output : 3.3-V LVTTL       :         : 3         : N              
+resultB[26]                  : F11       : output : 3.3-V LVTTL       :         : 3         : N              
+writeDataMem[3]              : F12       : output : 3.3-V LVTTL       :         : 3         : N              
+WriteDataReg[10]             : F13       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[6]              : F14       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[6]              : F15       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[1]              : F16       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[17]                   : F17       : output : 3.3-V LVTTL       :         : 4         : N              
+AluOut[21]                   : F18       : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL2                    : F19       : gnd    :                   :         :           :                
-DeslocInst[10]               : F20       : output : 3.3-V LVTTL       :         : 5         : N              
-extrapcnext[30]              : F21       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : F20       :        :                   :         : 5         :                
+GND*                         : F21       :        :                   :         : 5         :                
 VCCIO5                       : F22       : power  :                   : 3.3V    : 5         :                
-AluOut[22]                   : F23       : output : 3.3-V LVTTL       :         : 5         : N              
-Alu[31]                      : F24       : output : 3.3-V LVTTL       :         : 5         : N              
-Alu[13]                      : F25       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[24]             : F26       : output : 3.3-V LVTTL       :         : 5         : N              
-Address[13]                  : G1        : output : 3.3-V LVTTL       :         : 2         : N              
-Address[26]                  : G2        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[25]                      : G3        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[0]                       : G4        : output : 3.3-V LVTTL       :         : 2         : N              
-DeslocSinal[7]               : G5        : output : 3.3-V LVTTL       :         : 2         : N              
-DeslocInst[7]                : G6        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[23]               : F23       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[9]                : F24       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[20]                   : F25       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[24]                   : F26       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[25]                   : G1        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[26]                      : G2        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[5]                : G3        : output : 3.3-V LVTTL       :         : 2         : N              
+PC[23]                       : G4        : output : 3.3-V LVTTL       :         : 2         : N              
+PC[27]                       : G5        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[21]                      : G6        : output : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : G7        : gnd    :                   :         :           :                
 VCCA_PLL3                    : G8        : power  :                   : 1.2V    :           :                
-Address[28]                  : G9        : output : 3.3-V LVTTL       :         : 3         : N              
-Alu[6]                       : G10       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[15]             : G11       : output : 3.3-V LVTTL       :         : 3         : N              
-WriteDataReg[8]              : G12       : output : 3.3-V LVTTL       :         : 3         : N              
-Address[6]                   : G13       : output : 3.3-V LVTTL       :         : 4         : N              
-WriteDataReg[4]              : G14       : output : 3.3-V LVTTL       :         : 4         : N              
-Address[4]                   : G15       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[30]             : G16       : output : 3.3-V LVTTL       :         : 4         : N              
-Alu[1]                       : G17       : output : 3.3-V LVTTL       :         : 4         : N              
-writeDataMem[10]             : G18       : output : 3.3-V LVTTL       :         : 4         : N              
+writeDataMem[25]             : G9        : output : 3.3-V LVTTL       :         : 3         : N              
+resultB[24]                  : G10       : output : 3.3-V LVTTL       :         : 3         : N              
+MemData[2]                   : G11       : output : 3.3-V LVTTL       :         : 3         : N              
+writeDataMem[5]              : G12       : output : 3.3-V LVTTL       :         : 3         : N              
+WriteDataReg[13]             : G13       : output : 3.3-V LVTTL       :         : 4         : N              
+WriteDataReg[28]             : G14       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[21]               : G15       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[4]                : G16       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[12]               : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+Reg_Desloc[11]               : G18       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
-extrapcnext[8]               : G21       : output : 3.3-V LVTTL       :         : 5         : N              
-DeslocInst[13]               : G22       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[8]              : G23       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[16]             : G24       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[12]             : G25       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[4]                   : G26       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[10]                  : H1        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[25]                  : H2        : output : 3.3-V LVTTL       :         : 2         : N              
-AluOut[12]                   : H3        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[26]                      : H4        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : G21       :        :                   :         : 5         :                
+GND*                         : G22       :        :                   :         : 5         :                
+Reg_Desloc[1]                : G23       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[3]                : G24       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[30]               : G25       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[28]               : G26       : output : 3.3-V LVTTL       :         : 5         : N              
+PC[7]                        : H1        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[3]                   : H2        : output : 3.3-V LVTTL       :         : 2         : N              
+AluOut[30]                   : H3        : output : 3.3-V LVTTL       :         : 2         : N              
+AluOut[28]                   : H4        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : H5        : gnd    :                   :         :           :                
-Alu[5]                       : H6        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[22]                      : H6        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCD_PLL3                    : H7        : power  :                   : 1.2V    :           :                
 GND                          : H8        : gnd    :                   :         :           :                
 VCCIO3                       : H9        : power  :                   : 3.3V    : 3         :                
@@ -425,20 +425,20 @@ VCCINT                       : H17       : power  :                   : 1.2V    
 VCCIO4                       : H18       : power  :                   : 3.3V    : 4         :                
 VCCINT                       : H19       : power  :                   : 1.2V    :           :                
 VCCD_PLL2                    : H20       : power  :                   : 1.2V    :           :                
-extrapcnext[11]              : H21       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : H21       :        :                   :         : 5         :                
 GND                          : H22       : gnd    :                   :         :           :                
-Address[7]                   : H23       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[26]                       : H24       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[15]             : H25       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[6]                   : H26       : output : 3.3-V LVTTL       :         : 5         : N              
-AluOut[26]                   : J1        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[4]                       : J2        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[9]                       : J3        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[31]                  : J4        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[18]                  : J5        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[28]                  : J6        : output : 3.3-V LVTTL       :         : 2         : N              
-AluOut[17]                   : J7        : output : 3.3-V LVTTL       :         : 2         : N              
-PC[8]                        : J8        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[7]                : H23       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[4]              : H24       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[30]                  : H25       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[7]                   : H26       : output : 3.3-V LVTTL       :         : 5         : N              
+AluOut[3]                    : J1        : output : 3.3-V LVTTL       :         : 2         : N              
+PC[14]                       : J2        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[18]                  : J3        : output : 3.3-V LVTTL       :         : 2         : N              
+writeDataMem[2]              : J4        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[2]                : J5        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[23]                      : J6        : output : 3.3-V LVTTL       :         : 2         : N              
+AluOut[31]                   : J7        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[28]                  : J8        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCINT                       : J9        : power  :                   : 1.2V    :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 GND                          : J11       : gnd    :                   :         :           :                
@@ -450,21 +450,21 @@ GND                          : J16       : gnd    :                   :         
 GND                          : J17       : gnd    :                   :         :           :                
 VCCINT                       : J18       : power  :                   : 1.2V    :           :                
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
-MemData[31]                  : J20       : output : 3.3-V LVTTL       :         : 5         : N              
-AluOut[21]                   : J21       : output : 3.3-V LVTTL       :         : 5         : N              
-Alu[16]                      : J22       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[17]                  : J23       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[7]              : J24       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[29]                  : J25       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[26]                  : J26       : output : 3.3-V LVTTL       :         : 5         : N              
-WriteDataReg[26]             : K1        : output : 3.3-V LVTTL       :         : 2         : N              
-writeDataMem[14]             : K2        : output : 3.3-V LVTTL       :         : 2         : N              
-extrapcnext[19]              : K3        : output : 3.3-V LVTTL       :         : 2         : N              
-DeslocInst[21]               : K4        : output : 3.3-V LVTTL       :         : 2         : N              
-writeDataMem[20]             : K5        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[20]                  : K6        : output : 3.3-V LVTTL       :         : 2         : N              
-Address[14]                  : K7        : output : 3.3-V LVTTL       :         : 2         : N              
-MemData[25]                  : K8        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[26]               : J20       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[29]                  : J21       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[14]             : J22       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[13]               : J23       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[15]               : J24       : output : 3.3-V LVTTL       :         : 5         : N              
+resultB[14]                  : J25       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[2]              : J26       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[6]                   : K1        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[7]                   : K2        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[16]                  : K3        : output : 3.3-V LVTTL       :         : 2         : N              
+AluOut[14]                   : K4        : output : 3.3-V LVTTL       :         : 2         : N              
+Alu[17]                      : K5        : output : 3.3-V LVTTL       :         : 2         : N              
+PC[19]                       : K6        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[22]                  : K7        : output : 3.3-V LVTTL       :         : 2         : N              
+Address[24]                  : K8        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 VCCINT                       : K10       : power  :                   : 1.2V    :           :                
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
@@ -475,21 +475,21 @@ VCCINT                       : K15       : power  :                   : 1.2V    
 GND                          : K16       : gnd    :                   :         :           :                
 GND                          : K17       : gnd    :                   :         :           :                
 VCCINT                       : K18       : power  :                   : 1.2V    :           :                
-AluOut[11]                   : K19       : output : 3.3-V LVTTL       :         : 5         : N              
+wr                           : K19       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : K20       : gnd    :                   :         :           :                
-MemData[14]                  : K21       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[19]                  : K22       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[5]                        : K23       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[19]                       : K24       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[12]                  : K25       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[25]                       : K26       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[20]                  : K21       : output : 3.3-V LVTTL       :         : 5         : N              
+Reg_Desloc[8]                : K22       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[3]                   : K23       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[2]                   : K24       : output : 3.3-V LVTTL       :         : 5         : N              
+resultB[17]                  : K25       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[26]                  : K26       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
-WriteDataReg[10]             : L2        : output : 3.3-V LVTTL       :         : 2         : N              
-wr                           : L3        : output : 3.3-V LVTTL       :         : 2         : N              
-resultB[13]                  : L4        : output : 3.3-V LVTTL       :         : 2         : N              
+writeDataMem[18]             : L2        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[9]                   : L3        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[11]                  : L4        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : L5        : gnd    :                   :         :           :                
-WriteDataReg[25]             : L6        : output : 3.3-V LVTTL       :         : 2         : N              
-extrapcnext[25]              : L7        : output : 3.3-V LVTTL       :         : 2         : N              
+Reg_Desloc[25]               : L6        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[15]                  : L7        : output : 3.3-V LVTTL       :         : 2         : N              
 TMS                          : L8        : input  :                   :         : 2         :                
 VCCINT                       : L9        : power  :                   : 1.2V    :           :                
 GND                          : L10       : gnd    :                   :         :           :                
@@ -501,19 +501,19 @@ GND                          : L15       : gnd    :                   :         
 VCCINT                       : L16       : power  :                   : 1.2V    :           :                
 VCCINT                       : L17       : power  :                   : 1.2V    :           :                
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
-MemData[18]                  : L19       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[9]                   : L20       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[8]                   : L21       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[23]             : L19       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[9]              : L20       : output : 3.3-V LVTTL       :         : 5         : N              
+Address[4]                   : L21       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : L22       : gnd    :                   :         :           :                
-Address[2]                   : L23       : output : 3.3-V LVTTL       :         : 5         : N              
-Address[1]                   : L24       : output : 3.3-V LVTTL       :         : 5         : N              
-PC[6]                        : L25       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[12]             : L23       : output : 3.3-V LVTTL       :         : 5         : N              
+writeDataMem[22]             : L24       : output : 3.3-V LVTTL       :         : 5         : N              
+resultB[15]                  : L25       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : L26       : power  :                   : 3.3V    : 5         :                
 GND                          : M1        : gnd    :                   :         :           :                
-PC[3]                        : M2        : output : 3.3-V LVTTL       :         : 2         : N              
-AluOut[29]                   : M3        : output : 3.3-V LVTTL       :         : 2         : N              
-DeslocInst[27]               : M4        : output : 3.3-V LVTTL       :         : 2         : N              
-Alu[17]                      : M5        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[6]                   : M2        : output : 3.3-V LVTTL       :         : 2         : N              
+PC[5]                        : M3        : output : 3.3-V LVTTL       :         : 2         : N              
+resultB[2]                   : M4        : output : 3.3-V LVTTL       :         : 2         : N              
+MemData[12]                  : M5        : output : 3.3-V LVTTL       :         : 2         : N              
 TCK                          : M6        : input  :                   :         : 2         :                
 TDO                          : M7        : output :                   :         : 2         :                
 TDI                          : M8        : input  :                   :         : 2         :                
@@ -527,13 +527,13 @@ GND                          : M15       : gnd    :                   :         
 VCCINT                       : M16       : power  :                   : 1.2V    :           :                
 VCCINT                       : M17       : power  :                   : 1.2V    :           :                
 VCCIO5                       : M18       : power  :                   : 3.3V    : 5         :                
-MemData[2]                   : M19       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[1]              : M20       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[0]                   : M21       : output : 3.3-V LVTTL       :         : 5         : N              
-Alu[22]                      : M22       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[21]             : M23       : output : 3.3-V LVTTL       :         : 5         : N              
-MemData[4]                   : M24       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[30]                  : M25       : output : 3.3-V LVTTL       :         : 5         : N              
+resultB[8]                   : M19       : output : 3.3-V LVTTL       :         : 5         : N              
+resultB[4]                   : M20       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[21]                  : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+PC[13]                       : M22       : output : 3.3-V LVTTL       :         : 5         : N              
+Alu[13]                      : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[18]                  : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[1]              : M25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : M26       : gnd    :                   :         :           :                
 GND+                         : N1        :        :                   :         : 2         :                
 GND+                         : N2        :        :                   :         : 2         :                
@@ -554,20 +554,20 @@ GND                          : N16       : gnd    :                   :         
 VCCINT                       : N17       : power  :                   : 1.2V    :           :                
 GND                          : N18       : gnd    :                   :         :           :                
 GND                          : N19       : gnd    :                   :         :           :                
-MemData[1]                   : N20       : output : 3.3-V LVTTL       :         : 5         : N              
-writeDataMem[0]              : N21       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[24]             : N20       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[3]              : N21       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
-resultB[10]                  : N23       : output : 3.3-V LVTTL       :         : 5         : N              
-resultB[2]                   : N24       : output : 3.3-V LVTTL       :         : 5         : N              
+MemData[23]                  : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+WriteDataReg[17]             : N24       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : N25       :        :                   :         : 5         :                
 GND+                         : N26       :        :                   :         : 5         :                
 reset_l                      : P1        : input  : 3.3-V LVTTL       :         : 1         : N              
 clock                        : P2        : input  : 3.3-V LVTTL       :         : 1         : N              
-extrapcnext[17]              : P3        : output : 3.3-V LVTTL       :         : 1         : N              
-WriteDataReg[29]             : P4        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[2]                       : P3        : output : 3.3-V LVTTL       :         : 1         : N              
+AluOut[9]                    : P4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : P5        : power  :                   : 3.3V    : 1         :                
-resultB[9]                   : P6        : output : 3.3-V LVTTL       :         : 1         : N              
-PC[16]                       : P7        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[3]                       : P6        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[4]                        : P7        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : P8        : gnd    :                   :         :           :                
 GND                          : P9        : gnd    :                   :         :           :                
 VCCINT                       : P10       : power  :                   : 1.2V    :           :                
@@ -583,17 +583,17 @@ GND                          : P19       : gnd    :                   :         
 MSEL0                        : P20       :        :                   :         : 6         :                
 MSEL1                        : P21       :        :                   :         : 6         :                
 VCCIO6                       : P22       : power  :                   : 3.3V    : 6         :                
-resultB[17]                  : P23       : output : 3.3-V LVTTL       :         : 6         : N              
-WriteDataReg[1]              : P24       : output : 3.3-V LVTTL       :         : 6         : N              
+WriteDataReg[18]             : P23       : output : 3.3-V LVTTL       :         : 6         : N              
+WriteDataReg[22]             : P24       : output : 3.3-V LVTTL       :         : 6         : N              
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
-DeslocInst[19]               : R2        : output : 3.3-V LVTTL       :         : 1         : N              
-WriteDataReg[12]             : R3        : output : 3.3-V LVTTL       :         : 1         : N              
-WriteDataReg[14]             : R4        : output : 3.3-V LVTTL       :         : 1         : N              
-MemData[0]                   : R5        : output : 3.3-V LVTTL       :         : 1         : N              
-Address[23]                  : R6        : output : 3.3-V LVTTL       :         : 1         : N              
-writeDataMem[5]              : R7        : output : 3.3-V LVTTL       :         : 1         : N              
+WriteDataReg[9]              : R2        : output : 3.3-V LVTTL       :         : 1         : N              
+MemData[6]                   : R3        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[0]                        : R4        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[9]                        : R5        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[3]                        : R6        : output : 3.3-V LVTTL       :         : 1         : N              
+MemData[27]                  : R7        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : R8        : power  :                   : 1.2V    :           :                
 VCCIO1                       : R9        : power  :                   : 3.3V    : 1         :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -606,20 +606,20 @@ VCCINT                       : R16       : power  :                   : 1.2V    
 GND                          : R17       : gnd    :                   :         :           :                
 VCCIO6                       : R18       : power  :                   : 3.3V    : 6         :                
 VCCINT                       : R19       : power  :                   : 1.2V    :           :                
-writeDataMem[4]              : R20       : output : 3.3-V LVTTL       :         : 6         : N              
+IRWrite                      : R20       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R21       : gnd    :                   :         :           :                
 nSTATUS                      : R22       :        :                   :         : 6         :                
 CONF_DONE                    : R23       :        :                   :         : 6         :                
-WriteDataReg[5]              : R24       : output : 3.3-V LVTTL       :         : 6         : N              
-WriteRegister[2]             : R25       : output : 3.3-V LVTTL       :         : 6         : N              
+WriteDataReg[15]             : R24       : output : 3.3-V LVTTL       :         : 6         : N              
+WriteDataReg[19]             : R25       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
-resultB[26]                  : T2        : output : 3.3-V LVTTL       :         : 1         : N              
-Alu[3]                       : T3        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[31]                   : T4        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[2]                        : T2        : output : 3.3-V LVTTL       :         : 1         : N              
+AluOut[1]                    : T3        : output : 3.3-V LVTTL       :         : 1         : N              
+writeDataMem[28]             : T4        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : T5        : gnd    :                   :         :           :                
-AluOut[30]                   : T6        : output : 3.3-V LVTTL       :         : 1         : N              
-writeDataMem[2]              : T7        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[7]                       : T6        : output : 3.3-V LVTTL       :         : 1         : N              
+writeDataMem[27]             : T7        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : T8        : power  :                   : 1.2V    :           :                
 VCCINT                       : T9        : power  :                   : 1.2V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
@@ -632,20 +632,20 @@ VCCINT                       : T16       : power  :                   : 1.2V    
 GND                          : T17       : gnd    :                   :         :           :                
 VCCINT                       : T18       : power  :                   : 1.2V    :           :                
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
-writeDataMem[6]              : T20       : output : 3.3-V LVTTL       :         : 6         : N              
-extrapcnext[22]              : T21       : output : 3.3-V LVTTL       :         : 6         : N              
-MemData[19]                  : T22       : output : 3.3-V LVTTL       :         : 6         : N              
-AluOut[15]                   : T23       : output : 3.3-V LVTTL       :         : 6         : N              
-resultB[8]                   : T24       : output : 3.3-V LVTTL       :         : 6         : N              
-MemData[21]                  : T25       : output : 3.3-V LVTTL       :         : 6         : N              
+MemData[25]                  : T20       : output : 3.3-V LVTTL       :         : 6         : N              
+writeDataMem[30]             : T21       : output : 3.3-V LVTTL       :         : 6         : N              
+MemData[17]                  : T22       : output : 3.3-V LVTTL       :         : 6         : N              
+MemData[22]                  : T23       : output : 3.3-V LVTTL       :         : 6         : N              
+Address[8]                   : T24       : output : 3.3-V LVTTL       :         : 6         : N              
+Alu[8]                       : T25       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
-PC[11]                       : U1        : output : 3.3-V LVTTL       :         : 1         : N              
-WriteRegister[0]             : U2        : output : 3.3-V LVTTL       :         : 1         : N              
-PC[17]                       : U3        : output : 3.3-V LVTTL       :         : 1         : N              
-MemData[20]                  : U4        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[1]                    : U5        : output : 3.3-V LVTTL       :         : 1         : N              
-resultB[27]                  : U6        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[8]                    : U7        : output : 3.3-V LVTTL       :         : 1         : N              
+AluOut[11]                   : U1        : output : 3.3-V LVTTL       :         : 1         : N              
+AluOut[5]                    : U2        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[10]                      : U3        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[11]                       : U4        : output : 3.3-V LVTTL       :         : 1         : N              
+State[0]                     : U5        : output : 3.3-V LVTTL       :         : 1         : N              
+Address[13]                  : U6        : output : 3.3-V LVTTL       :         : 1         : N              
+Address[29]                  : U7        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : U8        : gnd    :                   :         :           :                
 VCCINT                       : U9        : power  :                   : 1.2V    :           :                
 GND                          : U10       : gnd    :                   :         :           :                
@@ -658,20 +658,20 @@ VCCINT                       : U16       : power  :                   : 1.2V    
 GND                          : U17       : gnd    :                   :         :           :                
 VCCINT                       : U18       : power  :                   : 1.2V    :           :                
 GND                          : U19       : gnd    :                   :         :           :                
-resultB[5]                   : U20       : output : 3.3-V LVTTL       :         : 6         : N              
-resultB[12]                  : U21       : output : 3.3-V LVTTL       :         : 6         : N              
-State[2]                     : U22       : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocInst[24]               : U23       : output : 3.3-V LVTTL       :         : 6         : N              
-MemData[23]                  : U24       : output : 3.3-V LVTTL       :         : 6         : N              
-resultB[11]                  : U25       : output : 3.3-V LVTTL       :         : 6         : N              
-WriteRegister[1]             : U26       : output : 3.3-V LVTTL       :         : 6         : N              
-Alu[29]                      : V1        : output : 3.3-V LVTTL       :         : 1         : N              
-Address[10]                  : V2        : output : 3.3-V LVTTL       :         : 1         : N              
-Alu[28]                      : V3        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[19]                   : V4        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[28]                   : V5        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[7]                    : V6        : output : 3.3-V LVTTL       :         : 1         : N              
-Alu[24]                      : V7        : output : 3.3-V LVTTL       :         : 1         : N              
+WriteRegister[1]             : U20       : output : 3.3-V LVTTL       :         : 6         : N              
+Address[17]                  : U21       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : U22       :        :                   :         : 6         :                
+writeDataMem[24]             : U23       : output : 3.3-V LVTTL       :         : 6         : N              
+writeDataMem[26]             : U24       : output : 3.3-V LVTTL       :         : 6         : N              
+State[2]                     : U25       : output : 3.3-V LVTTL       :         : 6         : N              
+AluOut[4]                    : U26       : output : 3.3-V LVTTL       :         : 6         : N              
+resultB[25]                  : V1        : output : 3.3-V LVTTL       :         : 1         : N              
+resultB[3]                   : V2        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[19]                      : V3        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[4]                       : V4        : output : 3.3-V LVTTL       :         : 1         : N              
+Address[19]                  : V5        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[0]                       : V6        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : V7        :        :                   :         : 1         :                
 VCCIO1                       : V8        : power  :                   : 3.3V    : 1         :                
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 VCCINT                       : V10       : power  :                   : 1.2V    :           :                
@@ -684,19 +684,19 @@ VCCINT                       : V16       : power  :                   : 1.2V    
 GND                          : V17       : gnd    :                   :         :           :                
 VCCINT                       : V18       : power  :                   : 1.2V    :           :                
 VCCIO6                       : V19       : power  :                   : 3.3V    : 6         :                
-DeslocSinal[29]              : V20       : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[16]               : V21       : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocSinal[20]              : V22       : output : 3.3-V LVTTL       :         : 6         : N              
-AluOut[4]                    : V23       : output : 3.3-V LVTTL       :         : 6         : N              
-State[1]                     : V24       : output : 3.3-V LVTTL       :         : 6         : N              
-resultB[16]                  : V25       : output : 3.3-V LVTTL       :         : 6         : N              
-RegWrite                     : V26       : output : 3.3-V LVTTL       :         : 6         : N              
-Address[30]                  : W1        : output : 3.3-V LVTTL       :         : 1         : N              
-resultB[7]                   : W2        : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocInst[18]               : W3        : output : 3.3-V LVTTL       :         : 1         : N              
-AluOut[9]                    : W4        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : V20       :        :                   :         : 6         :                
+GND*                         : V21       :        :                   :         : 6         :                
+GND*                         : V22       :        :                   :         : 6         :                
+Address[12]                  : V23       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : V24       :        :                   :         : 6         :                
+PC[26]                       : V25       : output : 3.3-V LVTTL       :         : 6         : N              
+PC[30]                       : V26       : output : 3.3-V LVTTL       :         : 6         : N              
+resultB[21]                  : W1        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[29]                      : W2        : output : 3.3-V LVTTL       :         : 1         : N              
+resultB[9]                   : W3        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[28]                       : W4        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : W5        : gnd    :                   :         :           :                
-DeslocInst[8]                : W6        : output : 3.3-V LVTTL       :         : 1         : N              
+State[4]                     : W6        : output : 3.3-V LVTTL       :         : 1         : N              
 GND_PLL1                     : W7        : gnd    :                   :         :           :                
 GND                          : W8        : gnd    :                   :         :           :                
 VCCIO8                       : W9        : power  :                   : 3.3V    : 8         :                
@@ -711,35 +711,35 @@ VCCINT                       : W17       : power  :                   : 1.2V    
 VCCIO7                       : W18       : power  :                   : 3.3V    : 7         :                
 GND                          : W19       : gnd    :                   :         :           :                
 GND_PLL4                     : W20       : gnd    :                   :         :           :                
-Reg_Desloc[23]               : W21       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : W21       :        :                   :         : 6         :                
 GND                          : W22       : gnd    :                   :         :           :                
-PC[27]                       : W23       : output : 3.3-V LVTTL       :         : 6         : N              
-State[0]                     : W24       : output : 3.3-V LVTTL       :         : 6         : N              
-AluOut[0]                    : W25       : output : 3.3-V LVTTL       :         : 6         : N              
-AluOut[2]                    : W26       : output : 3.3-V LVTTL       :         : 6         : N              
-Alu[10]                      : Y1        : output : 3.3-V LVTTL       :         : 1         : N              
-extrapcnext[16]              : Y2        : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocInst[1]                : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
-PC[30]                       : Y4        : output : 3.3-V LVTTL       :         : 1         : N              
-DeslocSinal[25]              : Y5        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : W23       :        :                   :         : 6         :                
+GND*                         : W24       :        :                   :         : 6         :                
+Address[23]                  : W25       : output : 3.3-V LVTTL       :         : 6         : N              
+Address[30]                  : W26       : output : 3.3-V LVTTL       :         : 6         : N              
+Address[27]                  : Y1        : output : 3.3-V LVTTL       :         : 1         : N              
+PC[12]                       : Y2        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[11]                      : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
+Alu[24]                      : Y4        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : Y5        :        :                   :         : 1         :                
 GND_PLL1                     : Y6        : gnd    :                   :         :           :                
 VCCD_PLL1                    : Y7        : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : Y8        : gnd    :                   :         :           :                
 GND                          : Y9        : gnd    :                   :         :           :                
-PC[31]                       : Y10       : output : 3.3-V LVTTL       :         : 8         : N              
-extrapcnext[21]              : Y11       : output : 3.3-V LVTTL       :         : 8         : N              
-Alu[15]                      : Y12       : output : 3.3-V LVTTL       :         : 8         : N              
-resultB[24]                  : Y13       : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[7]                   : Y14       : output : 3.3-V LVTTL       :         : 7         : N              
-MemData[6]                   : Y15       : output : 3.3-V LVTTL       :         : 7         : N              
-extrapcnext[10]              : Y16       : output : 3.3-V LVTTL       :         : 7         : N              
+PC[8]                        : Y10       : output : 3.3-V LVTTL       :         : 8         : N              
+PC[1]                        : Y11       : output : 3.3-V LVTTL       :         : 8         : N              
+resultB[5]                   : Y12       : output : 3.3-V LVTTL       :         : 8         : N              
+WriteDataReg[31]             : Y13       : output : 3.3-V LVTTL       :         : 7         : N              
+WriteDataReg[16]             : Y14       : output : 3.3-V LVTTL       :         : 7         : N              
+WriteDataReg[4]              : Y15       : output : 3.3-V LVTTL       :         : 7         : N              
+MemData[24]                  : Y16       : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : Y17       : gnd    :                   :         :           :                
-PC[28]                       : Y18       : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : Y18       :        :                   :         : 7         :                
 GNDA_PLL4                    : Y19       : gnd    :                   :         :           :                
 VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                
-Reg_Desloc[3]                : Y21       : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[26]               : Y22       : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[9]                : Y23       : output : 3.3-V LVTTL       :         : 6         : N              
-DeslocSinal[19]              : Y24       : output : 3.3-V LVTTL       :         : 6         : N              
-State[3]                     : Y25       : output : 3.3-V LVTTL       :         : 6         : N              
-Reg_Desloc[20]               : Y26       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : Y21       :        :                   :         : 6         :                
+GND*                         : Y22       :        :                   :         : 6         :                
+GND*                         : Y23       :        :                   :         : 6         :                
+GND*                         : Y24       :        :                   :         : 6         :                
+GND*                         : Y25       :        :                   :         : 6         :                
+GND*                         : Y26       :        :                   :         : 6         :                

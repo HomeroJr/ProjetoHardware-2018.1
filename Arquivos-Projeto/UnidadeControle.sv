@@ -35,7 +35,9 @@ module UnidadeControle(input logic clock,
 			ADDLOAD/*21*/, ADD/*22*/, ADDU/*23*/, AND/*24*/, SUB/*25*/,
 			SUBU/*26*/, ADDComp/*27*/, XOR/*28*/, BREAK/*29*/, NOP/*30*/, 
 			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
-			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/} state, nextState;
+			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/, SLLV /*40*/,
+			SLLVEND/*41*/, SRA /*42*/, SRAEND /*43*/, SRAV/*44*/, SRAVEND /*45*/,
+			SRL /*46*/, SRLEND /*47*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)
@@ -619,7 +621,7 @@ case(state)
 	PCWriCond = 1'b0;
 	RegAload = 1'b1;
 	RegBload = 1'b1;
-	setShift = 3'b001; //setShift 001 = LOAD B
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	ALUOutCtrl = 1'b0;
 	case(Funct)
@@ -640,6 +642,18 @@ case(state)
 			end
 			6'b000000:begin
 			nextState = SLL;
+			end
+			6'b000100:begin
+			nextState = SLLV;
+			end
+			6'b000011:begin
+			nextState = SRA;
+			end
+			6'b000111:begin
+			nextState = SRAV;
+			end
+			6'b000010:begin
+			nextState = SRL;
 			end
 			6'b001000:begin
 			nextState = JR;
@@ -806,7 +820,7 @@ case(state)
 	EscReg = 1'b1;
 	RegDst = 1'b1;
 	IREsc = 1'b0;
-	Mem2Reg = 3'b001;
+	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
@@ -825,10 +839,10 @@ case(state)
 	SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
-	EscReg = 1'b1;
+	EscReg = 1'b0;
 	RegDst = 1'b1;
 	IREsc = 1'b0;
-	Mem2Reg = 3'b001;
+	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
@@ -839,11 +853,55 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	setShift = 3'b000;
+	setShift = 3'b001;  //carrega o registrador de deslocamento
 	EPCWrite = 1'b0;
 	nextState = SLLEND;
 	end
 	SLLEND:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101; //pega o resultado do shift
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b010; //realiza deslocamento a esquerda logico
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
+	end
+	SLLV:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b0;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b001;  //setShift 001 = LOAD B
+	EPCWrite = 1'b0;
+	nextState = SLLVEND;
+	end
+	SLLVEND:begin
 	SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
@@ -861,7 +919,139 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	setShift = 3'b000;
+	setShift = 3'b010;
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
+	end
+	SRA:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b0;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b001; //carrega o registrador
+	EPCWrite = 1'b0;
+	nextState = SRAEND;
+	end
+	SRAEND:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b100; //shift a direita aritmetico 
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
+	end
+	SRAV:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b0;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b001; //carrega o registrador
+	EPCWrite = 1'b0;
+	nextState = SRAVEND;
+	end
+	SRAVEND:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b100; //shift a direita aritmetico
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
+	end
+	SRL:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b0;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b001; //carrega o registrador
+	EPCWrite = 1'b0;
+	nextState = SRLEND;
+	end
+	SRLEND:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b011;  //shift a direita logico
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end

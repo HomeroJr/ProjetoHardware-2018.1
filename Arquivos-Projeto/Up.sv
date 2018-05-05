@@ -5,12 +5,9 @@ module Up(input logic clock,
 			output logic [31:0] Alu,
 			output logic [31:0] resultB, //resultado de B
 			output logic [31:0] writeDataMem,
-			output logic [31:0] extrapcnext,
 			output logic [31:0] PC,
 			output logic [31:0] WriteDataReg,
 			output logic [4:0] WriteRegister,
-			output logic [31:0] DeslocInst,
-			output logic [31:0] DeslocSinal,
 			output logic wr,
 			output logic RegWrite,
 			output logic IRWrite,
@@ -61,6 +58,9 @@ logic [1:0] selwrmem;
 logic [31:0] MemDataExt;
 logic [2:0] setDesloc;
 logic [4:0] lineshamt;
+logic [31:0] DeslocInst;
+logic [31:0] DeslocSinal;
+logic [31:0] extrapcnext;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);

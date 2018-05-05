@@ -488,42 +488,6 @@ AdderMem16:AdderHlf
 
 # end
 # entity
-UnidadeControle
-# storage
-db|UP.(1).cnf
-db|UP.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-unidadecontrole.sv
-b75732d462cf995b1dca571b8b602cc7
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-UnidadeControle:UC
-}
-# macro_sequence
-
-# end
-# entity
 Registrador
 # storage
 db|UP.(2).cnf
@@ -1442,7 +1406,7 @@ ON
 # case_sensitive
 # source_file
 up.sv
-17c677e8e75f2288dbee74876c82d
+cea3349ba127895492c9948c311d5
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1462,6 +1426,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 |
+}
+# macro_sequence
+
+# end
+# entity
+UnidadeControle
+# storage
+db|UP.(1).cnf
+db|UP.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+unidadecontrole.sv
+eb5a214c2dd59669f7594d1ffd225cfd
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+UnidadeControle:UC
 }
 # macro_sequence
 

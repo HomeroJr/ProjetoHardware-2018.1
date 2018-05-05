@@ -844,7 +844,6 @@ case(state)
 	nextState = SLLEND;
 	end
 	SLLEND:begin
-	SLL:begin
 	SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
@@ -1045,6 +1044,5 @@ case(state)
 	EPCWrite = 1'b1;
 	nextState = BUSCA;
 	end
-end
 endcase
 endmodule:UnidadeControle

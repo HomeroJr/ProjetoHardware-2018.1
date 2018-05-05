@@ -111,7 +111,7 @@ UnidadeControle UC (.clock(clock),
 					.ALUOutCtrl(comALUOut),
 					.RegAload(comRegA),
 					.RegBload(comRegB),
-					.shiftSel(setDesloc),
+					.setShift(setDesloc),
 					.EPCWrite(WriteEPC),
 					.stateout(State)
 					);
@@ -233,7 +233,7 @@ Registrador ALUOutReg (.Clk(clock),
 					);
 					
 MuxShiftAmount MuxShamt (.shamt(lineshamt),
-				.RegA(regAout),
+				.regA(regAout),
 				.code15to0(code15_0)
 				);
 					

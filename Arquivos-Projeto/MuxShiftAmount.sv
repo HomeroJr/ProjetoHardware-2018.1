@@ -5,14 +5,14 @@ module MuxShiftAmount (output logic [4:0] shamt,
 logic [5:0] functRead;
 logic [4:0] shiftOver;
 						
-assign functRead = code15_0[5:0];
+assign functRead = code15to0[5:0];
 assign shiftOver = regA[31:5];
 						
-	always@(code15_0)
+	always@(code15to0)
 	begin
 		case(functRead)
 		6'b000000:begin
-		shamt = code15_0[10:6];
+		shamt = code15to0[10:6];
 		end
 		6'b000100:begin
 			case(shiftOver)
@@ -23,7 +23,7 @@ assign shiftOver = regA[31:5];
 			endcase
 		end
 		6'b000011:begin
-		shamt = code15_0[10:6];
+		shamt = code15to0[10:6];
 		end
 		6'b000111:begin
 			case(shiftOver)
@@ -34,7 +34,7 @@ assign shiftOver = regA[31:5];
 			endcase
 		end
 		6'b000010:begin
-		shamt = code15_0[10:6];
+		shamt = code15to0[10:6];
 		end
 		endcase
 	end

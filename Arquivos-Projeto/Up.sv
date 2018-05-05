@@ -3,7 +3,6 @@ module Up(input logic clock,
 			output logic [31:0] Address,
 			output logic [31:0] MemData,
 			output logic [31:0] Alu,
-			output logic [31:0] resultB, //resultado de B
 			output logic [31:0] writeDataMem,
 			output logic [31:0] PC,
 			output logic [31:0] WriteDataReg,
@@ -19,6 +18,7 @@ module Up(input logic clock,
 
 //logic [tamanho] nome 
 logic [31:0] resultA;
+logic [31:0] resultB; //resultado de B
 logic [4:0] code25_21;
 logic [4:0] code20_16;
 logic [31:0] regisA;
@@ -65,6 +65,7 @@ logic sinalMenor;
 logic storeOver;
 logic [31:0] OverOp;
 logic [31:0] Overfill;
+logic [31:0] PCplus8;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -190,6 +191,7 @@ Multiplex MuxIorD (.f(Address),
 MultiplexMini RegDst (.f(WriteRegister),
 					.a(code20_16),
 					.b(code15_0[15:11]),
+					.c(5'b11111),
 					.sel(chooseRegDst)
 					);
 					
@@ -216,7 +218,7 @@ Multiplex3bit MuxSrcPC (.h(pc_next),
 						.sel(pc_choosenext)
 						);
 						
-Multiplex3bit MuxMem2Reg (.h(WriteDataReg),
+Multiplex3bit MuxMem2Reg (.i(WriteDataReg),
 							.a(MDR),
 							.b(AluOut),
 							.c(luishift), //quando LUI, sel = 010.
@@ -224,6 +226,7 @@ Multiplex3bit MuxMem2Reg (.h(WriteDataReg),
 							.e(MDRHalf),
 							.f(Reg_Desloc), //quando SHIFT, sel = 101
 							.g(sinalMenor), //quando SLT, sel = 110
+							.h(PCplus8), //quando JAL, sel = 111
 							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
@@ -239,6 +242,10 @@ Ula32 ULA (.A(resultA),
 			);
 			
 			
+JALReg SalvaPC (.PCSave(PCplus8),
+				.Aluresult(Alu),
+				.Opcode(code31_26)
+				);
 
 Registrador ALUOutReg (.Clk(clock),
 					.Entrada(Alu),
@@ -267,7 +274,7 @@ SignedExtend SinalExtensao (.codein(code15_0),
 Registrador SignOverflow (.Clk(clock),
 							.Entrada(Overfill),
 							.Saida(OverOp),
-							.Reset(reset_l),
+							.Reset(State[0]),
 							.Load(storeOver)
 							);
 

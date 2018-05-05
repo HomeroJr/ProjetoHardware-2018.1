@@ -7,7 +7,7 @@ module UnidadeControle(input logic clock,
 			output logic ULASrcA,
 			output logic [2:0] ULASrcB,
 			output logic EscReg,
-			output logic RegDst,
+			output logic [1:0] RegDst,
 			output logic IREsc,
 			output logic [2:0] Mem2Reg,
 			output logic WriteMem,
@@ -33,14 +33,14 @@ module UnidadeControle(input logic clock,
 			LHUWBS/*11*/, LW/*12*/, SW/*13*/, WBS/*14*/, SB/*15*/,
 			SBMEM/*16*/, SBWRITE/*17*/, SH/*18*/, SHMEM/*19*/, SHWRITE/*20*/, 
 			ADDLOAD/*21*/, ADD/*22*/, ADDU/*23*/, AND/*24*/, SUB/*25*/,
-			SUBU/*26*/, ADDComp/*27*/, XOR/*28*/, BREAK/*29*/, NOP/*30*/, 
-			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
-			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/, SLLV /*40*/,
-			SLLVEND/*41*/, SRA /*42*/, SRAEND /*43*/, SRAV/*44*/, SRAVEND /*45*/,
-			SRL /*46*/, SRLEND /*47*/, SLT /*48*/, RTE /*49*/, ADDILOAD /*50*/, 
-			ADDI /*51*/, ADDIWRITE /*52*/, ADDIULOAD /*53*/, ADDIU /*54*/, ADDIUWRITE /*55*/,
-			ANDILOAD /*56*/, ANDI /*57*/, ANDIWRITE /*58*/, SLTILOAD /*59*/, SLTI /*60*/, 
-			SXORILOAD /*61*/, SXORI /*62*/, SXORIWRITE /*63*/, OPCODEERROR /*64*/} state, nextState;
+			SUBU/*26*/, ADDComp/*27*/, XOR/*28*/, BREAK/*29*/, JUMP/*30*/,
+			JR/*31*/, BNE/*32*/, BEQ/*33*/, LUI/*34*/, WAITLW/*35*/, 
+			SLL /*36*/, SLLEND /*37*/, SLLV /*38*/, SLLVEND/*39*/, SRA /*40*/, 
+			SRAEND /*41*/, SRAV/*42*/, SRAVEND /*43*/, SRL /*44*/, SRLEND /*45*/,
+			SLT /*46*/, OVERFLOW/*47*/, RTE /*48*/, ADDILOAD /*49*/, ADDI /*50*/, 
+			ADDIWRITE /*51*/, ADDIULOAD /*52*/, ADDIU /*53*/, ADDIUWRITE /*54*/, ANDILOAD /*55*/, 
+			ANDI /*56*/, ANDIWRITE /*57*/, SLTILOAD /*58*/, SLTI /*59*/, SXORILOAD /*60*/, 
+			SXORI /*61*/, SXORIWRITE /*62*/, OPCODEERROR /*63*/, JALLOAD /*64*/, JAL /*65*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)
@@ -64,7 +64,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -87,7 +87,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01; // carrega o 4 
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0; //sempre leia a memoria quando = 0, escrever quando = 1
@@ -110,7 +110,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -133,7 +133,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b1;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -156,17 +156,17 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b11;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;  //LOAD
+	ULAOp = 3'b001;  //ADD
 	IorD = 1'b0;
 	PCWri = 1'b0;
 	PCWriCond = 1'b0;
-	ALUOutCtrl = 1'b0;
+	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
 	saveOver = 1'b0;
@@ -175,6 +175,9 @@ case(state)
 		case(OPcode)
 		6'b000010:begin
 		 nextState = JUMP;
+		end
+		6'b000011:begin
+		 nextState = JR;
 		end
 		6'b000100:begin
 		 nextState = BEQ;
@@ -208,19 +211,19 @@ case(state)
 		 nextState = ADDLOAD;
         end
 		6'b001000:begin
-		nextState = ADDI;
+		nextState = ADDILOAD;
 		end
 		6'b001001:begin
-		nextState = ADDIU;
+		nextState = ADDIULOAD;
 		end
 		6'b001100:begin
-		nextState = ANDI;
+		nextState = ANDILOAD;
 		end
 		6'b001010:begin
-		nextState = SLTI;
+		nextState = SLTILOAD;
 		end
 		6'b001110:begin
-		nextState = SXORI;
+		nextState = SXORILOAD;
 		end
 		
 		default: nextState = OPCODEERROR; //excecao opcode inexistente
@@ -232,7 +235,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -270,7 +273,7 @@ case(state)
 		6'b00000:begin
 		nextState = RTE;
 		end
-		default: nextState = NOP;
+		default: nextState = OPCODEERROR;
 		endcase
 	end
 	
@@ -279,7 +282,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -302,7 +305,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -325,7 +328,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b011; //MDRByte
 	WriteMem = 1'b0;
@@ -348,7 +351,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -371,7 +374,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -394,7 +397,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b100; //MDRHalf
 	WriteMem = 1'b0;
@@ -417,7 +420,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -441,7 +444,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -465,7 +468,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -488,7 +491,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -511,7 +514,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -534,7 +537,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b1;
@@ -558,7 +561,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -581,7 +584,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -604,7 +607,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b1;
@@ -627,7 +630,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b1;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b1;
@@ -651,7 +654,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -704,7 +707,13 @@ case(state)
 			6'b101010:begin
 			nextState = SLT;
 			end
-			default: nextState = NOP; //excecao opcode inexistente
+			6'b100001:begin
+			nextState = ADDU;
+			end
+			6'b100011:begin
+			nextState = SUBU;
+			end
+			default: nextState = OPCODEERROR; //excecao opcode inexistente
 			endcase
 	end
 	
@@ -713,7 +722,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -744,7 +753,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -768,7 +777,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -799,7 +808,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -823,7 +832,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -847,7 +856,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -870,7 +879,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -893,7 +902,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -916,7 +925,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101; //pega o resultado do shift
 	WriteMem = 1'b0;
@@ -939,7 +948,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -962,7 +971,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -985,7 +994,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1008,7 +1017,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1031,7 +1040,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1054,7 +1063,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1077,7 +1086,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1100,7 +1109,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b101;
 	WriteMem = 1'b0;
@@ -1123,7 +1132,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
-	RegDst = 1'b1;
+	RegDst = 2'b01;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b110; //pega o sinal de menor que sair da ula
 	WriteMem = 1'b0;
@@ -1146,7 +1155,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1164,36 +1173,13 @@ case(state)
 	EPCWrite = 1'b0;
 	nextState = BREAK;
 	end
-	NOP:begin
-	SrcPC = 2'b000;
-	ULASrcA = 1'b0;
-	ULASrcB = 2'b00;
-	EscReg = 1'b0;
-	RegDst = 1'b0;
-	IREsc = 1'b0;
-	Mem2Reg = 3'b000;
-	WriteMem = 1'b0;
-	SelMemWrite = 2'b00;
-	StoreMem = 1'b0;
-	ULAOp = 3'b010;  //SUB
-	IorD = 1'b0;
-	PCWri = 1'b0;
-	PCWriCond = 1'b0;
-	ALUOutCtrl = 1'b0; //precisa de EPC?
-	RegAload = 1'b0;
-	RegBload = 1'b0;
-	saveOver = 1'b0;
-	setShift = 3'b000;
-	EPCWrite = 1'b0;
-	nextState = BUSCA;
-	end
 	
 	JUMP:begin
 	SrcPC = 2'b010;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1203,7 +1189,7 @@ case(state)
 	IorD = 1'b0;
 	PCWri = 1'b1;
 	PCWriCond = 1'b0;
-	ALUOutCtrl = 1'b1; //precisa de EPC?
+	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
 	saveOver = 1'b0;
@@ -1217,7 +1203,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 2'b00;
 	WriteMem = 1'b0;
@@ -1241,7 +1227,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1264,7 +1250,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1287,7 +1273,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b010;
 	WriteMem = 1'b0;
@@ -1310,7 +1296,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b001;
 	WriteMem = 1'b0;
@@ -1333,7 +1319,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1356,7 +1342,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1379,7 +1365,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1409,7 +1395,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1432,7 +1418,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1455,7 +1441,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1478,7 +1464,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1501,7 +1487,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1524,7 +1510,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1547,7 +1533,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1570,7 +1556,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1593,7 +1579,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;  //escreve no registrador t
+	RegDst = 2'b00;  //escreve no registrador t
 	IREsc = 1'b0;
 	Mem2Reg = 3'b110; //pega o sinal de menor que sair da ula
 	WriteMem = 1'b0;
@@ -1616,7 +1602,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1639,7 +1625,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1662,7 +1648,7 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1685,7 +1671,7 @@ case(state)
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
-	RegDst = 1'b0;
+	RegDst = 2'b00;
 	IREsc = 1'b0;
 	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
@@ -1701,6 +1687,52 @@ case(state)
 	saveOver = 1'b0;
 	setShift = 3'b000;
 	EPCWrite = 1'b1;
+	nextState = BUSCA;
+	end
+	JALLOAD:begin
+	SrcPC = 2'b000;
+	ULASrcA = 1'b0;
+	ULASrcB = 2'b01;
+	EscReg = 1'b0;
+	RegDst = 2'b00;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b000;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b001; //faz a soma do PC que está atualmente no estado
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	saveOver = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
+	nextState = JALLOAD;
+	end
+	JAL:begin
+	SrcPC = 2'b010; //simultaneamente incrementa o PC com o immediate
+	ULASrcA = 1'b0;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 2'b11; //destino: registrador 31
+	IREsc = 1'b0;
+	Mem2Reg = 3'b111; //seleciona o valor de PC que salvou no registrador exclusivo para o JAL
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;  //LOAD
+	IorD = 1'b0;
+	PCWri = 1'b1;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	saveOver = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
 endcase

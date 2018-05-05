@@ -17710,8 +17710,8 @@ VECTOR("C:/Users/phjc/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Waveform2.
 	ZOOM{
 		ZBEGIN = 1450;
 		ZEND = 71150;
-		NUMERATOR = 0;
-		DENOMINATOR = 0;
+		NUMERATOR = 20;
+		DENOMINATOR = 1000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{

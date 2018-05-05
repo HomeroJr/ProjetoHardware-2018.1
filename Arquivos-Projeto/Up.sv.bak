@@ -59,14 +59,15 @@ logic [31:0] addrHalf;
 logic [31:0] addrByte;
 logic [1:0] selwrmem;
 logic [31:0] MemDataExt;
+logic [2:0] setDesloc;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
 
 always @(code25_21)
 begin
-extrapcnext[31:30] = 2'b00;
-extrapcnext[29:26] =  PC[31:28];
+extrapcnext[31:28] = PC[31:28];
+extrapcnext[27:26] =  2'b00;
 extrapcnext[25:21] = code25_21;
 extrapcnext[20:16] = code20_16;
 extrapcnext[15:0] = code15_0;
@@ -109,6 +110,7 @@ UnidadeControle UC (.clock(clock),
 					.ALUOutCtrl(comALUOut),
 					.RegAload(comRegA),
 					.RegBload(comRegB),
+					.shiftSel(setDesloc),
 					.EPCWrite(WriteEPC),
 					.stateout(State)
 					);

@@ -18,10 +18,10 @@ module UnidadeControle(input logic clock,
 			output logic PCWri,
 			output logic PCWriCond,
 			output logic ALUOutCtrl,
-			output logic [4:0] stateout,
+			output logic [2:0] setShift,
+			output logic [5:0] stateout,
 			output logic RegAload,
 			output logic RegBload,
-			output logic [2:0] shiftSel,
 			output logic EPCWrite
 			);
 			//output logic stateout);
@@ -35,7 +35,7 @@ module UnidadeControle(input logic clock,
 			ADDLOAD/*21*/, ADD/*22*/, ADDU/*23*/, AND/*24*/, SUB/*25*/,
 			SUBU/*26*/, ADDComp/*27*/, XOR/*28*/, BREAK/*29*/, NOP/*30*/, 
 			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
-			WAITLW/*36*/, OVERFLOW/*37*/} state, nextState;
+			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)
@@ -72,7 +72,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000; //setShift 000 = load
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -94,7 +94,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = WAIT;
 	end
@@ -116,7 +116,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = WRITE;
 	end
@@ -138,7 +138,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = DECODE;
 	end
@@ -160,7 +160,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 		case(OPcode)
 		6'b000010:begin
@@ -203,7 +203,7 @@ case(state)
 		endcase
 	end
 	
-	LWorSW:begin
+	LORS:begin
 	SrcPC = 2'b00;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
@@ -221,7 +221,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 		case(OPcode)
 		6'b101011:begin
@@ -264,7 +264,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = LBUMEM; 
 	end
@@ -286,7 +286,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = LBUWBS;
 	end
@@ -308,7 +308,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -330,7 +330,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = LHUMEM; 
 	end
@@ -352,7 +352,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = LHUWBS;
 	end
@@ -374,7 +374,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -396,7 +396,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = WAITLW;
 	end
@@ -419,7 +419,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b1;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = WBS;
 	end
@@ -442,7 +442,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -464,7 +464,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = SBMEM; 
 	end
@@ -486,7 +486,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = SBWRITE;
 	end
@@ -508,7 +508,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -531,7 +531,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = SHMEM; 
 	end
@@ -553,7 +553,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = SHWRITE;
 	end
@@ -575,7 +575,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -597,7 +597,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -607,9 +607,9 @@ case(state)
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
-	RegDst = 1'b1;
+	RegDst = 1'b0;
 	IREsc = 1'b0;
-	Mem2Reg = 3'b001;
+	Mem2Reg = 3'b000;
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
@@ -619,9 +619,9 @@ case(state)
 	PCWriCond = 1'b0;
 	RegAload = 1'b1;
 	RegBload = 1'b1;
-	shiftSel = 3'b000;
+	setShift = 3'b001; //setShift 001 = LOAD B
 	EPCWrite = 1'b0;
-	ALUOutCtrl = 1'b1;
+	ALUOutCtrl = 1'b0;
 	case(Funct)
 			6'b100000:begin
 			nextState = ADD;
@@ -639,7 +639,7 @@ case(state)
 			nextState = BREAK;
 			end
 			6'b000000:begin
-			nextState = NOP;
+			nextState = SLL;
 			end
 			6'b001000:begin
 			nextState = JR;
@@ -666,7 +666,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 		case(sinalOverflow)
 		1'b0:begin
@@ -696,7 +696,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = ADDComp;
 	end
@@ -719,7 +719,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	case(sinalOverflow)
 		1'b0:begin
@@ -749,7 +749,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = ADDComp;
 	end
@@ -772,7 +772,7 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = ADDComp;
 	end
@@ -795,7 +795,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -817,9 +817,54 @@ case(state)
 	ALUOutCtrl = 1'b1;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = ADDComp;
+	end
+	SLL:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b001;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
+	nextState = SLLEND;
+	end
+	SLLEND:begin
+	SLL:begin
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b101;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000;
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
 	end
 	BREAK:begin
 	SrcPC = 2'b00;
@@ -839,7 +884,7 @@ case(state)
 	ALUOutCtrl = 1'b0; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BREAK;
 	end
@@ -861,7 +906,7 @@ case(state)
 	ALUOutCtrl = 1'b0; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -884,13 +929,14 @@ case(state)
 	ALUOutCtrl = 1'b1; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
+	
 	JR:begin
-	SrcPC = 2'b10;
-	ULASrcA = 1'b0;
+	SrcPC = 2'b00;
+	ULASrcA = 1'b1;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
 	RegDst = 1'b0;
@@ -899,14 +945,14 @@ case(state)
 	WriteMem = 1'b0;
 	SelMemWrite = 2'b00;
 	StoreMem = 1'b0;
-	ULAOp = 3'b000;  //LOAD, a função load simplemente carrega o registrador A
+	ULAOp = 3'b000;  //LOAD, a função load simplemente passa o valor do MuxSrcA
 	IorD = 1'b0;
 	PCWri = 1'b1;
 	PCWriCond = 1'b0;
-	ALUOutCtrl = 1'b1; //precisa de EPC?
+	ALUOutCtrl = 1'b0; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -929,7 +975,7 @@ case(state)
 	ALUOutCtrl = 1'b0; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -951,7 +997,7 @@ case(state)
 	ALUOutCtrl = 1'b0; //precisa de EPC?
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -973,7 +1019,7 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
@@ -995,10 +1041,10 @@ case(state)
 	ALUOutCtrl = 1'b0;
 	RegAload = 1'b0;
 	RegBload = 1'b0;
-	shiftSel = 3'b000;
+	setShift = 3'b000;
 	EPCWrite = 1'b1;
 	nextState = BUSCA;
 	end
-	
+end
 endcase
 endmodule:UnidadeControle

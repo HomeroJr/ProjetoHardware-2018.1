@@ -15,7 +15,7 @@ module Up(input logic clock,
 			output logic RegWrite,
 			output logic IRWrite,
 			output logic [31:0] AluOut,
-			output logic [4:0] State,
+			output logic [5:0] State,
 			output logic [31:0] Reg_Desloc
 			);
 
@@ -60,14 +60,15 @@ logic [31:0] addrByte;
 logic [1:0] selwrmem;
 logic [31:0] MemDataExt;
 logic [2:0] setDesloc;
+logic [4:0] lineshamt;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
 
 always @(code25_21)
 begin
-extrapcnext[31:30] = 2'b00;
-extrapcnext[29:26] =  PC[31:28];
+extrapcnext[31:28] = PC[31:28];
+extrapcnext[27:26] =  2'b00;
 extrapcnext[25:21] = code25_21;
 extrapcnext[20:16] = code20_16;
 extrapcnext[15:0] = code15_0;
@@ -206,10 +207,10 @@ Multiplex2bit MuxSrcPC (.f(pc_next),
 Multiplex3bit MuxMem2Reg (.g(WriteDataReg),
 							.a(MDR),
 							.b(AluOut),
-							.c(luishift), //quando LUI, sel = 10.
+							.c(luishift), //quando LUI, sel = 010.
 							.d(MDRByte),
 							.e(MDRHalf),
-							.f(Reg_Desloc),
+							.f(Reg_Desloc), //quando SHIFT, sel = 101
 							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
@@ -231,10 +232,15 @@ Registrador ALUOutReg (.Clk(clock),
 					.Load(comALUOut)
 					);
 					
+MuxShiftAmount MuxShamt (.shamt(lineshamt),
+				.RegA(regAout),
+				.code15to0(code15_0)
+				);
+					
 RegDesloc ShiftOp (.Clk(clock),
 					.Reset(reset_l),
 					.Shift(setDesloc), //recebe o seletor da unidade de controle, tem que dar 'load' por aqui
-					.N(code15_0[10:6]),
+					.N(lineshamt),
 					.Entrada(regBout),
 					.Saida(Reg_Desloc)
 					);

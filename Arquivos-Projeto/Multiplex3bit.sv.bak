@@ -1,5 +1,5 @@
 module Multiplex3bit (output logic [31:0] g,
-			input logic [31:0] a,b,c,d,e,f
+			input logic [31:0] a,b,c,d,e,f,
 			input logic [2:0] sel);
 			
 			

@@ -5,7 +5,7 @@ module UnidadeControle(input logic clock,
 			input logic [5:0] Funct,
 			output logic [1:0] SrcPC,
 			output logic ULASrcA,
-			output logic [1:0] ULASrcB,
+			output logic [2:0] ULASrcB,
 			output logic EscReg,
 			output logic RegDst,
 			output logic IREsc,
@@ -37,7 +37,7 @@ module UnidadeControle(input logic clock,
 			JUMP/*31*/, JR/*32*/, BNE/*33*/, BEQ/*34*/, LUI/*35*/, 
 			WAITLW/*36*/, OVERFLOW/*37*/, SLL /*38*/, SLLEND /*39*/, SLLV /*40*/,
 			SLLVEND/*41*/, SRA /*42*/, SRAEND /*43*/, SRAV/*44*/, SRAVEND /*45*/,
-			SRL /*46*/, SRLEND /*47*/} state, nextState;
+			SRL /*46*/, SRLEND /*47*/, SLT /*48*/, RTE /*49*/} state, nextState;
 			assign stateout = state;
 			
 always_ff@(negedge clock, posedge reset)
@@ -57,7 +57,7 @@ always_ff@(negedge clock, posedge reset)
 always_comb
 case(state)
 	RESET: begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -79,7 +79,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	BUSCA:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01; // carrega o 4 
 	EscReg = 1'b0;
@@ -101,7 +101,7 @@ case(state)
 	nextState = WAIT;
 	end
 	WAIT:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -123,7 +123,7 @@ case(state)
 	nextState = WRITE;
 	end
 	WRITE:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -145,7 +145,7 @@ case(state)
 	nextState = DECODE;
 	end
 	DECODE:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b11;
 	EscReg = 1'b0;
@@ -206,7 +206,7 @@ case(state)
 	end
 	
 	LORS:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -244,12 +244,15 @@ case(state)
 		6'b101001:begin
 		nextState = SH;
 		end
+		6'b00000:begin
+		nextState = RTE;
+		end
 		default: nextState = NOP;
 		endcase
 	end
 	
 	LBU:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -271,7 +274,7 @@ case(state)
 	nextState = LBUMEM; 
 	end
 	LBUMEM:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -293,7 +296,7 @@ case(state)
 	nextState = LBUWBS;
 	end
 	LBUWBS:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
@@ -315,7 +318,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	LHU:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -337,7 +340,7 @@ case(state)
 	nextState = LHUMEM; 
 	end
 	LHUMEM:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -359,7 +362,7 @@ case(state)
 	nextState = LHUWBS;
 	end
 	LHUWBS:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
@@ -381,7 +384,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	LW:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -404,7 +407,7 @@ case(state)
 	end
 	
 	WAITLW:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -427,7 +430,7 @@ case(state)
 	end
 	
 	WBS:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b1;
@@ -449,7 +452,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SB:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -471,7 +474,7 @@ case(state)
 	nextState = SBMEM; 
 	end
 	SBMEM:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -493,7 +496,7 @@ case(state)
 	nextState = SBWRITE;
 	end
 	SBWRITE:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -516,7 +519,7 @@ case(state)
 	end
 	
 	SH:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -538,7 +541,7 @@ case(state)
 	nextState = SHMEM; 
 	end
 	SHMEM:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -560,7 +563,7 @@ case(state)
 	nextState = SHWRITE;
 	end
 	SHWRITE:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b10;
 	EscReg = 1'b0;
@@ -582,7 +585,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SW:begin
-    SrcPC = 2'b00;
+    SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -605,7 +608,7 @@ case(state)
 	end
 	
 	ADDLOAD:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -658,12 +661,15 @@ case(state)
 			6'b001000:begin
 			nextState = JR;
 			end
+			6'b101010:begin
+			nextState = SLT;
+			end
 			default: nextState = NOP; //excecao opcode inexistente
 			endcase
 	end
 	
 	ADD:begin
-    SrcPC = 2'b00;
+    SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -693,7 +699,7 @@ case(state)
 	end
 	
 	ADDU:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -716,7 +722,7 @@ case(state)
 	end
 	
 	SUB:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -746,7 +752,7 @@ case(state)
 	end
 	
 	SUBU:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -769,7 +775,7 @@ case(state)
 	end
 	
 	AND: begin
-    SrcPC = 2'b00;
+    SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -792,7 +798,7 @@ case(state)
 	end
 	
 	ADDComp: begin
-    SrcPC = 2'b00;
+    SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -814,7 +820,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	XOR: begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -836,7 +842,7 @@ case(state)
 	nextState = ADDComp;
 	end
 	SLL:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -858,7 +864,7 @@ case(state)
 	nextState = SLLEND;
 	end
 	SLLEND:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -880,7 +886,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SLLV:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -902,7 +908,7 @@ case(state)
 	nextState = SLLVEND;
 	end
 	SLLVEND:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -924,7 +930,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SRA:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -946,7 +952,7 @@ case(state)
 	nextState = SRAEND;
 	end
 	SRAEND:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -968,7 +974,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SRAV:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -990,7 +996,7 @@ case(state)
 	nextState = SRAVEND;
 	end
 	SRAVEND:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -1012,7 +1018,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	SRL:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -1034,7 +1040,7 @@ case(state)
 	nextState = SRLEND;
 	end
 	SRLEND:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b1;
@@ -1055,8 +1061,30 @@ case(state)
 	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
+	SLT:begin
+	SrcPC = 2'b000;
+	ULASrcA = 1'b1;
+	ULASrcB = 2'b00;
+	EscReg = 1'b1;
+	RegDst = 1'b1;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b110; //pega o sinal de menor que sair da ula
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b001; //o teste booleano ocorre na ULA durante outras operações
+	IorD = 1'b0;
+	PCWri = 1'b0;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
+	nextState = BUSCA;
+	end
 	BREAK:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -1078,7 +1106,7 @@ case(state)
 	nextState = BREAK;
 	end
 	NOP:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -1101,7 +1129,7 @@ case(state)
 	end
 	
 	JUMP:begin
-	SrcPC = 2'b10;
+	SrcPC = 2'b010;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -1124,7 +1152,7 @@ case(state)
 	end
 	
 	JR:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -1147,7 +1175,7 @@ case(state)
 	end
 	
 	BEQ:begin
-	SrcPC = 2'b01;
+	SrcPC = 2'b001;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -1169,7 +1197,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	BNE:begin
-	SrcPC = 2'b01;
+	SrcPC = 2'b001;
 	ULASrcA = 1'b1;
 	ULASrcB = 2'b00;
 	EscReg = 1'b0;
@@ -1191,7 +1219,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	LUI:begin
-	SrcPC = 2'b00;
+	SrcPC = 2'b000;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b1;
@@ -1213,7 +1241,7 @@ case(state)
 	nextState = BUSCA;
 	end
 	OVERFLOW:begin
-	SrcPC = 2'b11;
+	SrcPC = 2'b011;
 	ULASrcA = 1'b0;
 	ULASrcB = 2'b01;
 	EscReg = 1'b0;
@@ -1232,6 +1260,28 @@ case(state)
 	RegBload = 1'b0;
 	setShift = 3'b000;
 	EPCWrite = 1'b1;
+	nextState = BUSCA;
+	end
+	RTE:begin
+	SrcPC = 2'b100;
+	ULASrcA = 1'b0;
+	ULASrcB = 2'b01;
+	EscReg = 1'b0;
+	RegDst = 1'b0;
+	IREsc = 1'b0;
+	Mem2Reg = 3'b000;
+	WriteMem = 1'b0;
+	SelMemWrite = 2'b00;
+	StoreMem = 1'b0;
+	ULAOp = 3'b000; //LOAD
+	IorD = 1'b0;
+	PCWri = 1'b1;
+	PCWriCond = 1'b0;
+	ALUOutCtrl = 1'b0;
+	RegAload = 1'b0;
+	RegBload = 1'b0;
+	setShift = 3'b000;
+	EPCWrite = 1'b0;
 	nextState = BUSCA;
 	end
 endcase

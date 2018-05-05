@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UP
-Sat May 05 01:48:49 2018
+Sat May 05 04:28:04 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,30 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. State Machine - |Up|UnidadeControle:UC|state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 17. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
- 18. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
- 19. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
- 20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
- 21. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
- 22. Port Connectivity Checks: "Registrador:EPC"
- 23. Port Connectivity Checks: "Ula32:ULA"
- 24. Port Connectivity Checks: "Multiplex3bit:MuxMem2Reg"
- 25. Port Connectivity Checks: "Multiplex2bit:MuxSrcPC"
- 26. Port Connectivity Checks: "Multiplex2bit:MuxSrcB"
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,20 +37,20 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 05 01:48:48 2018        ;
+; Analysis & Synthesis Status        ; Failed - Sat May 05 04:28:04 2018            ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; UP                                           ;
 ; Top-level Entity Name              ; Up                                           ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 3,669                                        ;
-;     Total combinational functions  ; 2,594                                        ;
-;     Dedicated logic registers      ; 1,294                                        ;
-; Total registers                    ; 1294                                         ;
-; Total pins                         ; 304                                          ;
-; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 8,192                                        ;
-; Embedded Multiplier 9-bit elements ; 0                                            ;
-; Total PLLs                         ; 0                                            ;
+; Total logic elements               ; N/A until Partition Merge                    ;
+;     Total combinational functions  ; N/A until Partition Merge                    ;
+;     Dedicated logic registers      ; N/A until Partition Merge                    ;
+; Total registers                    ; N/A until Partition Merge                    ;
+; Total pins                         ; N/A until Partition Merge                    ;
+; Total virtual pins                 ; N/A until Partition Merge                    ;
+; Total memory bits                  ; N/A until Partition Merge                    ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                    ;
+; Total PLLs                         ; N/A until Partition Merge                    ;
 +------------------------------------+----------------------------------------------+
 
 
@@ -166,443 +144,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                             ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------+
-; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Banco_reg.vhd          ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Instr_Reg.vhd          ;
-; Memoria.vhd                      ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Memoria.vhd            ;
-; Multiplex.sv                     ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex.sv           ;
-; Multiplex2bit.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex2bit.sv       ;
-; RegDesloc.vhd                    ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/RegDesloc.vhd          ;
-; UnidadeControle.sv               ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv     ;
-; Registrador.vhd                  ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Registrador.vhd        ;
-; ula32.vhd                        ; yes             ; User VHDL File                   ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/ula32.vhd              ;
-; Up.sv                            ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Up.sv                  ;
-; MultiplexMini.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/MultiplexMini.sv       ;
-; SignedExtend.sv                  ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/SignedExtend.sv        ;
-; Multiplex3op.sv                  ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex3op.sv        ;
-; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/instrucoes.mif         ;
-; UnsignedExtend.sv                ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsignedExtend.sv      ;
-; UnsExtend8.sv                    ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsExtend8.sv          ;
-; UnsExtend16.sv                   ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnsExtend16.sv         ;
-; Multiplex3bit.sv                 ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/Multiplex3bit.sv       ;
-; AdderMem8.sv                     ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/AdderMem8.sv           ;
-; AdderMem16.sv                    ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/AdderMem16.sv          ;
-; MuxShiftAmount.sv                ; yes             ; User SystemVerilog HDL File      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/MuxShiftAmount.sv      ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/lpm_ram_dq.tdf         ;
-; altram.tdf                       ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/altram.tdf             ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/users/paulinho/desktop/quartus/quartus/libraries/megafunctions/altsyncram.tdf         ;
-; db/altsyncram_e1a1.tdf           ; yes             ; Auto-Generated Megafunction      ; D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/db/altsyncram_e1a1.tdf ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 3,669 ;
-;                                             ;       ;
-; Total combinational functions               ; 2594  ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1951  ;
-;     -- 3 input functions                    ; 550   ;
-;     -- <=2 input functions                  ; 93    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 2574  ;
-;     -- arithmetic mode                      ; 20    ;
-;                                             ;       ;
-; Total registers                             ; 1294  ;
-;     -- Dedicated logic registers            ; 1294  ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 304   ;
-; Total memory bits                           ; 8192  ;
-; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 1326  ;
-; Total fan-out                               ; 15523 ;
-; Average fan-out                             ; 3.67  ;
-+---------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                    ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Library Name ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-; |Up                                             ; 2594 (18)         ; 1294 (0)     ; 8192        ; 0            ; 0       ; 0         ; 304  ; 0            ; |Up                                                                                                       ; work         ;
-;    |Banco_reg:BancoRegs|                        ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Banco_reg:BancoRegs                                                                                   ; work         ;
-;    |Instr_Reg:RegInstrucao|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Instr_Reg:RegInstrucao                                                                                ; work         ;
-;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem                                                                                           ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM                                                                            ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
-;    |Multiplex2bit:MuxSrcB|                      ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcB                                                                                 ; work         ;
-;    |Multiplex2bit:MuxSrcPC|                     ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex2bit:MuxSrcPC                                                                                ; work         ;
-;    |Multiplex3bit:MuxMem2Reg|                   ; 86 (86)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3bit:MuxMem2Reg                                                                              ; work         ;
-;    |Multiplex3op:MuxMemWri|                     ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex3op:MuxMemWri                                                                                ; work         ;
-;    |Multiplex:MuxIorD|                          ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxIorD                                                                                     ; work         ;
-;    |Multiplex:MuxSrcA|                          ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Multiplex:MuxSrcA                                                                                     ; work         ;
-;    |MultiplexMini:RegDst|                       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|MultiplexMini:RegDst                                                                                  ; work         ;
-;    |MuxShiftAmount:MuxShamt|                    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|MuxShiftAmount:MuxShamt                                                                               ; work         ;
-;    |RegDesloc:ShiftOp|                          ; 531 (531)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|RegDesloc:ShiftOp                                                                                     ; work         ;
-;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:ALUOutReg                                                                                 ; work         ;
-;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:A                                                                                         ; work         ;
-;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:B                                                                                         ; work         ;
-;    |Registrador:MemReg|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:MemReg                                                                                    ; work         ;
-;    |Registrador:RegPC|                          ; 28 (28)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Registrador:RegPC                                                                                     ;              ;
-;    |Ula32:ULA|                                  ; 213 (213)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|Ula32:ULA                                                                                             ; work         ;
-;    |UnidadeControle:UC|                         ; 117 (117)         ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Up|UnidadeControle:UC                                                                                    ;              ;
-+-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Up|UnidadeControle:UC|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
-+----------------+--------------+-----------+---------------+------------+--------------+-----------+---------------+------------+--------------+-----------+----------------+--------------+-----------+-----------+-----------+----------+------------+-----------+-------------+-----------+---------------+------------+-----------+-----------+------------+-----------+---------------+---------------+-------------+----------+---------------+-------------+----------+-----------+----------+----------+--------------+--------------+-----------+--------------+--------------+-----------+------------+--------------+-------------+------------+-------------+-------------+
-; Name           ; state.SRLEND ; state.SRL ; state.SRAVEND ; state.SRAV ; state.SRAEND ; state.SRA ; state.SLLVEND ; state.SLLV ; state.SLLEND ; state.SLL ; state.OVERFLOW ; state.WAITLW ; state.LUI ; state.BEQ ; state.BNE ; state.JR ; state.JUMP ; state.NOP ; state.BREAK ; state.XOR ; state.ADDComp ; state.SUBU ; state.SUB ; state.AND ; state.ADDU ; state.ADD ; state.ADDLOAD ; state.SHWRITE ; state.SHMEM ; state.SH ; state.SBWRITE ; state.SBMEM ; state.SB ; state.WBS ; state.SW ; state.LW ; state.LHUWBS ; state.LHUMEM ; state.LHU ; state.LBUWBS ; state.LBUMEM ; state.LBU ; state.LORS ; state.DECODE ; state.WRITE ; state.WAIT ; state.BUSCA ; state.RESET ;
-+----------------+--------------+-----------+---------------+------------+--------------+-----------+---------------+------------+--------------+-----------+----------------+--------------+-----------+-----------+-----------+----------+------------+-----------+-------------+-----------+---------------+------------+-----------+-----------+------------+-----------+---------------+---------------+-------------+----------+---------------+-------------+----------+-----------+----------+----------+--------------+--------------+-----------+--------------+--------------+-----------+------------+--------------+-------------+------------+-------------+-------------+
-; state.RESET    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 0           ;
-; state.BUSCA    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 1           ; 1           ;
-; state.WAIT     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 1          ; 0           ; 1           ;
-; state.WRITE    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 1           ; 0          ; 0           ; 1           ;
-; state.DECODE   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 1            ; 0           ; 0          ; 0           ; 1           ;
-; state.LORS     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 1          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LBU      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 1         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LBUMEM   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 1            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LBUWBS   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 1            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LHU      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 1         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LHUMEM   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 1            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LHUWBS   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 1            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LW       ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 1        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SW       ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 1        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.WBS      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 1         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SB       ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 1        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SBMEM    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 1           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SBWRITE  ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 1             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SH       ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 1        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SHMEM    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 1           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SHWRITE  ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 1             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADDLOAD  ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 1             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADD      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 1         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADDU     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 1          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.AND      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 1         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SUB      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 1         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SUBU     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 1          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.ADDComp  ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 1             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.XOR      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 1         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BREAK    ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 1           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.NOP      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 1         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.JUMP     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 1          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.JR       ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 1        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BNE      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 1         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.BEQ      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 1         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.LUI      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 1         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.WAITLW   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 1            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.OVERFLOW ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 1              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SLL      ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 1         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SLLEND   ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 1            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SLLV     ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 1          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SLLVEND  ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 1             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRA      ; 0            ; 0         ; 0             ; 0          ; 0            ; 1         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRAEND   ; 0            ; 0         ; 0             ; 0          ; 1            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRAV     ; 0            ; 0         ; 0             ; 1          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRAVEND  ; 0            ; 0         ; 1             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRL      ; 0            ; 1         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-; state.SRLEND   ; 1            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0             ; 0          ; 0            ; 0         ; 0              ; 0            ; 0         ; 0         ; 0         ; 0        ; 0          ; 0         ; 0           ; 0         ; 0             ; 0          ; 0         ; 0         ; 0          ; 0         ; 0             ; 0             ; 0           ; 0        ; 0             ; 0           ; 0        ; 0         ; 0        ; 0        ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0          ; 0            ; 0           ; 0          ; 0           ; 1           ;
-+----------------+--------------+-----------+---------------+------------+--------------+-----------+---------------+------------+--------------+-----------+----------------+--------------+-----------+-----------+-----------+----------+------------+-----------+-------------+-----------+---------------+------------+-----------+-----------+------------+-----------+---------------+---------------+-------------+----------+---------------+-------------+----------+-----------+----------+----------+--------------+--------------+-----------+--------------+--------------+-----------+------------+--------------+-------------+------------+-------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                           ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; MuxShiftAmount:MuxShamt|shamt[0]                   ; MuxShiftAmount:MuxShamt|WideOr0 ; yes                    ;
-; MuxShiftAmount:MuxShamt|shamt[1]                   ; MuxShiftAmount:MuxShamt|WideOr0 ; yes                    ;
-; MuxShiftAmount:MuxShamt|shamt[2]                   ; MuxShiftAmount:MuxShamt|WideOr0 ; yes                    ;
-; MuxShiftAmount:MuxShamt|shamt[3]                   ; MuxShiftAmount:MuxShamt|WideOr0 ; yes                    ;
-; MuxShiftAmount:MuxShamt|shamt[4]                   ; MuxShiftAmount:MuxShamt|WideOr0 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                                 ;                        ;
-+----------------------------------------------------+---------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; UnidadeControle:UC|state.ADDU         ; Lost fanout        ;
-; UnidadeControle:UC|state.SUBU         ; Lost fanout        ;
-; UnidadeControle:UC|state~4            ; Lost fanout        ;
-; UnidadeControle:UC|state~5            ; Lost fanout        ;
-; UnidadeControle:UC|state~6            ; Lost fanout        ;
-; UnidadeControle:UC|state~7            ; Lost fanout        ;
-; UnidadeControle:UC|state~8            ; Lost fanout        ;
-; UnidadeControle:UC|state~9            ; Lost fanout        ;
-; Total Number of Removed Registers = 8 ;                    ;
-+---------------------------------------+--------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 1294  ;
-; Number of registers using Synchronous Clear  ; 35    ;
-; Number of registers using Synchronous Load   ; 37    ;
-; Number of registers using Asynchronous Clear ; 1294  ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1242  ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[28]       ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[30]       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[0]        ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Up|Registrador:RegPC|Saida[3]        ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:B|Saida[25]           ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Up|Registrador:A|Saida[26]           ;
-; 13:1               ; 13 bits   ; 104 LEs       ; 78 LEs               ; 26 LEs                 ; Yes        ; |Up|RegDesloc:ShiftOp|temp[11]        ;
-; 13:1               ; 13 bits   ; 104 LEs       ; 78 LEs               ; 26 LEs                 ; Yes        ; |Up|RegDesloc:ShiftOp|temp[28]        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux30       ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux5        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Up|Multiplex3op:MuxMemWri|Mux11      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Up|MuxShiftAmount:MuxShamt|Selector4 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |Up|Multiplex2bit:MuxSrcB|Mux23       ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |Up|Ula32:ULA|Mux32                   ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |Up|Ula32:ULA|Mux6                    ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |Up|Multiplex3bit:MuxMem2Reg|Mux19    ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |Up|Multiplex3bit:MuxMem2Reg|Mux28    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 48 LEs               ; 32 LEs                 ; No         ; |Up|Multiplex3bit:MuxMem2Reg|Mux15    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                  ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
-+---------------------------------+--------------------+------+-----------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                             ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM ;
-+------------------------+----------------+-------------------------------+
-; Parameter Name         ; Value          ; Type                          ;
-+------------------------+----------------+-------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                       ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                       ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                       ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                       ;
-; USE_EAB                ; ON             ; Untyped                       ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                       ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                       ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
-+------------------------+----------------+-------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                           ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                           ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                           ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                  ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                  ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                  ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                  ;
-; USE_EAB                ; ON             ; Untyped                                  ;
-; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                  ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "Registrador:EPC"        ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; saida ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
-
-
-+-------------------------------------------------------+
-; Port Connectivity Checks: "Ula32:ULA"                 ;
-+----------+--------+----------+------------------------+
-; Port     ; Type   ; Severity ; Details                ;
-+----------+--------+----------+------------------------+
-; negativo ; Output ; Info     ; Explicitly unconnected ;
-; igual    ; Output ; Info     ; Explicitly unconnected ;
-; maior    ; Output ; Info     ; Explicitly unconnected ;
-; menor    ; Output ; Info     ; Explicitly unconnected ;
-+----------+--------+----------+------------------------+
-
-
-+------------------------------------------------------+
-; Port Connectivity Checks: "Multiplex3bit:MuxMem2Reg" ;
-+----------+-------+----------+------------------------+
-; Port     ; Type  ; Severity ; Details                ;
-+----------+-------+----------+------------------------+
-; c[15..0] ; Input ; Info     ; Stuck at GND           ;
-+----------+-------+----------+------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "Multiplex2bit:MuxSrcPC" ;
-+-----------+-------+----------+---------------------+
-; Port      ; Type  ; Severity ; Details             ;
-+-----------+-------+----------+---------------------+
-; c[29..28] ; Input ; Info     ; Stuck at GND        ;
-; c[1..0]   ; Input ; Info     ; Stuck at GND        ;
-+-----------+-------+----------+---------------------+
-
-
-+---------------------------------------------------+
-; Port Connectivity Checks: "Multiplex2bit:MuxSrcB" ;
-+----------+-------+----------+---------------------+
-; Port     ; Type  ; Severity ; Details             ;
-+----------+-------+----------+---------------------+
-; b[31..3] ; Input ; Info     ; Stuck at GND        ;
-; b[1..0]  ; Input ; Info     ; Stuck at GND        ;
-; b[2]     ; Input ; Info     ; Stuck at VCC        ;
-; d[1..0]  ; Input ; Info     ; Stuck at GND        ;
-+----------+-------+----------+---------------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 05 01:48:21 2018
+    Info: Processing started: Sat May 05 04:27:53 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoHardware -c UP
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -621,6 +169,7 @@ Info: Found 1 design units, including 1 entities, in source file multiplex2bit.s
 Info: Found 2 design units, including 1 entities, in source file regdesloc.vhd
     Info: Found design unit 1: RegDesloc-behavioral_arch
     Info: Found entity 1: RegDesloc
+Warning (10229): Verilog HDL Expression warning at UnidadeControle.sv(1266): truncated literal to match 2 bits
 Info: Found 1 design units, including 1 entities, in source file unidadecontrole.sv
     Info: Found entity 1: UnidadeControle
 Info: Found 2 design units, including 1 entities, in source file registrador.vhd
@@ -651,119 +200,17 @@ Info: Found 1 design units, including 1 entities, in source file addermem16.sv
     Info: Found entity 1: AdderMem16
 Info: Found 1 design units, including 1 entities, in source file muxshiftamount.sv
     Info: Found entity 1: MuxShiftAmount
-Info: Elaborating entity "Up" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(70): variable "PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(73): variable "code20_16" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Up.sv(74): variable "code15_0" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:UC"
-Info: Elaborating entity "Registrador" for hierarchy "Registrador:RegPC"
-Info: Elaborating entity "Memoria" for hierarchy "Memoria:Mem"
-Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Instantiated megafunction "Memoria:Mem|LPM_RAM_DQ:MEM" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "8"
-    Info: Parameter "LPM_WIDTHAD" = "8"
-    Info: Parameter "LPM_NUMWORDS" = "0"
-    Info: Parameter "LPM_INDATA" = "REGISTERED"
-    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
-    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info: Parameter "LPM_FILE" = "instrucoes.mif"
-    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
-    Info: Parameter "USE_EAB" = "ON"
-    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
-    Info: Parameter "LPM_HINT" = "UNUSED"
-Info: Elaborating entity "altram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram"
-Warning: Assertion warning: altram does not support Cyclone II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone II devices
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
-Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_e1a1.tdf
-    Info: Found entity 1: altsyncram_e1a1
-Info: Elaborating entity "altsyncram_e1a1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated"
-Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:RegInstrucao"
-Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BancoRegs"
-Info: Elaborating entity "Multiplex" for hierarchy "Multiplex:MuxIorD"
-Warning (10235): Verilog HDL Always Construct warning at Multiplex.sv(9): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex.sv(12): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "MultiplexMini" for hierarchy "MultiplexMini:RegDst"
-Warning (10235): Verilog HDL Always Construct warning at MultiplexMini.sv(9): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MultiplexMini.sv(12): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "Multiplex2bit" for hierarchy "Multiplex2bit:MuxSrcB"
-Warning (10235): Verilog HDL Always Construct warning at Multiplex2bit.sv(10): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex2bit.sv(13): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex2bit.sv(16): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex2bit.sv(19): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "Multiplex3bit" for hierarchy "Multiplex3bit:MuxMem2Reg"
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(10): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(13): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(16): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(19): variable "d" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(22): variable "e" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(25): variable "f" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3bit.sv(27): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
-Info: Elaborating entity "MuxShiftAmount" for hierarchy "MuxShiftAmount:MuxShamt"
-Warning (10230): Verilog HDL assignment warning at MuxShiftAmount.sv(9): truncated value with size 27 to match size of target (5)
-Warning (10235): Verilog HDL Always Construct warning at MuxShiftAmount.sv(13): variable "functRead" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxShiftAmount.sv(18): variable "shiftOver" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxShiftAmount.sv(22): variable "regA" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at MuxShiftAmount.sv(22): truncated value with size 6 to match size of target (5)
-Warning (10235): Verilog HDL Always Construct warning at MuxShiftAmount.sv(29): variable "shiftOver" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxShiftAmount.sv(33): variable "regA" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at MuxShiftAmount.sv(33): truncated value with size 6 to match size of target (5)
-Warning (10270): Verilog HDL Case Statement warning at MuxShiftAmount.sv(13): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at MuxShiftAmount.sv(11): inferring latch(es) for variable "shamt", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "shamt[0]" at MuxShiftAmount.sv(11)
-Info (10041): Inferred latch for "shamt[1]" at MuxShiftAmount.sv(11)
-Info (10041): Inferred latch for "shamt[2]" at MuxShiftAmount.sv(11)
-Info (10041): Inferred latch for "shamt[3]" at MuxShiftAmount.sv(11)
-Info (10041): Inferred latch for "shamt[4]" at MuxShiftAmount.sv(11)
-Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:ShiftOp"
-Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1102): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info: Elaborating entity "SignedExtend" for hierarchy "SignedExtend:SinalExtensao"
-Info: Elaborating entity "UnsignedExtendExc" for hierarchy "UnsignedExtendExc:ExtensaoMemInst"
-Warning (10235): Verilog HDL Always Construct warning at UnsignedExtend.sv(8): variable "Overflow" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "UnsExtend8" for hierarchy "UnsExtend8:MDRExt8"
-Info: Elaborating entity "UnsExtend16" for hierarchy "UnsExtend16:MDRExt16"
-Info: Elaborating entity "AdderMem8" for hierarchy "AdderMem8:AdderByte"
-Warning (10235): Verilog HDL Always Construct warning at AdderMem8.sv(9): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "AdderMem16" for hierarchy "AdderMem16:AdderHlf"
-Warning (10235): Verilog HDL Always Construct warning at AdderMem16.sv(9): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info: Elaborating entity "Multiplex3op" for hierarchy "Multiplex3op:MuxMemWri"
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(9): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(12): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(15): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at Multiplex3op.sv(17): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Latch MuxShiftAmount:MuxShamt|shamt[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:RegInstrucao|Instr15_0[5]
-Warning: Latch MuxShiftAmount:MuxShamt|shamt[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:RegInstrucao|Instr15_0[5]
-Warning: Latch MuxShiftAmount:MuxShamt|shamt[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:RegInstrucao|Instr15_0[5]
-Warning: Latch MuxShiftAmount:MuxShamt|shamt[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:RegInstrucao|Instr15_0[5]
-Warning: Latch MuxShiftAmount:MuxShamt|shamt[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:RegInstrucao|Instr15_0[5]
-Info: 8 registers lost all their fanouts during netlist optimizations. The first 8 are displayed below.
-    Info: Register "UnidadeControle:UC|state.ADDU" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state.SUBU" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~4" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~5" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~6" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~7" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~8" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:UC|state~9" lost all its fanouts during netlist optimizations.
+Warning (10236): Verilog HDL Implicit Net warning at Up.sv(205): created implicit net for "getEPC"
+Error (10161): Verilog HDL error at UnidadeControle.sv(248): object "RTE" is not declared File: D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv Line: 248
+Error (10161): Verilog HDL error at UnidadeControle.sv(665): object "SLT" is not declared File: D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv Line: 665
+Error (10161): Verilog HDL error at UnidadeControle.sv(1064): object "SLT" is not declared File: D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv Line: 1064
+Error (10161): Verilog HDL error at UnidadeControle.sv(1265): object "RTE" is not declared File: D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UnidadeControle.sv Line: 1265
 Info: Generated suppressed messages file D:/Users/Paulinho/Desktop/ProjetoHardware-2018.1/Arquivos-Projeto/UP.map.smsg
-Info: Implemented 4069 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
-    Info: Implemented 302 output pins
-    Info: Implemented 3733 logic cells
-    Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 252 megabytes
-    Info: Processing ended: Sat May 05 01:48:49 2018
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:26
+Error: Quartus II Analysis & Synthesis was unsuccessful. 4 errors, 2 warnings
+    Error: Peak virtual memory: 215 megabytes
+    Error: Processing ended: Sat May 05 04:28:04 2018
+    Error: Elapsed time: 00:00:11
+    Error: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

@@ -26,7 +26,7 @@ logic [31:0] regisB;
 logic [15:0] code15_0;
 logic [31:0] pc_next;
 logic [5:0] code31_26;
-logic [1:0] pc_choosenext;
+logic [2:0] pc_choosenext;
 logic chooseulaA;
 logic [1:0] chooseulaB;
 logic chooseRegDst;
@@ -61,6 +61,7 @@ logic [4:0] lineshamt;
 logic [31:0] DeslocInst;
 logic [31:0] DeslocSinal;
 logic [31:0] extrapcnext;
+logic sinalMenor;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -196,21 +197,23 @@ Multiplex2bit MuxSrcB (.f(resultB),
 						.sel(chooseulaB)
 						);
 
-Multiplex2bit MuxSrcPC (.f(pc_next),
+Multiplex3bit MuxSrcPC (.h(pc_next),
 						.a(Alu),
 						.b(AluOut),
 						.c(DeslocInst),
 						.d(MemDataExt),
+						.e(getEPC),  //sel = 100
 						.sel(pc_choosenext)
 						);
 						
-Multiplex3bit MuxMem2Reg (.g(WriteDataReg),
+Multiplex3bit MuxMem2Reg (.h(WriteDataReg),
 							.a(MDR),
 							.b(AluOut),
 							.c(luishift), //quando LUI, sel = 010.
 							.d(MDRByte),
 							.e(MDRHalf),
 							.f(Reg_Desloc), //quando SHIFT, sel = 101
+							.g(sinalMenor), //quando SLT, sel = 110
 							.sel(chooseRegData));
 		
 Ula32 ULA (.A(resultA),
@@ -222,8 +225,10 @@ Ula32 ULA (.A(resultA),
 			.z(zeroalert),
 			.Igual(),
 			.Maior(),
-			.Menor()
+			.Menor(sinalMenor)
 			);
+			
+			
 
 Registrador ALUOutReg (.Clk(clock),
 					.Entrada(Alu),

@@ -62,6 +62,9 @@ logic [31:0] DeslocInst;
 logic [31:0] DeslocSinal;
 logic [31:0] extrapcnext;
 logic sinalMenor;
+logic storeOver;
+logic [31:0] OverOp;
+logic [31:0] Overfill;
 
 and g1(pccond,zeroalert,setcondpcwrite);
 xor g2(loadpc,pccond,setpcwrite);
@@ -90,6 +93,12 @@ begin
 luishift = code15_0<<5'b10000;
 end
 
+always@(callOverflow)
+begin
+Overfill[31:1] = 31'b0000000000000000000000000000000;
+Overfill[0] = callOverflow;
+end
+
 UnidadeControle UC (.clock(clock),
 					.reset(reset_l),
 					.sinalOverflow(callOverflow),
@@ -112,6 +121,7 @@ UnidadeControle UC (.clock(clock),
 					.ALUOutCtrl(comALUOut),
 					.RegAload(comRegA),
 					.RegBload(comRegB),
+					.saveOver(storeover),
 					.setShift(setDesloc),
 					.EPCWrite(WriteEPC),
 					.stateout(State)
@@ -254,14 +264,21 @@ SignedExtend SinalExtensao (.codein(code15_0),
 							.outsigned(exten31_0)
 							);
 
+Registrador SignOverflow (.Clk(clock),
+							.Entrada(Overfill),
+							.Saida(OverOp),
+							.Reset(reset_l),
+							.Load(storeOver)
+							);
+
 UnsignedExtendExc ExtensaoMemInst (.MemIn(MemData),
 								.OutNewInst(MemDataExt),
-								.Overflow(callOverflow)
+								.Overflow(OverOp[0])
 								);
 
 Registrador EPC (.Clk(clock),
 					.Entrada(Alu),
-					.Saida(),
+					.Saida(getEPC),
 					.Reset(reset_l),
 					.Load(WriteEPC)
 					);

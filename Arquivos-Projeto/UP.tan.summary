@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 28.617 ns
-From           : UnidadeControle:UC|state.WAIT
-To             : Alu[27]
+Actual Time    : 29.528 ns
+From           : UnidadeControle:UC|state.OVERFLOW
+To             : WriteDataReg[0]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 22.47 MHz ( period = 44.512 ns )
-From           : UnidadeControle:UC|state.WAIT
-To             : Banco_reg:BancoRegs|Reg27[0]
+Actual Time    : 22.83 MHz ( period = 43.794 ns )
+From           : UnidadeControle:UC|state.OVERFLOW
+To             : Banco_reg:BancoRegs|Reg17[0]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -30,7 +30,7 @@ From           : Registrador:A|Saida[3]
 To             : MuxShiftAmount:MuxShamt|Selector1~1
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 40
+Failed Paths   : 35
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +40,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 40
+Failed Paths   : 35
 
 --------------------------------------------------------------------------------------
 
